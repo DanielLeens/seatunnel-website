@@ -225,8 +225,6 @@ docker run -d --name seatunnel_worker_1 \
 
 The `docker-compose.yaml` file is :
 ```yaml
-version: '3.8'
-
 services:
   master:
     image: apache/seatunnel
@@ -275,6 +273,7 @@ services:
 
 networks:
   seatunnel_network:
+    name: seatunnel_network
     driver: bridge
     ipam:
       config:
