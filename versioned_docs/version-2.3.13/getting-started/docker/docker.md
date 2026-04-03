@@ -274,7 +274,7 @@ services:
 
 networks:
   seatunnel_network:
-    name: seatunnel_network
+    name: seatunnel-network
     driver: bridge
     ipam:
       config:
@@ -361,7 +361,7 @@ services:
 
 networks:
   seatunnel_network:
-    name: seatunnel_network
+    name: seatunnel-network
     driver: bridge
     ipam:
       config:
@@ -379,7 +379,7 @@ and run `docker-compose up -d` command, the new worker node will start, and the 
 ```shell
 # you need update yourself master container ip to `ST_DOCKER_MEMBER_LIST`
 docker run --name seatunnel_client \
-    --network seatunnel_network \
+    --network seatunnel-network \
     -e ST_DOCKER_MEMBER_LIST=172.16.0.2:5801 \
     --rm \
     apache/seatunnel \
@@ -390,7 +390,7 @@ docker run --name seatunnel_client \
 ```shell
 # you need update yourself master container ip to `ST_DOCKER_MEMBER_LIST`
 docker run --name seatunnel_client \
-    --network seatunnel_network \
+    --network seatunnel-network \
     -e ST_DOCKER_MEMBER_LIST=172.16.0.2:5801 \
     --rm \
     apache/seatunnel \
