@@ -372,7 +372,6 @@ and run `docker-compose up -d` command, the new worker node will start, and the 
 #### use docker as a client
 - submit job (local):
 ```shell
-# you need update yourself master container ip to `ST_DOCKER_MEMBER_LIST`
 docker run --name seatunnel_client \
     --network seatunnel-network \
     -e ST_DOCKER_MEMBER_LIST=seatunnel_master:5801 \
@@ -382,7 +381,6 @@ docker run --name seatunnel_client \
 ```
 - submit job (cluster):
 ```shell
-# you need update yourself master container ip to `ST_DOCKER_MEMBER_LIST`
 docker run --name seatunnel_client \
     --network seatunnel-network \
     -e ST_DOCKER_MEMBER_LIST=seatunnel_master:5801 \
@@ -393,7 +391,6 @@ docker run --name seatunnel_client \
 
 - list job
 ```shell
-# you need update yourself master container ip to `ST_DOCKER_MEMBER_LIST`
 docker run --name seatunnel_client \
     --network seatunnel-network \
     -e ST_DOCKER_MEMBER_LIST=seatunnel_master:5801 \
