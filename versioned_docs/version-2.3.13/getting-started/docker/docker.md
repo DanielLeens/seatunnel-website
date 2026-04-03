@@ -225,6 +225,7 @@ docker run -d --name seatunnel_worker_1 \
 
 The `docker-compose.yaml` file is :
 ```yaml
+
 services:
   master:
     image: apache/seatunnel
@@ -294,7 +295,6 @@ After that, you can use client or restapi to submit job to this cluster.
 If you want to increase cluster node, like add a new work node.
 
 ```yaml
-version: '3.8'
 
 services:
   master:
