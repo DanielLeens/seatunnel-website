@@ -240,7 +240,7 @@ services:
     ports:
       - "5801:5801"  
     networks:
-      seatunnel_network:
+      seatunnel_network
 
   worker1:
     image: apache/seatunnel
@@ -255,7 +255,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
+      seatunnel_network
 
   worker2:
     image: apache/seatunnel
@@ -270,7 +270,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
+      seatunnel_network
 
 networks:
   seatunnel_network:
@@ -307,7 +307,7 @@ services:
     ports:
       - "5801:5801"  
     networks:
-      seatunnel_network:
+      seatunnel_network
 
   worker1:
     image: apache/seatunnel
@@ -322,7 +322,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
+      seatunnel_network
 
   worker2:
     image: apache/seatunnel
@@ -337,7 +337,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
+      seatunnel_network
 
   ####
   ## add new worker node
@@ -355,7 +355,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
+      seatunnel_network
 
 networks:
   seatunnel_network:
