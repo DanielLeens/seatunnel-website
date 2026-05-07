@@ -219,5 +219,6 @@ Total Failed Count        :                   0
 ## 下一步
 
 - 开始编写您自己的配置文件，选择您想要使用的[连接器](../../connectors/source)，并根据连接器的文档配置参数。
+- 如果您是在已有 SeaTunnel Engine 环境上做升级，请继续阅读[SeaTunnel Engine(Zeta) 版本升级](../../engines/zeta/version-upgrade.md)。
 - 如果您要部署多节点 SeaTunnel Engine 集群，请继续阅读[SeaTunnel Engine(Zeta) 安装部署](../../engines/zeta/deployment.md)。
 - 如果您想进一步了解 SeaTunnel Engine，请参阅[SeaTunnel引擎](../../engines/zeta/about.md)。
