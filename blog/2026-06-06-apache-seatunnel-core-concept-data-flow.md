@@ -38,7 +38,7 @@ Record1 → Record2 → Record3 → ...
 
 ### Every plugin “operates on data flow”
 
-![](/image/20260606/data-flow/17792421251124.jpg)
+
 
 ## 2. The Real Meaning of plugin_output / plugin_input
 
@@ -234,7 +234,6 @@ data flow      data flow       data flow
 
 Just remember this universal rule table:
 
-![](/image/20260606/data-flow/17792425500018.jpg)
 
 The connection depends on two things:
 
