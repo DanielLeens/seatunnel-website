@@ -18,7 +18,7 @@ The first article starts with one of SeaTunnel’s core concepts: **Data Flow**.
 >
 > - It is a DAG execution engine driven by **DataStream / DataFlow**.
 
-**Two sources flowing into one sink** is a direct manifestation of this model.
+In SeaTunnel's **Zeta engine**, multiple upstream branches converging on one downstream stage is a direct manifestation of this model.
 
 ## 1. SeaTunnel’s Core Concept: Data Flow
 
@@ -38,7 +38,7 @@ Record1 → Record2 → Record3 → ...
 
 ### Every plugin “operates on data flow”
 
-
+In practice, a plugin either produces a stream, consumes a stream, or does both when it sits in the middle of a pipeline.
 
 ## 2. The Real Meaning of plugin_output / plugin_input
 
@@ -80,11 +80,11 @@ plugin_output / plugin_input = the “connection ports” of data flow
 
 ## 3. SeaTunnel’s DAG Model: You Are Already Using It
 
-The successful experiment you ran is essentially this:
+Under SeaTunnel's **Zeta engine** and its `LogicalDag` model, the successful experiment you ran is essentially this:
 
 ```text
 SourceA ┐
-        ├──► Sink
+        ├──► Downstream Stage
 SourceB ┘
 ```
 
@@ -92,37 +92,29 @@ SourceB ┘
 
 ```text
 DataStream A ┐
-             ├──► Sink Operator
+             ├──► Downstream Vertex
 DataStream B ┘
 ```
 
-### Key question: Why can they be merged?
+### Key question: Why can they converge?
 
 Because:
 
-> A Sink is not “bound to one source”; it “subscribes to one or more data flows”.
+> In Zeta's logical graph, one downstream vertex can be connected to multiple upstream data flows.
 
-When you write:
+That is a graph-level capability first, not a blanket guarantee that every runtime plugin instance accepts multiple `plugin_input` values directly.
 
-```text
-sink {
-  jdbc {
-    plugin_input = "a,b"
-  }
-}
-```
-
-Or when you use multiple sources that eventually connect to the same sink, SeaTunnel internally does the following:
+In Zeta, SeaTunnel internally does the following:
 
 - Takes multiple input streams;
-- Merges them into one Logical Input;
-- Writes records in record order.
+- Represents them as a multiple-input vertex in the `LogicalDag`;
+- Splits the graph into executable pipelines during physical planning.
 
-⚠️ Note:
+A precise caveat is important here:
 
-- It is not a join.
-- It is not SQL union.
-- It is stream-level merge/append.
+- Zeta's DAG model can express multiple-input vertices.
+- The current Flink and Spark starter implementations still reject multiple `plugin_input` values in a single plugin instance.
+- So treat this as a **Zeta / logical-graph concept**, not as a universal sink-plugin contract.
 
 ## 4. How Is This Fundamentally Different from “SQL / ETL” Thinking?
 
@@ -144,12 +136,12 @@ SELECT * FROM B
 Record stream from A
 Record stream from B
 ↓
-Sink continuously consumes records
+A downstream stage processes the records according to the configured graph
 ```
 
 - This is **stream semantics**.
 
-As long as the Schema is consistent, the records can enter the same sink.
+In Zeta, as long as the graph and Schema assumptions are valid, the downstream stage can be planned from those upstream streams.
 
 ## 5. The Role of Schema in Data Flow: Must Remember
 
@@ -174,9 +166,9 @@ You can directly use the following standard wording in future design discussions
 
 > SeaTunnel uses DataStream as its core abstraction.
 >
-> Source plugins generate data streams, Transform plugins process data streams and output new data streams, and Sink plugins consume one or more data streams and write the data into external systems.
+> Source plugins generate data streams, Transform plugins process data streams and output new data streams, and Sink plugins consume upstream data streams and write the data into external systems.
 >
-> Multiple data streams can converge at a Sink. As long as their Schemas are compatible, SeaTunnel writes them using stream-level append semantics, rather than relational join semantics.
+> In SeaTunnel Zeta's `LogicalDag`, multiple data streams can converge at one downstream vertex. Whether that convergence is expressed directly by a specific sink plugin or through an intermediate stage depends on the engine/runtime implementation.
 
 ## 7. Direct Impact on Your Builder / Strategy Design
 
@@ -194,7 +186,7 @@ If someone does not set `plugin_output` in your Builder:
 
 This is a platform-level capability.
 
-### 3️⃣ A Sink logically allows multiple input streams
+### 3️⃣ In Zeta, the logical graph may contain multiple-input vertices
 
 Even if the DSL shows only one:
 
@@ -202,21 +194,21 @@ Even if the DSL shows only one:
 plugin_input = "s1"
 ```
 
-The semantic model in your Builder should be:
+Your Builder should model upstream relationships as:
 
 ```text
 Set<DataStream>
 ```
 
-Instead of String.
+instead of hard-coding every downstream step as a single linear String-to-String hop.
 
 ## 8. Key Facts You Have Already Verified
 
 Here are the conclusions you have already validated through practice:
 
 ✅ SeaTunnel is a DAG, not a linear ETL tool.  
-✅ Multiple Sources can flow into one Sink.  
-✅ The merge is stream-level append, not SQL join.  
+✅ In Zeta's DAG model, multiple upstream branches can converge on one downstream stage.  
+✅ That convergence is a graph-level concept, not automatically a direct multi-input sink contract in every engine implementation.  
 ✅ Schema alignment is the prerequisite.  
 ✅ The DSL describes data flow, not SQL.
 
@@ -232,19 +224,19 @@ data flow      data flow       data flow
 
 ### How are data flows “connected”?
 
-Just remember this universal rule table:
+Just remember this connection rule:
 
 
 The connection depends on two things:
 
 - `plugin_output`: What is the name of the data flow I produce?
-- `plugin_input`: Which data flow, or data flows, do I consume?
+- `plugin_input`: Which upstream data flow am I consuming?
 
-For example, two Sources → one Sink:
+For example, two upstream branches converging on one downstream stage in Zeta:
 
 ```text
 SourceA ┐
-        ├──► Sink
+        ├──► Downstream Stage
 SourceB ┘
 ```
 
