@@ -4,7 +4,7 @@
     "description": "The label for version 1.x"
   },
   "sidebar.docs.category.Configuration": {
-    "message": "配置",
+    "message": "基础配置",
     "description": "The label for category Configuration in sidebar docs"
   },
   "sidebar.docs.category.Filter-Plugin": {

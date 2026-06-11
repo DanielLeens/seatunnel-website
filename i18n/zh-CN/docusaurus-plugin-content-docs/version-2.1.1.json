@@ -4,11 +4,11 @@
     "description": "The label for version 2.1.1"
   },
   "sidebar.docs.category.Introduction": {
-    "message": "简介",
+    "message": "认识 SeaTunnel",
     "description": "The label for category Introduction in sidebar docs"
   },
   "sidebar.docs.category.Quick Start": {
-    "message": "快速开始",
+    "message": "快速上手",
     "description": "The label for category Quick Start in sidebar docs"
   },
   "sidebar.docs.category.Quick Start.link.generated-index.title": {
@@ -20,15 +20,15 @@
     "description": "The generated-index page description for category Quick Start in sidebar docs"
   },
   "sidebar.docs.category.Connector": {
-    "message": "连接器",
+    "message": "数据连接器",
     "description": "The label for category Connector in sidebar docs"
   },
   "sidebar.docs.category.Source": {
-    "message": "源端",
+    "message": "数据来源",
     "description": "The label for category Source in sidebar docs"
   },
   "sidebar.docs.category.Source.link.generated-index.title": {
-    "message": "SeaTunnel 源连接器",
+    "message": "数据来源连接器",
     "description": "The generated-index page title for category Source in sidebar docs"
   },
   "sidebar.docs.category.Source.link.generated-index.description": {
@@ -36,11 +36,11 @@
     "description": "The generated-index page description for category Source in sidebar docs"
   },
   "sidebar.docs.category.Sink": {
-    "message": "目标端",
+    "message": "数据写入",
     "description": "The label for category Sink in sidebar docs"
   },
   "sidebar.docs.category.Sink.link.generated-index.title": {
-    "message": "SeaTunnel 目标连接器",
+    "message": "数据写入连接器",
     "description": "The generated-index page title for category Sink in sidebar docs"
   },
   "sidebar.docs.category.Sink.link.generated-index.description": {
@@ -48,11 +48,11 @@
     "description": "The generated-index page description for category Sink in sidebar docs"
   },
   "sidebar.docs.category.Transform": {
-    "message": "转换",
+    "message": "数据转换",
     "description": "The label for category Transform in sidebar docs"
   },
   "sidebar.docs.category.Command": {
-    "message": "命令",
+    "message": "命令行",
     "description": "The label for category Command in sidebar docs"
   },
   "sidebar.docs.category.Contribution": {
