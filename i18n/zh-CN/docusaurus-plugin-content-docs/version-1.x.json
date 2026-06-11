@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "1.x",
+    "description": "The label for version 1.x"
+  },
+  "sidebar.docs.category.Configuration": {
+    "message": "配置",
+    "description": "The label for category Configuration in sidebar docs"
+  },
+  "sidebar.docs.category.Filter-Plugin": {
+    "message": "过滤插件",
+    "description": "The label for category Filter-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Filter-Plugin.link.generated-index.title": {
+    "message": "SeaTunnel 过滤插件",
+    "description": "The generated-index page title for category Filter-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Filter-Plugin.link.generated-index.description": {
+    "message": "List all filter supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Filter-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Input-Plugin": {
+    "message": "输入插件",
+    "description": "The label for category Input-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Input-Plugin.link.generated-index.title": {
+    "message": "SeaTunnel 输入插件",
+    "description": "The generated-index page title for category Input-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Input-Plugin.link.generated-index.description": {
+    "message": "List all input supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Input-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Output-Plugin": {
+    "message": "输出插件",
+    "description": "The label for category Output-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Output-Plugin.link.generated-index.title": {
+    "message": "SeaTunnel 输出插件",
+    "description": "The generated-index page title for category Output-Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Output-Plugin.link.generated-index.description": {
+    "message": "List all output supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Output-Plugin in sidebar docs"
+  }
+}

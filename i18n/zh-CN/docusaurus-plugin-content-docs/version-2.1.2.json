@@ -1,0 +1,66 @@
+{
+  "version.label": {
+    "message": "2.1.2",
+    "description": "The label for version 2.1.2"
+  },
+  "sidebar.docs.category.Introduction": {
+    "message": "简介",
+    "description": "The label for category Introduction in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start": {
+    "message": "快速开始",
+    "description": "The label for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start.link.generated-index.title": {
+    "message": "SeaTunnel 快速开始",
+    "description": "The generated-index page title for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start.link.generated-index.description": {
+    "message": "In this section, you could learn how to get up and running Apache SeaTunnel in both locally or in Docker environment.",
+    "description": "The generated-index page description for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Concept": {
+    "message": "概念",
+    "description": "The label for category Concept in sidebar docs"
+  },
+  "sidebar.docs.category.Connector": {
+    "message": "连接器",
+    "description": "The label for category Connector in sidebar docs"
+  },
+  "sidebar.docs.category.Source": {
+    "message": "源端",
+    "description": "The label for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.title": {
+    "message": "SeaTunnel 源连接器",
+    "description": "The generated-index page title for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.description": {
+    "message": "List all source supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Sink": {
+    "message": "目标端",
+    "description": "The label for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.title": {
+    "message": "SeaTunnel 目标连接器",
+    "description": "The generated-index page title for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.description": {
+    "message": "List all sink supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Transform": {
+    "message": "转换",
+    "description": "The label for category Transform in sidebar docs"
+  },
+  "sidebar.docs.category.Command": {
+    "message": "命令",
+    "description": "The label for category Command in sidebar docs"
+  },
+  "sidebar.docs.category.Contribution": {
+    "message": "贡献指南",
+    "description": "The label for category Contribution in sidebar docs"
+  }
+}
