@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "2.1.0",
+    "description": "The label for version 2.1.0"
+  },
+  "sidebar.tutorialSidebar.category.developement": {
+    "message": "开发",
+    "description": "The label for category developement in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.flink": {
+    "message": "Flink",
+    "description": "The label for category flink in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.commands": {
+    "message": "命令",
+    "description": "The label for category commands in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.configuration": {
+    "message": "配置",
+    "description": "The label for category configuration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.sink-plugins": {
+    "message": "Sink 插件",
+    "description": "The label for category sink-plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.source-plugins": {
+    "message": "Source 插件",
+    "description": "The label for category source-plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.transform-plugins": {
+    "message": "Transform 插件",
+    "description": "The label for category transform-plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.spark": {
+    "message": "Spark",
+    "description": "The label for category spark in sidebar tutorialSidebar"
+  }
+}

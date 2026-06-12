@@ -1,0 +1,102 @@
+{
+  "version.label": {
+    "message": "2.2.0-beta",
+    "description": "The label for version 2.2.0-beta"
+  },
+  "sidebar.docs.category.Introduction": {
+    "message": "认识 SeaTunnel",
+    "description": "The label for category Introduction in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start": {
+    "message": "快速上手",
+    "description": "The label for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start.link.generated-index.title": {
+    "message": "SeaTunnel 快速开始",
+    "description": "The generated-index page title for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start.link.generated-index.description": {
+    "message": "In this section, you could learn how to get up and running Apache SeaTunnel in both locally or in Docker environment.",
+    "description": "The generated-index page description for category Quick Start in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start - V2": {
+    "message": "V2 快速上手",
+    "description": "The label for category Quick Start - V2 in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start - V2.link.generated-index.title": {
+    "message": "SeaTunnel V2 快速开始",
+    "description": "The generated-index page title for category Quick Start - V2 in sidebar docs"
+  },
+  "sidebar.docs.category.Quick Start - V2.link.generated-index.description": {
+    "message": "In this section, you could learn how to get up and running Apache SeaTunnel in both locally or in Docker environment.",
+    "description": "The generated-index page description for category Quick Start - V2 in sidebar docs"
+  },
+  "sidebar.docs.category.Concept": {
+    "message": "核心概念",
+    "description": "The label for category Concept in sidebar docs"
+  },
+  "sidebar.docs.category.Connector": {
+    "message": "数据连接器",
+    "description": "The label for category Connector in sidebar docs"
+  },
+  "sidebar.docs.category.Source": {
+    "message": "数据来源",
+    "description": "The label for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.title": {
+    "message": "数据来源连接器",
+    "description": "The generated-index page title for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.description": {
+    "message": "List all source(v2) supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Sink": {
+    "message": "数据写入",
+    "description": "The label for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.title": {
+    "message": "数据写入连接器",
+    "description": "The generated-index page title for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.description": {
+    "message": "List all sink(v2) supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.flink-sql": {
+    "message": "Flink SQL",
+    "description": "The label for category flink-sql in sidebar docs"
+  },
+  "sidebar.docs.category.flink-sql.link.generated-index.title": {
+    "message": "SeaTunnel Flink SQL",
+    "description": "The generated-index page title for category flink-sql in sidebar docs"
+  },
+  "sidebar.docs.category.flink-sql.link.generated-index.description": {
+    "message": "List all flink-sql supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category flink-sql in sidebar docs"
+  },
+  "sidebar.docs.category.Connector-V2": {
+    "message": "数据连接器 V2",
+    "description": "The label for category Connector-V2 in sidebar docs"
+  },
+  "sidebar.docs.category.Transform": {
+    "message": "数据转换",
+    "description": "The label for category Transform in sidebar docs"
+  },
+  "sidebar.docs.category.Transform.link.generated-index.title": {
+    "message": "SeaTunnel 转换",
+    "description": "The generated-index page title for category Transform in sidebar docs"
+  },
+  "sidebar.docs.category.Transform.link.generated-index.description": {
+    "message": "List all transform supported Apache SeaTunnel for now.",
+    "description": "The generated-index page description for category Transform in sidebar docs"
+  },
+  "sidebar.docs.category.Command": {
+    "message": "命令行",
+    "description": "The label for category Command in sidebar docs"
+  },
+  "sidebar.docs.category.Contribution": {
+    "message": "贡献指南",
+    "description": "The label for category Contribution in sidebar docs"
+  }
+}
