@@ -116,7 +116,7 @@
     "description": "The generated-index page title for category Transforms in sidebar docs"
   },
   "sidebar.docs.category.Transforms.link.generated-index.description": {
-    "message": "List all transforms supported by Apache SeaTunnel.",
+    "message": "查看 Apache SeaTunnel 支持的全部数据转换能力，并按场景选择合适的转换插件。",
     "description": "The generated-index page description for category Transforms in sidebar docs"
   },
   "sidebar.docs.category.Engines": {
