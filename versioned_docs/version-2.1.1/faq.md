@@ -68,9 +68,9 @@ refer to: [lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
 Of course, please see the screenshot below:
 
-![workflow.png](/image_en/workflow.png)
+![workflow.png](./images/workflow.png)
 
-![azkaban.png](/image_en/azkaban.png)
+![azkaban.png](./images/azkaban.png)
 
 ## Does SeaTunnel have a case of configuring multiple sources, such as configuring  elasticsearch and hdfs in source at the same time?
 
@@ -194,7 +194,7 @@ The following conclusions can be drawn:
 
 3. In general, both M and N are determined, and the conclusion can be drawn from 2: The size of `spark.streaming.kafka.maxRatePerPartition` is positively correlated with the size of `spark.executor.cores` * `spark.executor.instances`, and it can be increased while increasing the resource `maxRatePerPartition` to speed up consumption.
 
-![kafka](/image_en/kafka.png)
+![kafka](./images/kafka.png)
 
 ## How to solve the Error `Exception in thread "main" java.lang.NoSuchFieldError: INSTANCE`?
 

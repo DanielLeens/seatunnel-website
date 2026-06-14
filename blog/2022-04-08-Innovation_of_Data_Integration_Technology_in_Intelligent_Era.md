@@ -140,11 +140,10 @@ dev@seatunnel.apache.org
 
 Join Slack:
 
-[https://the-asf.slack.com/archives/C053HND1D6X](https://the-asf.slack.com/archives/C053HND1D6X)
+[https://s.apache.org/seatunnel-slack](https://s.apache.org/seatunnel-slack)
 
 Follow Twitter:
 
 [https://twitter.com/ASFSeaTunnel](https://twitter.com/ASFSeaTunnel)
 
 Come and join us!
-

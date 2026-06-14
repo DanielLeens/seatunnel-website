@@ -7,7 +7,7 @@ sidebar_position: 1
 
 <img src="https://seatunnel.apache.org/image/logo.png" alt="seatunnel logo" width="200px" height="200px" align="right" />
 
-[![Slack](https://img.shields.io/badge/slack-%23seatunnel-4f8eba?logo=slack)](https://the-asf.slack.com/archives/C053HND1D6X)
+[![Slack](https://img.shields.io/badge/slack-%23seatunnel-4f8eba?logo=slack)](https://s.apache.org/seatunnel-slack)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ASFSeaTunnel.svg?label=Follow&logo=twitter)](https://twitter.com/ASFSeaTunnel)
 
 ---
@@ -51,7 +51,7 @@ SeaTunnel will do its best to solve the problems that may be encountered in the 
 
 ## Workflow of SeaTunnel
 
-![seatunnel-workflow.svg](images/image/seatunnel-workflow.svg)
+![workflow.png](/image_en/workflow.png)
 
 ```
 Source[Data Source Input] -> Transform[Data Processing] -> Sink[Result Output]
@@ -155,7 +155,7 @@ Thanks to all developers!
 
 * Mail list: **dev@seatunnel.apache.org**. Mail to `dev-subscribe@seatunnel.apache.org`, follow the reply to subscribe
   the mail list.
-* Slack: https://the-asf.slack.com/archives/C053HND1D6X
+* Slack: https://s.apache.org/seatunnel-slack
 * Twitter: https://twitter.com/ASFSeaTunnel
 * [Bilibili](https://space.bilibili.com/1542095008) (for Chinese users)
 

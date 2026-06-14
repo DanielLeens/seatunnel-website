@@ -2,7 +2,7 @@
 
 <img src="https://seatunnel.apache.org/image/logo.png" alt="seatunnel logo" width="200px" height="200px" align="right" />
 
-[![Slack](images/seatunnel-slack.svg)](https://the-asf.slack.com/archives/C053HND1D6X)
+[![Slack](images/seatunnel-slack.svg)](https://s.apache.org/seatunnel-slack)
 [![Twitter Follow](images/ASFSeaTunnel.svg)](https://x.com/ASFSeaTunnel)
 
 SeaTunnel is a very easy-to-use ultra-high-performance distributed data integration platform that supports real-time
