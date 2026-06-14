@@ -671,15 +671,6 @@ function GitHubIcon() {
     );
 }
 
-function MessageIcon() {
-    return (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M8 10h.01M12 10h.01M16 10h.01" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
-}
-
 function XIcon() {
     return (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -760,7 +751,6 @@ export default function Home() {
     const seatunnelWebPath = useBaseUrl(localizePath(language, '/seatunnel_web/about'));
     const blogPath = useBaseUrl(localizePath(language, '/blog'));
     const communityPath = useBaseUrl(localizePath(language, '/community/contribution_guide/contribute'));
-    const askAiPath = useBaseUrl(localizePath(language, '/ask-ai'));
     const logoPath = `${assetRoot}image/logo.png`;
     const routeMap = {
         apiReference: apiReferencePath,
@@ -785,6 +775,8 @@ export default function Home() {
             return undefined;
         }
 
+        document.body.classList.add('seatunnel-homepage-page');
+
         const root = pageRef.current;
         const revealElements = Array.from(root.querySelectorAll('.st-home-rv'));
         const revealObserver = new IntersectionObserver((entries) => {
@@ -804,7 +796,33 @@ export default function Home() {
                 revealObserver.unobserve(entry.target);
             });
         }, {threshold: 0.08});
+
+        // Tie reveal luminance to viewport position so copy brightens as it scrolls into focus.
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+        const updateRevealProgress = () => {
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            revealElements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                const start = viewportHeight;
+                const end = viewportHeight * 0.28;
+                const progress = clamp((start - rect.top) / Math.max(start - end, 1), 0, 1);
+                element.style.setProperty('--rv-progress', progress.toFixed(3));
+            });
+        };
+        let revealFrame = 0;
+        const requestRevealProgressUpdate = () => {
+            if (revealFrame) {
+                return;
+            }
+            revealFrame = window.requestAnimationFrame(() => {
+                revealFrame = 0;
+                updateRevealProgress();
+            });
+        };
         revealElements.forEach((element) => revealObserver.observe(element));
+        requestRevealProgressUpdate();
+        window.addEventListener('scroll', requestRevealProgressUpdate, {passive: true});
+        window.addEventListener('resize', requestRevealProgressUpdate);
 
         const heroTimer = window.setTimeout(() => {
             root.querySelector('#st-home-hero-meteor')?.classList.add('go');
@@ -854,6 +872,10 @@ export default function Home() {
             function draw() {
                 const width = canvas.offsetWidth;
                 const height = canvas.offsetHeight;
+                if (!width || !height) {
+                    frameId = window.requestAnimationFrame(draw);
+                    return;
+                }
                 context.clearRect(0, 0, width, height);
                 context.save();
                 context.globalAlpha = opacity;
@@ -940,6 +962,10 @@ export default function Home() {
                 frame += 1;
                 const width = canvas.offsetWidth;
                 const height = canvas.offsetHeight;
+                if (!width || !height) {
+                    frameId = window.requestAnimationFrame(draw);
+                    return;
+                }
                 const centerY = height / 2;
                 const dash = 10;
                 const gap = 8;
@@ -969,7 +995,8 @@ export default function Home() {
                 for (let index = 0; index < pulseCount; index += 1) {
                     const phase = ((frame / 240) + (index / pulseCount)) % 1;
                     const pulseX = phase * width;
-                    const hue = 197 + ((pulseX / width) * 130);
+                    const hueRatio = width > 0 ? (pulseX / width) : 0;
+                    const hue = 197 + (hueRatio * 130);
                     const radius = 11 + (Math.sin((frame * 0.04) + index) * 2);
                     const pulseGradient = context.createRadialGradient(pulseX, centerY, 0, pulseX, centerY, radius * 2.2);
                     pulseGradient.addColorStop(0, `hsla(${hue},90%,78%,1)`);
@@ -1015,8 +1042,14 @@ export default function Home() {
         const stopFlowCanvas = startFlowCanvas();
 
         return () => {
+            document.body.classList.remove('seatunnel-homepage-page');
             window.clearTimeout(heroTimer);
             revealObserver.disconnect();
+            window.removeEventListener('scroll', requestRevealProgressUpdate);
+            window.removeEventListener('resize', requestRevealProgressUpdate);
+            if (revealFrame) {
+                window.cancelAnimationFrame(revealFrame);
+            }
             stopHeroWarpCanvas();
             stopCtaWarpCanvas();
             stopFlowCanvas();
@@ -1232,8 +1265,8 @@ export default function Home() {
                                     <span>&gt;</span>
                                 </div>
                                 <div className="st-home-architecture-connector st-home-architecture-connector-right">
-                                    <span>&gt;</span>
                                     <div className="st-home-architecture-line"></div>
+                                    <span>&gt;</span>
                                 </div>
                                 <div className="st-home-architecture-card">
                                     <div className="st-home-architecture-card-head">
@@ -1468,14 +1501,6 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
-
-            <a href={askAiPath} className="st-home-ask-ai" aria-label={content.askAi}>
-                <span className="st-home-ask-ai-button">
-                    <MessageIcon />
-                    <span>{content.askAi}</span>
-                </span>
-                <span className="st-home-ask-ai-dot" aria-hidden="true"></span>
-            </a>
         </div>
     );
 }

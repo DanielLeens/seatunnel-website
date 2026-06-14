@@ -1,9 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 body.seatunnel-homepage-page {
+  --home-page-bg: #060a15;
+  --home-main-bg: #060a15;
+  --home-nav-bg: rgba(6, 10, 21, 0.86);
+  --home-nav-border: rgba(255, 255, 255, 0.06);
+  --home-nav-text: #8ba5c5;
+  --home-nav-text-hover: #eef4ff;
+  --home-dropdown-bg: rgba(10, 17, 34, 0.98);
+  --home-dropdown-border: rgba(255, 255, 255, 0.08);
+  --home-dropdown-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+  --home-search-bg: rgba(255, 255, 255, 0.05);
+  --home-search-border: rgba(255, 255, 255, 0.08);
+  --home-search-text: #eef4ff;
+  --home-search-placeholder: #8ba5c5;
+  --home-toggle-bg: rgba(255, 255, 255, 0.04);
+  --home-toggle-border: rgba(255, 255, 255, 0.08);
+  --home-toggle-color: #eef4ff;
   min-width: 0 !important;
   overflow-x: hidden;
-  background: #060a15;
+  background: var(--home-page-bg);
+}
+
+html[data-theme='light'] body.seatunnel-homepage-page {
+  --home-page-bg: #eef4fc;
+  --home-main-bg: #e3ecf8;
+  --home-nav-bg: rgba(255, 255, 255, 0.94);
+  --home-nav-border: rgba(17, 31, 53, 0.1);
+  --home-nav-text: #4d6787;
+  --home-nav-text-hover: #091321;
+  --home-dropdown-bg: rgba(255, 255, 255, 0.98);
+  --home-dropdown-border: rgba(17, 31, 53, 0.1);
+  --home-dropdown-shadow: 0 24px 48px rgba(39, 63, 101, 0.14);
+  --home-search-bg: rgba(255, 255, 255, 0.92);
+  --home-search-border: rgba(17, 31, 53, 0.1);
+  --home-search-text: #091321;
+  --home-search-placeholder: #56708f;
+  --home-toggle-bg: rgba(255, 255, 255, 0.9);
+  --home-toggle-border: rgba(17, 31, 53, 0.1);
+  --home-toggle-color: #091321;
 }
 
 body.seatunnel-homepage-page [class*='announcementBar'] {
@@ -12,7 +45,7 @@ body.seatunnel-homepage-page [class*='announcementBar'] {
 
 body.seatunnel-homepage-page .main-wrapper {
   padding-top: 0 !important;
-  background: #060a15;
+  background: var(--home-main-bg);
 }
 
 body.seatunnel-homepage-page .index-nav {
@@ -21,8 +54,8 @@ body.seatunnel-homepage-page .index-nav {
   z-index: 250;
   height: 64px;
   padding: 0 1.5rem;
-  background: rgba(6, 10, 21, 0.86);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--home-nav-bg);
+  border-bottom: 1px solid var(--home-nav-border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: none;
@@ -39,14 +72,14 @@ body.seatunnel-homepage-page .index-nav .navbar__title,
 body.seatunnel-homepage-page .index-nav .dropdown__link,
 body.seatunnel-homepage-page .index-nav .navbar__toggle,
 body.seatunnel-homepage-page .index-nav .clean-btn {
-  color: #8ba5c5;
+  color: var(--home-nav-text);
 }
 
 body.seatunnel-homepage-page .index-nav .navbar__brand:hover,
 body.seatunnel-homepage-page .index-nav .navbar__link:hover,
 body.seatunnel-homepage-page .index-nav .dropdown__link:hover,
 body.seatunnel-homepage-page .index-nav .navbar__title:hover {
-  color: #eef4ff;
+  color: var(--home-nav-text-hover);
 }
 
 body.seatunnel-homepage-page .index-nav .navbar__brand {
@@ -58,7 +91,7 @@ body.seatunnel-homepage-page .index-nav .navbar__brand {
 
 body.seatunnel-homepage-page .index-nav .navbar__link--active,
 body.seatunnel-homepage-page .index-nav .dropdown__link--active {
-  color: #eef4ff;
+  color: var(--home-nav-text-hover);
 }
 
 body.seatunnel-homepage-page .index-nav .navbar__logo {
@@ -74,9 +107,9 @@ body.seatunnel-homepage-page .index-nav .navbar__title {
 }
 
 body.seatunnel-homepage-page .index-nav .dropdown__menu {
-  background: rgba(10, 17, 34, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+  background: var(--home-dropdown-bg);
+  border: 1px solid var(--home-dropdown-border);
+  box-shadow: var(--home-dropdown-shadow);
 }
 
 body.seatunnel-homepage-page .index-nav .dropdown__caret,
@@ -85,25 +118,54 @@ body.seatunnel-homepage-page .index-nav .dropdown__link svg {
 }
 
 body.seatunnel-homepage-page .index-nav .navbar__search-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #eef4ff;
+  background: var(--home-search-bg);
+  border: 1px solid var(--home-search-border);
+  color: var(--home-search-text);
 }
 
 body.seatunnel-homepage-page .index-nav .navbar__search-input::placeholder {
-  color: #8ba5c5;
+  color: var(--home-search-placeholder);
 }
 
 body.seatunnel-homepage-page .index-nav .toggle_vylO,
 body.seatunnel-homepage-page .index-nav .toggleButton_gllP,
 body.seatunnel-homepage-page .index-nav .navbar__toggle svg {
-  color: #eef4ff;
+  color: var(--home-toggle-color);
 }
 
 body.seatunnel-homepage-page .index-nav [class*='colorModeToggle'],
 body.seatunnel-homepage-page .index-nav .toggle_vylO,
 body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
-  display: none;
+  display: inline-flex;
+}
+
+body.seatunnel-homepage-page .index-nav [class*='colorModeToggle'] {
+  margin-left: 0.15rem;
+}
+
+body.seatunnel-homepage-page .index-nav [class*='toggleButton'] {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--home-toggle-border);
+  background: var(--home-toggle-bg);
+  color: var(--home-toggle-color);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+body.seatunnel-homepage-page .index-nav [class*='toggleButton']:hover {
+  transform: translateY(-1px);
+  border-color: rgba(93, 184, 226, 0.3);
+  box-shadow: 0 10px 24px rgba(39, 63, 101, 0.12);
+}
+
+body.seatunnel-homepage-page .index-nav [class*='lightToggleIcon'],
+body.seatunnel-homepage-page .index-nav [class*='darkToggleIcon'] {
+  width: 18px;
+  height: 18px;
 }
 
 .seatunnel-homepage-shell {
@@ -112,29 +174,32 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home {
   --bg0: #060a15;
-  --bg1: #0a1122;
-  --bg2: #0f1a30;
-  --bg3: #162240;
+  --bg1: #0b1225;
+  --bg2: #111b35;
+  --bg3: #18264b;
   --light: #f2f5fa;
   --light2: #e8edf5;
-  --teal: #00c896;
-  --teal2: #00f0b8;
-  --blue: #5b7cf6;
-  --blue2: #7c9bff;
+  --teal: #5db8e2;
+  --teal2: #acdfff;
+  --blue: #6b76d6;
+  --blue2: #a596e9;
+  --pink: #bb56b6;
   --amber: #f59e0b;
   --t1: #eef4ff;
   --t2: #8ba5c5;
   --t3: #4d6a8a;
   --b1: rgba(255, 255, 255, 0.07);
-  --b2: rgba(91, 124, 246, 0.18);
-  --bteal: rgba(0, 200, 150, 0.14);
+  --b2: rgba(107, 118, 214, 0.2);
+  --bteal: rgba(93, 184, 226, 0.16);
+  --brand-gradient: linear-gradient(90deg, #5db8e2 0%, #6b76d6 56%, #bb56b6 100%);
+  --brand-gradient-soft: linear-gradient(145deg, rgba(93, 184, 226, 0.16) 0%, rgba(107, 118, 214, 0.11) 58%, rgba(187, 86, 182, 0.06) 100%);
   --shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
   --r-sm: 10px;
   --r-md: 16px;
   --r-lg: 24px;
   color: var(--t1);
   background: var(--bg0);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--ifm-font-family-base);
   line-height: 1.6;
 
   *,
@@ -154,13 +219,27 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   }
 }
 
+html[data-theme='light'] .st-home {
+  --bg0: #e8f0fb;
+  --bg1: rgba(255, 255, 255, 0.92);
+  --bg2: rgba(255, 255, 255, 0.98);
+  --bg3: #dde7f4;
+  --t1: #091321;
+  --t2: #314a67;
+  --t3: #58718f;
+  --b1: rgba(17, 31, 53, 0.12);
+  --b2: rgba(107, 118, 214, 0.18);
+  --bteal: rgba(93, 184, 226, 0.18);
+  --shadow: 0 24px 56px rgba(39, 63, 101, 0.16);
+}
+
 .st-home-container {
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 .st-home-gradient {
-  background: linear-gradient(90deg, #42b8ec 0%, #7c3aed 52%, #f0188a 100%);
+  background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -193,13 +272,13 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-btn-primary {
-  background: var(--teal);
-  color: #05100a;
+  background: linear-gradient(135deg, #5db8e2 0%, #6f82dc 100%);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(107, 118, 214, 0.2);
 }
 
 .st-home-btn-primary:hover {
-  background: var(--teal2);
-  box-shadow: 0 0 24px rgba(0, 200, 150, 0.45);
+  box-shadow: 0 16px 36px rgba(107, 118, 214, 0.26), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
 .st-home-btn-outline {
@@ -277,7 +356,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   color: var(--t1);
 
   span {
-    background: linear-gradient(90deg, #7c3aed, #f0188a);
+    background: linear-gradient(90deg, #6f5bff, #f0188a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -386,7 +465,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-orb-2 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 118, 214, 0.13) 0%, transparent 70%);
   bottom: 50px;
   right: -150px;
   animation: st-home-orb-2 11s ease-in-out infinite;
@@ -395,7 +474,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-orb-3 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(240, 24, 138, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(187, 86, 182, 0.06) 0%, transparent 70%);
   top: 30%;
   left: 55%;
   animation: st-home-orb-3 14s ease-in-out infinite;
@@ -419,10 +498,10 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   padding: 6px 14px 6px 10px;
   margin-bottom: 2rem;
   border-radius: 999px;
-  border: 1px solid rgba(91, 124, 246, 0.28);
-  background: rgba(91, 124, 246, 0.1);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  border: 1px solid rgba(107, 118, 214, 0.22);
+  background: rgba(107, 118, 214, 0.08);
+  font-size: 0.76rem;
+  font-weight: 600;
   color: var(--blue2);
   animation: st-home-fade-up 0.6s ease both;
 }
@@ -438,8 +517,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-hero-title {
   margin: 0 0 1.5rem;
   font-size: clamp(2.8rem, 5.7vw, 4.9rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-weight: 700;
+  line-height: 1.04;
   letter-spacing: -0.04em;
   color: var(--t1);
   animation: st-home-fade-up 0.6s ease both 0.08s;
@@ -448,8 +527,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-hero-subtitle {
   max-width: 620px;
   margin: 0 auto 2.5rem;
-  font-size: clamp(1rem, 1.6vw, 1.16rem);
-  line-height: 1.75;
+  font-size: clamp(1.08rem, 1.75vw, 1.24rem);
+  line-height: 1.78;
+  font-weight: 500;
   color: var(--t2);
   animation: st-home-fade-up 0.6s ease both 0.16s;
 }
@@ -472,11 +552,11 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-meta-tag {
-  padding: 4px 10px;
+  padding: 5px 11px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.66rem;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  font-weight: 500;
   color: var(--t3);
 }
 
@@ -492,11 +572,11 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   grid-template-columns: 1fr 80px 1fr 80px 1fr;
   align-items: center;
   padding: 1.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(137, 161, 199, 0.2);
   border-radius: var(--r-lg);
-  background: rgba(10, 17, 34, 0.7);
+  background: linear-gradient(180deg, rgba(14, 22, 38, 0.96) 0%, rgba(9, 16, 30, 0.98) 100%);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, var(--shadow);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, 0 28px 64px rgba(5, 10, 21, 0.34);
 }
 
 .st-home-pipeline-column {
@@ -507,14 +587,15 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-pipeline-label,
 .st-home-pipeline-tunnel-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 .st-home-pipeline-label {
-  color: var(--t3);
+  color: #88a7ca;
 }
 
 .st-home-pipeline-item {
@@ -522,24 +603,26 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   align-items: center;
   gap: 8px;
   padding: 0.5rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(137, 161, 199, 0.16);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  color: var(--t2);
-  font-size: 0.78rem;
-  font-weight: 500;
+  color: #dde8f7;
+  font-size: 0.9rem;
+  font-weight: 600;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .st-home-pipeline-item:hover {
-  background: rgba(91, 124, 246, 0.08);
-  border-color: rgba(91, 124, 246, 0.25);
-  color: var(--t1);
+  background: rgba(93, 184, 226, 0.1);
+  border-color: rgba(93, 184, 226, 0.3);
+  color: #f7fbff;
 }
 
 .st-home-pipeline-item-muted {
-  opacity: 0.6;
-  font-size: 0.72rem;
+  opacity: 1;
+  color: #8da8c8;
+  font-size: 0.84rem;
+  font-weight: 500;
 }
 
 .st-home-pipeline-dot,
@@ -613,7 +696,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-pipeline-tunnel-label {
   margin-bottom: 0.25rem;
-  color: var(--teal);
+  color: #73d5ff;
   white-space: nowrap;
 }
 
@@ -623,7 +706,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   height: 2px;
   overflow: hidden;
   border-radius: 2px;
-  background: linear-gradient(90deg, rgba(0, 200, 150, 0.2), rgba(0, 200, 150, 0.7), rgba(0, 200, 150, 0.2));
+  background: linear-gradient(90deg, rgba(93, 184, 226, 0.16), rgba(107, 118, 214, 0.58), rgba(107, 118, 214, 0.2));
 }
 
 .st-home-tunnel-line::after {
@@ -633,8 +716,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 240, 184, 1), transparent);
-  animation: st-home-flow 1.8s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.84), rgba(172, 223, 255, 0.9) 60%, transparent);
+  animation: st-home-flow 1.95s linear infinite;
 }
 
 .st-home-tunnel-line:nth-child(3)::after {
@@ -663,8 +746,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, #1a253c 0%, #0f172a 100%);
+  box-shadow: 0 14px 28px rgba(3, 8, 18, 0.28);
 
   img {
     width: 28px;
@@ -674,9 +758,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-pipeline-center-name {
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: var(--t2);
+  color: #dce8f8;
   white-space: nowrap;
 }
 
@@ -734,7 +818,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  background: linear-gradient(90deg, #42b8ec 0%, #7c3aed 52%, #f0188a 100%);
+  background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -742,7 +826,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-stat-label {
   color: var(--t2);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .st-home-section {
@@ -755,8 +840,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-eyebrow {
   margin: 0 0 1rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.66rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.74rem;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--teal);
@@ -769,7 +855,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-section-title {
   margin: 0;
   font-size: clamp(1.9rem, 3.5vw, 3.1rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
@@ -778,8 +864,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   max-width: 760px;
   margin: 0.95rem 0 0;
   color: var(--t2);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.08rem;
+  line-height: 1.82;
+  font-weight: 500;
 }
 
 .st-home-architecture-header {
@@ -789,8 +876,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   margin-top: 3.5rem;
   margin-bottom: 0.75rem;
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
 }
 
@@ -822,8 +910,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   width: 100%;
   padding: 2rem 1rem;
   border-radius: var(--r-lg);
-  border: 1.5px solid rgba(0, 200, 150, 0.22);
-  background: linear-gradient(160deg, rgba(0, 200, 150, 0.07), rgba(66, 184, 236, 0.05));
+  border: 1.5px solid rgba(66, 184, 236, 0.26);
+  background: linear-gradient(160deg, rgba(66, 184, 236, 0.08), rgba(111, 91, 255, 0.08) 55%, rgba(240, 24, 138, 0.04));
   text-align: center;
 
   img {
@@ -843,8 +931,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-architecture-engine-word {
   margin-top: 0.35rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.05rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 1.08rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
 }
 
@@ -873,8 +962,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   margin-top: 0.45rem;
 
   span {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.58rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.64rem;
+    font-weight: 500;
     color: var(--t3);
     letter-spacing: 0.04em;
   }
@@ -889,7 +979,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-architecture-card:hover {
-  border-color: rgba(0, 200, 150, 0.22);
+  border-color: rgba(66, 184, 236, 0.24);
 }
 
 .st-home-architecture-card-head {
@@ -897,8 +987,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   align-items: center;
   gap: 6px;
   color: var(--t2);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -906,7 +997,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-architecture-card-tag {
   margin-left: auto;
   color: var(--t3);
-  font-size: 0.52rem;
+  font-size: 0.62rem;
+  font-weight: 500;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -924,14 +1016,15 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--t2);
-  font-size: 0.73rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
 .st-home-architecture-connector {
   display: flex;
   align-items: center;
-  color: rgba(0, 200, 150, 0.75);
+  gap: 0.35rem;
+  color: rgba(138, 215, 255, 0.82);
   font-size: 0.85rem;
 }
 
@@ -944,8 +1037,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   height: 2px;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(0, 200, 150, 0.62) 0px,
-    rgba(0, 200, 150, 0.62) 5px,
+    rgba(66, 184, 236, 0.7) 0px,
+    rgba(66, 184, 236, 0.7) 5px,
     transparent 5px,
     transparent 10px
   );
@@ -974,14 +1067,14 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 200, 150, 0.06), transparent 60%);
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(111, 91, 255, 0.08), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .st-home-feature-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 200, 150, 0.25);
+  border-color: rgba(66, 184, 236, 0.26);
 }
 
 .st-home-feature-card:hover::before {
@@ -1002,7 +1095,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  background: linear-gradient(90deg, transparent, #5db8e2 28%, #6b76d6 74%, transparent);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -1014,8 +1107,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-feature-number {
   margin-bottom: 1.25rem;
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
 }
 
@@ -1036,8 +1130,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-feature-description {
   margin: 0;
   color: var(--t2);
-  font-size: 0.9rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.82;
+  font-weight: 500;
 }
 
 .st-home-feature-description-large {
@@ -1061,12 +1156,12 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-feature-icon-blue {
   background: var(--b2);
-  border: 1px solid rgba(91, 124, 246, 0.22);
+  border: 1px solid rgba(111, 91, 255, 0.24);
 }
 
 .st-home-feature-icon-teal {
   background: var(--bteal);
-  border: 1px solid rgba(0, 200, 150, 0.18);
+  border: 1px solid rgba(66, 184, 236, 0.2);
 }
 
 .st-home-feature-icon-amber {
@@ -1077,12 +1172,12 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-schema-demo {
   margin: 0;
   padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(0, 200, 150, 0.14);
+  border: 1px solid rgba(66, 184, 236, 0.18);
   border-radius: 12px;
-  background: #040c18;
+  background: linear-gradient(180deg, rgba(9, 18, 38, 0.98), rgba(8, 14, 30, 0.98));
   color: #9ec3ee;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
   line-height: 1.95;
   white-space: pre-wrap;
 }
@@ -1113,8 +1208,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-connector-category-label {
   margin-bottom: 0.875rem;
   color: var(--blue2);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -1132,8 +1228,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   padding: 0.35rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   color: var(--t2);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: 550;
 }
 
 .st-home-connector-item:last-child {
@@ -1159,7 +1255,13 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   display: flex;
   gap: 0.45rem;
   width: max-content;
-  animation: st-home-marquee 45s linear infinite;
+  will-change: transform;
+  animation: st-home-marquee 72s linear infinite;
+}
+
+.st-home-marquee:hover .st-home-marquee-track,
+.st-home-marquee:focus-within .st-home-marquee-track {
+  animation-play-state: paused;
 }
 
 .st-home-marquee-chip {
@@ -1168,22 +1270,25 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.03);
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.76rem;
+  font-weight: 500;
   white-space: nowrap;
-  transition: color 0.18s ease, border-color 0.18s ease;
+  transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
 .st-home-marquee-chip:hover {
-  color: var(--teal);
-  border-color: rgba(0, 200, 150, 0.25);
+  color: var(--teal2);
+  border-color: rgba(66, 184, 236, 0.26);
+  background: rgba(66, 184, 236, 0.07);
 }
 
 .st-home-connector-more {
   margin-top: 2rem;
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.84rem;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -1204,19 +1309,20 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-flow-card:hover {
-  border-color: rgba(0, 200, 150, 0.25);
+  border-color: rgba(66, 184, 236, 0.26);
 }
 
 .st-home-flow-card-highlight {
-  border-color: rgba(0, 200, 150, 0.18);
-  background: rgba(0, 200, 150, 0.025);
+  border-color: rgba(111, 91, 255, 0.22);
+  background: rgba(111, 91, 255, 0.05);
 }
 
 .st-home-flow-card-label {
   margin-bottom: 0.55rem;
   color: var(--teal);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -1241,13 +1347,14 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 500;
 }
 
 .st-home-flow-tag-highlight {
-  border-color: rgba(0, 200, 150, 0.2);
-  background: rgba(0, 200, 150, 0.04);
+  border-color: rgba(66, 184, 236, 0.22);
+  background: rgba(66, 184, 236, 0.06);
   color: var(--teal);
 }
 
@@ -1256,7 +1363,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   align-items: center;
   justify-content: center;
   padding-top: 2.5rem;
-  color: rgba(0, 200, 150, 0.6);
+  color: rgba(66, 184, 236, 0.68);
 
   svg {
     width: 24px;
@@ -1266,8 +1373,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-code-section {
   background:
-    radial-gradient(circle at 78% 22%, rgba(91, 124, 246, 0.16) 0%, transparent 24%),
-    radial-gradient(circle at 18% 80%, rgba(0, 200, 150, 0.12) 0%, transparent 26%),
+    radial-gradient(circle at 78% 22%, rgba(111, 91, 255, 0.18) 0%, transparent 24%),
+    radial-gradient(circle at 18% 80%, rgba(66, 184, 236, 0.12) 0%, transparent 26%),
     linear-gradient(180deg, #08101d 0%, #0a1122 100%);
 }
 
@@ -1300,7 +1407,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-code-box {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(91, 124, 246, 0.2);
+  border: 1px solid rgba(111, 91, 255, 0.22);
   border-radius: var(--r-lg);
   background: #040c19;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
@@ -1311,7 +1418,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(91, 124, 246, 0.08), transparent 18%, transparent 82%, rgba(0, 200, 150, 0.05));
+  background: linear-gradient(180deg, rgba(111, 91, 255, 0.08), transparent 18%, transparent 82%, rgba(66, 184, 236, 0.05));
 }
 
 .st-home-code-topbar {
@@ -1348,8 +1455,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-code-filename {
   color: #4a6a8a;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 
 .st-home-code-body {
@@ -1358,8 +1466,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   border: 0;
   background: #040c19 !important;
   color: #a6c3df;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.775rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.82rem;
   line-height: 1.95;
   white-space: pre;
   overflow-x: auto;
@@ -1425,7 +1533,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   top: -100px;
   left: 50%;
   transform: translateX(-70%);
-  background: radial-gradient(circle, rgba(91, 124, 246, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(111, 91, 255, 0.15) 0%, transparent 70%);
 }
 
 .st-home-cta-orb-2 {
@@ -1434,15 +1542,15 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   bottom: -50px;
   left: 50%;
   transform: translateX(-30%);
-  background: radial-gradient(circle, rgba(0, 200, 150, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(66, 184, 236, 0.11) 0%, transparent 70%);
 }
 
 .st-home-cta-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(91, 124, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91, 124, 246, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(111, 91, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 91, 255, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 85% at 50% 50%, black, transparent);
 }
@@ -1465,8 +1573,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-cta-subtitle {
   margin: 0 0 2.5rem;
   color: var(--t2);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.12rem;
+  line-height: 1.78;
+  font-weight: 500;
 }
 
 .st-home-cta-actions {
@@ -1515,7 +1624,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   letter-spacing: -0.02em;
 
   span {
-    background: linear-gradient(90deg, #7c3aed, #f0188a);
+    background: linear-gradient(90deg, #6f5bff, #f0188a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1526,15 +1635,17 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   max-width: 220px;
   margin: 0.75rem 0 0;
   color: var(--t2);
-  font-size: 0.82rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.78;
+  font-weight: 500;
 }
 
 .st-home-footer-apache {
   margin: 1.15rem 0 0;
   color: var(--t3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1558,7 +1669,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-footer-column a {
   color: var(--t2);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: color 0.18s ease;
 }
 
@@ -1580,7 +1692,8 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 .st-home-footer-copy {
   margin: 0;
   color: var(--t3);
-  font-size: 0.75rem;
+  font-size: 0.84rem;
+  line-height: 1.7;
 }
 
 .st-home-footer-socials {
@@ -1609,69 +1722,13 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 .st-home-social:hover {
   transform: translateY(-2px);
-  border-color: rgba(0, 200, 150, 0.36);
-  background: rgba(0, 200, 150, 0.08);
+  border-color: rgba(66, 184, 236, 0.38);
+  background: rgba(66, 184, 236, 0.08);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
 
   svg {
     color: var(--teal);
   }
-}
-
-.st-home-ask-ai {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  z-index: 320;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: auto;
-}
-
-.st-home-ask-ai-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.7rem 1.5rem;
-  border: 0;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #42b8ec 0%, #7c3aed 55%, #f0188a 100%);
-  color: #fff;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s;
-
-  svg {
-    width: 17px;
-    height: 17px;
-    flex-shrink: 0;
-  }
-
-  span {
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0;
-  }
-}
-
-.st-home-ask-ai:hover .st-home-ask-ai-button {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.65), 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.st-home-ask-ai-dot {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #00d79c;
-  box-shadow: 0 0 0 0 rgba(0, 215, 156, 0.55);
-  animation: st-home-pulse 2s ease infinite;
 }
 
 .st-home-meteor-line {
@@ -1688,7 +1745,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   width: 0;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #42b8ec 0%, #7c3aed 52%, #f0188a 100%);
+  background: var(--brand-gradient);
   animation: st-home-meteor-grow 0.95s cubic-bezier(0.22, 0.8, 0.18, 1) both;
   animation-play-state: paused;
 }
@@ -1713,14 +1770,172 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 }
 
 .st-home-rv {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  --rv-progress: 0;
+  opacity: calc(0.34 + (var(--rv-progress) * 0.66));
+  transform: translateY(calc((1 - var(--rv-progress)) * 18px));
+  filter: brightness(calc(0.84 + (var(--rv-progress) * 0.16)));
+  will-change: opacity, transform, filter;
+  transition: opacity 0.32s ease, transform 0.32s ease, filter 0.32s ease, color 0.32s ease;
 }
 
-.st-home-rv.in {
-  opacity: 1;
-  transform: none;
+.st-home-eyebrow.st-home-rv,
+.st-home-section-title.st-home-rv,
+.st-home-section-lead.st-home-rv {
+  filter: none;
+}
+
+.st-home-eyebrow.st-home-rv {
+  color: rgba(93, 184, 226, calc(0.62 + (var(--rv-progress) * 0.38)));
+}
+
+.st-home-section-title.st-home-rv {
+  color: rgba(238, 244, 255, calc(0.72 + (var(--rv-progress) * 0.28)));
+}
+
+.st-home-section-lead.st-home-rv {
+  color: rgba(173, 195, 223, calc(0.76 + (var(--rv-progress) * 0.24)));
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-item,
+html[data-theme='light'] .st-home .st-home-meta-tag,
+html[data-theme='light'] .st-home .st-home-architecture-chip,
+html[data-theme='light'] .st-home .st-home-flow-tag,
+html[data-theme='light'] .st-home .st-home-marquee-chip,
+html[data-theme='light'] .st-home .st-home-social {
+  border-color: rgba(17, 31, 53, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--t2);
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual,
+html[data-theme='light'] .st-home .st-home-feature-card,
+html[data-theme='light'] .st-home .st-home-architecture-card,
+html[data-theme='light'] .st-home .st-home-connector-category,
+html[data-theme='light'] .st-home .st-home-flow-card {
+  border-color: rgba(17, 31, 53, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 44px rgba(39, 63, 101, 0.1);
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual {
+  border-color: rgba(75, 95, 131, 0.22);
+  background: linear-gradient(180deg, rgba(14, 22, 38, 0.96) 0%, rgba(9, 16, 30, 0.98) 100%);
+  box-shadow: 0 28px 64px rgba(33, 51, 84, 0.2);
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual .st-home-pipeline-label {
+  color: #8eadcf;
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual .st-home-pipeline-item {
+  border-color: rgba(137, 161, 199, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #dde8f7;
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual .st-home-pipeline-item-muted {
+  color: #8da8c8;
+}
+
+html[data-theme='light'] .st-home .st-home-pipeline-visual .st-home-pipeline-center-name {
+  color: #dce8f8;
+}
+
+html[data-theme='light'] .st-home .st-home-connectors-section {
+  background: linear-gradient(180deg, #f5f8ff 0%, #edf3ff 100%);
+}
+
+html[data-theme='light'] .st-home .st-home-stats,
+html[data-theme='light'] .st-home .st-home-stat {
+  background: #eaf1fb;
+}
+
+html[data-theme='light'] .st-home .st-home-hero-badge {
+  border-color: rgba(107, 118, 214, 0.18);
+  background: rgba(107, 118, 214, 0.1);
+  color: #5a67c8;
+}
+
+html[data-theme='light'] .st-home .st-home-btn-outline,
+html[data-theme='light'] .st-home .st-home-btn-dark {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(17, 31, 53, 0.12);
+}
+
+html[data-theme='light'] .st-home .st-home-btn-outline:hover,
+html[data-theme='light'] .st-home .st-home-btn-dark:hover {
+  color: #334968;
+}
+
+html[data-theme='light'] .st-home .st-home-stat + .st-home-stat::before {
+  background: rgba(17, 31, 53, 0.08);
+}
+
+html[data-theme='light'] .st-home .st-home-footer-bottom {
+  border-top-color: rgba(17, 31, 53, 0.08);
+}
+
+html[data-theme='light'] .st-home .st-home-connector-item {
+  border-bottom-color: rgba(17, 31, 53, 0.08);
+  color: var(--t2);
+}
+
+html[data-theme='light'] .st-home .st-home-stat-label,
+html[data-theme='light'] .st-home .st-home-section-lead,
+html[data-theme='light'] .st-home .st-home-feature-description,
+html[data-theme='light'] .st-home .st-home-code-lead,
+html[data-theme='light'] .st-home .st-home-cta-subtitle,
+html[data-theme='light'] .st-home .st-home-footer-tagline,
+html[data-theme='light'] .st-home .st-home-footer-column a {
+  color: #39526f;
+}
+
+html[data-theme='light'] .st-home .st-home-meta-tag,
+html[data-theme='light'] .st-home .st-home-architecture-chip,
+html[data-theme='light'] .st-home .st-home-flow-tag,
+html[data-theme='light'] .st-home .st-home-marquee-chip {
+  color: #4e6886;
+}
+
+html[data-theme='light'] .st-home .st-home-feature-number,
+html[data-theme='light'] .st-home .st-home-connector-more,
+html[data-theme='light'] .st-home .st-home-footer-apache,
+html[data-theme='light'] .st-home .st-home-footer-copy {
+  color: #6a83a2;
+}
+
+html[data-theme='light'] .st-home .st-home-code-section {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(107, 118, 214, 0.12) 0%, transparent 24%),
+    radial-gradient(circle at 18% 80%, rgba(93, 184, 226, 0.1) 0%, transparent 26%),
+    linear-gradient(180deg, #f4f8ff 0%, #e6eef9 100%);
+}
+
+html[data-theme='light'] .st-home .st-home-code-box {
+  border-color: rgba(107, 118, 214, 0.16);
+  box-shadow: 0 24px 56px rgba(39, 63, 101, 0.12);
+}
+
+html[data-theme='light'] .st-home .st-home-footer {
+  border-top-color: rgba(17, 31, 53, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme='light'] .st-home .st-home-eyebrow.st-home-rv {
+  color: #4eaad7;
+}
+
+html[data-theme='light'] .st-home .st-home-section-title.st-home-rv {
+  color: #091321;
+}
+
+html[data-theme='light'] .st-home .st-home-section-lead.st-home-rv {
+  color: #314a67;
+}
+
+html[data-theme='light'] .st-home .st-home-rv {
+  opacity: calc(0.88 + (var(--rv-progress) * 0.12));
+  filter: none;
 }
 
 @media (max-width: 1200px) {
@@ -1836,34 +2051,6 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
     grid-column: auto !important;
   }
 
-  .st-home-ask-ai {
-    right: 1.25rem;
-    bottom: 1.25rem;
-  }
-
-  .st-home-ask-ai-button {
-    gap: 8px;
-    padding: 0.6rem 1.1rem;
-
-    span {
-      font-size: 0.8rem;
-    }
-  }
-
-  .st-home-ask-ai-dot {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-@media (max-width: 420px) {
-  .st-home-ask-ai-button span {
-    display: none;
-  }
-
-  .st-home-ask-ai-button {
-    padding: 0.7rem 1rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1926,7 +2113,7 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
   }
 
   to {
-    background-position: -15px 0;
+    background-position: 15px 0;
   }
 }
 
@@ -1969,15 +2156,15 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 @keyframes st-home-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.65);
+    box-shadow: 0 0 0 0 rgba(66, 184, 236, 0.6);
   }
 
   70% {
-    box-shadow: 0 0 0 9px rgba(0, 200, 150, 0);
+    box-shadow: 0 0 0 9px rgba(66, 184, 236, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 200, 150, 0);
+    box-shadow: 0 0 0 0 rgba(66, 184, 236, 0);
   }
 }
 

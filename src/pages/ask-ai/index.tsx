@@ -70,7 +70,7 @@ export default function AskAiPage() {
             {
                 kicker: 'Support',
                 title: 'Slack 入口',
-                text: '如果你需要实时交流，可以直接使用官网同款官方 Slack 短链。',
+                text: '如果你需要实时交流，可以直接打开 Apache SeaTunnel 官方 Slack 工作区。',
                 href: SLACK_DIRECT_URL,
             },
         ],
@@ -115,7 +115,7 @@ export default function AskAiPage() {
             {
                 kicker: 'Support',
                 title: 'Slack access',
-                text: 'Use the same official Slack short link that the homepage exposes for direct access.',
+                text: 'Open the official Apache SeaTunnel Slack workspace for direct real-time discussion.',
                 href: SLACK_DIRECT_URL,
             },
         ],

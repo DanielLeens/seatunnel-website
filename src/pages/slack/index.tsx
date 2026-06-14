@@ -6,7 +6,6 @@ import '../access-hub.less';
 
 const versions = require('../../../versions.json');
 const SLACK_DIRECT_URL = 'https://s.apache.org/seatunnel-slack';
-const SLACK_INVITE_MAIL = 'mailto:dev@seatunnel.apache.org?subject=Request%20to%20join%20SeaTunnel%20Slack';
 const MAILING_LIST_URL = 'https://lists.apache.org/list.html?dev@seatunnel.apache.org';
 
 function localizePath(locale: string, path: string) {
@@ -32,8 +31,8 @@ export default function SlackPage() {
     const content = isZh ? {
         titleLead: 'Join SeaTunnel',
         titleAccent: 'Slack',
-        subtitle: '官网首页使用官方 Slack 短链直达。这里同时保留直达入口与邮件列表等备用沟通路径。',
-        note: '如果直达链接在你的浏览器环境里不可用，再走邮件列表或邀请申请；涉及长期讨论与归档，仍然优先使用官方 mailing list。',
+        subtitle: '官网首页现在直接打开 Apache SeaTunnel 官方 Slack 工作区。这里同时保留工作区入口与邮件列表等备用沟通路径。',
+        note: '优先直接进入官方 Slack 工作区；涉及长期讨论与归档，仍然优先使用官方 mailing list。',
         primaryButton: '打开 Slack',
         secondaryButton: '邮件列表',
         steps: [
@@ -57,7 +56,7 @@ export default function SlackPage() {
             {
                 kicker: 'Direct Link',
                 title: '官方直达链接',
-                text: '与官网首页一致，直接打开官方 Slack 短链。',
+                text: '与官网首页一致，直接打开 Apache SeaTunnel 官方 Slack 工作区。',
                 href: SLACK_DIRECT_URL,
             },
             {
@@ -94,8 +93,8 @@ export default function SlackPage() {
     } : {
         titleLead: 'Join SeaTunnel',
         titleAccent: 'Slack',
-        subtitle: 'The homepage uses the official Slack short link directly. This page keeps that direct link and the fallback community routes in one place.',
-        note: 'Use the direct Slack link first. If that route is not usable in your browser environment, fall back to the mailing list or invite request email.',
+        subtitle: 'The homepage now opens the official Apache SeaTunnel Slack workspace directly. This page keeps that workspace link and the fallback community routes in one place.',
+        note: 'Use the direct workspace link first. For archived or longer-form discussion, prefer the official mailing list.',
         primaryButton: 'Open Slack',
         secondaryButton: 'Mailing list',
         steps: [
@@ -119,7 +118,7 @@ export default function SlackPage() {
             {
                 kicker: 'Direct Link',
                 title: 'Official direct link',
-                text: 'Use the same direct Slack short link exposed on the homepage.',
+                text: 'Use the same direct Apache SeaTunnel Slack workspace link exposed on the homepage.',
                 href: SLACK_DIRECT_URL,
             },
             {
