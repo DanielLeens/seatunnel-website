@@ -38,8 +38,8 @@ export default function SlackPage() {
         steps: [
             {
                 number: '01',
-                title: '发送邀请申请',
-                text: '通过 dev@seatunnel.apache.org 说明你的背景、问题方向或贡献意向，社区会按流程协助你进入 Slack。',
+                title: '直接打开工作区',
+                text: '使用官网首页和当前页面提供的官方入口，直接进入 Apache SeaTunnel Slack 工作区开始交流。',
             },
             {
                 number: '02',
@@ -100,8 +100,8 @@ export default function SlackPage() {
         steps: [
             {
                 number: '01',
-                title: 'Request an invite',
-                text: 'Email dev@seatunnel.apache.org with your background, question area, or contribution context so the community can route the Slack invite correctly.',
+                title: 'Open the workspace',
+                text: 'Use the official link on the homepage or this page to enter the Apache SeaTunnel Slack workspace directly.',
             },
             {
                 number: '02',

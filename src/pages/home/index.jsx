@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './index.less';
@@ -733,13 +734,14 @@ function FeatureIcon({icon}) {
 }
 
 export default function Home() {
+    const {i18n} = useDocusaurusContext();
     const isBrowser = useIsBrowser();
     const pageRef = useRef(null);
     const heroWarpCanvasRef = useRef(null);
     const ctaWarpCanvasRef = useRef(null);
     const flowCanvasRef = useRef(null);
 
-    const language = isBrowser && location.pathname.indexOf('/zh-CN/') === 0 ? 'zh-CN' : 'en';
+    const language = i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en';
     const content = HOME_COPY[language] || HOME_COPY.en;
     const version = versions[0];
     const assetRoot = useBaseUrl('/');
