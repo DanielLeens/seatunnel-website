@@ -227,9 +227,9 @@ const config = {
     },
     hideOnScroll: false, // Whether to hide the sidebar on scroll
     colorMode: {
-      defaultMode: "light",
+      defaultMode: "dark",
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "Apache SeaTunnel",
@@ -238,12 +238,6 @@ const config = {
         src: "image/logo.png",
       },
       items: [
-        {
-          to: "/",
-          position: "right",
-          label: "Home",
-          activeBaseRegex: `^/$`,
-        },
         {
           position: "right",
           label: "Document",
@@ -298,36 +292,6 @@ const config = {
           activeBaseRegex: `/user/`,
         },
         {
-          label: "ASF",
-          position: "right",
-          items: [
-            {
-              label: "Foundation",
-              to: "https://www.apache.org/",
-            },
-            {
-              label: "License",
-              to: "https://www.apache.org/licenses/",
-            },
-            {
-              label: "Events",
-              to: "https://www.apache.org/events/current-event",
-            },
-            {
-              label: "Sponsorship",
-              to: "https://www.apache.org/foundation/sponsorship.html",
-            },
-            {
-              label: "Thanks",
-              to: "https://www.apache.org/foundation/thanks.html",
-            },
-            {
-              label: "Privacy",
-              to: "https://apache.org/foundation/policies/privacy.html",
-            },
-          ],
-        },
-        {
           href: "https://github.com/apache/seatunnel",
           label: "GitHub",
           position: "right",
@@ -375,6 +339,35 @@ const config = {
             {
               label: "Pull Requests",
               href: "https://github.com/apache/seatunnel/pulls",
+            },
+          ],
+        },
+        {
+          title: "ASF",
+          items: [
+            {
+              label: "Foundation",
+              href: "https://www.apache.org/",
+            },
+            {
+              label: "License",
+              href: "https://www.apache.org/licenses/",
+            },
+            {
+              label: "Events",
+              href: "https://www.apache.org/events/current-event",
+            },
+            {
+              label: "Sponsorship",
+              href: "https://www.apache.org/foundation/sponsorship.html",
+            },
+            {
+              label: "Thanks",
+              href: "https://www.apache.org/foundation/thanks.html",
+            },
+            {
+              label: "Privacy",
+              href: "https://apache.org/foundation/policies/privacy.html",
             },
           ],
         },

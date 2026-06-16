@@ -7,9 +7,7 @@ import systemConfiguration from '../../js/sysConfig';
 
 const versions = require('../../../versions.json');
 
-const MAILING_LIST_URL = 'https://lists.apache.org/list.html?dev@seatunnel.apache.org';
 const SLACK_URL = 'https://s.apache.org/seatunnel-slack';
-const TWITTER_URL = 'https://twitter.com/asfseatunnel?s=21';
 const EXAMPLES_URL = 'https://github.com/apache/seatunnel/tree/dev/seatunnel-examples';
 
 const HERO_SOURCES = [
@@ -124,7 +122,7 @@ const CONNECTOR_MARQUEE_ITEMS = [
 
 const HOME_COPY = {
     'en': {
-        badge: `v${versions[0]} docs live / Apache Top-Level Project`,
+        badge: `v${versions[0]} live / Apache Top-Level Project`,
         nav: {
             docs: 'Docs',
             connectors: 'Connectors',
@@ -223,6 +221,8 @@ const HOME_COPY = {
             lead: 'Real fault tolerance, schema evolution, and multi-engine scale for production pipelines.',
             schema: {
                 number: '01',
+                icon: 'schema',
+                accent: 'violet',
                 title: 'Schema changes? Handled automatically.',
                 description: 'SeaTunnel detects upstream schema changes and propagates them downstream in real time, so teams do not need to pause the pipeline for every column change.',
             },
@@ -383,7 +383,7 @@ const HOME_COPY = {
         askAi: 'Ask AI',
     },
     'zh-CN': {
-        badge: `v${versions[0]} 文档已发布 / Apache 顶级项目`,
+        badge: `v${versions[0]} 已发布 / Apache 顶级项目`,
         nav: {
             docs: '文档',
             connectors: '连接器',
@@ -482,6 +482,8 @@ const HOME_COPY = {
             lead: '容错、模式演进和多引擎扩展能力都按生产环境要求设计。',
             schema: {
                 number: '01',
+                icon: 'schema',
+                accent: 'violet',
                 title: 'Schema 变化？自动处理。',
                 description: 'SeaTunnel 能检测上游 Schema 变化并实时同步到下游，减少因为字段变更带来的人工迁移与任务中断。',
             },
@@ -664,38 +666,6 @@ function ArrowRightIcon() {
     );
 }
 
-function GitHubIcon() {
-    return (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
-        </svg>
-    );
-}
-
-function XIcon() {
-    return (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
-        </svg>
-    );
-}
-
-function MailIcon() {
-    return (
-        <svg viewBox="0 0 1024 1024" aria-hidden="true">
-            <path fill="currentColor" d="M853.333333 170.666667H170.666667c-46.933333 0-85.333333 38.4-85.333334 85.333333v512c0 46.933333 38.4 85.333333 85.333334 85.333333h682.666666c46.933333 0 85.333333-38.4 85.333334-85.333333V256c0-46.933333-38.4-85.333333-85.333334-85.333333z m0 170.666666l-341.333333 213.333334-341.333333-213.333334V256l341.333333 213.333333 341.333333-213.333333v85.333333z" />
-        </svg>
-    );
-}
-
-function SlackIcon() {
-    return (
-        <svg viewBox="0 0 1024 1024" aria-hidden="true">
-            <path fill="currentColor" d="M215.125333 647.04a107.861333 107.861333 0 0 1-107.52 107.648A107.861333 107.861333 0 0 1 0 647.04a107.818667 107.818667 0 0 1 107.605333-107.52h107.52v107.52z m54.229334 0a107.818667 107.818667 0 0 1 107.562666-107.52 107.818667 107.818667 0 0 1 107.562667 107.52v269.354667A107.861333 107.861333 0 0 1 376.917333 1024a107.861333 107.861333 0 0 1-107.562666-107.605333v-269.354667zM376.917333 215.125333a107.861333 107.861333 0 0 1-107.562666-107.52A107.861333 107.861333 0 0 1 376.917333 0a107.861333 107.861333 0 0 1 107.562667 107.605333v107.52H376.917333z m0 54.229334a107.861333 107.861333 0 0 1 107.562667 107.562666 107.861333 107.861333 0 0 1-107.562667 107.562667H107.605333A107.861333 107.861333 0 0 1 0 376.917333a107.861333 107.861333 0 0 1 107.605333-107.562666h269.312z m431.872 107.562666a107.861333 107.861333 0 0 1 107.605334-107.562666A107.861333 107.861333 0 0 1 1024 376.917333a107.861333 107.861333 0 0 1-107.605333 107.562667h-107.605334V376.917333z m-54.101333 0a107.861333 107.861333 0 0 1-107.648 107.562667 107.818667 107.818667 0 0 1-107.52-107.562667V107.605333A107.818667 107.818667 0 0 1 647.04 0a107.861333 107.861333 0 0 1 107.648 107.605333v269.312z m-107.648 431.872a107.861333 107.861333 0 0 1 107.648 107.605334A107.861333 107.861333 0 0 1 647.04 1024a107.818667 107.818667 0 0 1-107.52-107.605333v-107.605334h107.52z m0-54.101333a107.818667 107.818667 0 0 1-107.52-107.648 107.776 107.776 0 0 1 107.52-107.52h269.354667A107.818667 107.818667 0 0 1 1024 647.04a107.861333 107.861333 0 0 1-107.605333 107.648h-269.354667z" />
-        </svg>
-    );
-}
-
 function LightningIcon() {
     return (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -723,12 +693,26 @@ function LayersIcon() {
     );
 }
 
+function SchemaIcon() {
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 5.5h12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M6 12h12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M6 18.5h8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="17.5" cy="18.5" r="1.5" fill="currentColor" />
+        </svg>
+    );
+}
+
 function FeatureIcon({icon}) {
     if (icon === 'lightning') {
         return <LightningIcon />;
     }
     if (icon === 'shield') {
         return <ShieldIcon />;
+    }
+    if (icon === 'schema') {
+        return <SchemaIcon />;
     }
     return <LayersIcon />;
 }
@@ -748,29 +732,7 @@ export default function Home() {
     const docsOverviewPath = useBaseUrl(localizePath(language, `/docs/${version}/introduction/about`));
     const quickStartPath = useBaseUrl(localizePath(language, `/docs/${version}/getting-started/locally/quick-start-seatunnel-engine`));
     const connectorsPath = useBaseUrl(localizePath(language, `/docs/${version}/connectors/source`));
-    const transformsPath = useBaseUrl(localizePath(language, `/docs/${version}/transforms`));
-    const apiReferencePath = useBaseUrl(localizePath(language, `/docs/${version}/engines/zeta/rest-api-v2`));
-    const seatunnelWebPath = useBaseUrl(localizePath(language, '/seatunnel_web/about'));
-    const blogPath = useBaseUrl(localizePath(language, '/blog'));
-    const communityPath = useBaseUrl(localizePath(language, '/community/contribution_guide/contribute'));
     const logoPath = `${assetRoot}image/logo.png`;
-    const routeMap = {
-        apiReference: apiReferencePath,
-        blog: blogPath,
-        community: communityPath,
-        connectors: connectorsPath,
-        docsOverview: docsOverviewPath,
-        examples: EXAMPLES_URL,
-        github: systemConfiguration.github.projectUrl,
-        mailingList: MAILING_LIST_URL,
-        quickStart: quickStartPath,
-        releases: systemConfiguration.github.projectReleaseUrl,
-        roadmap: systemConfiguration.github.projectIssueUrl,
-        seatunnelWeb: seatunnelWebPath,
-        slack: SLACK_URL,
-        transforms: transformsPath,
-        twitter: TWITTER_URL,
-    };
 
     useEffect(() => {
         if (!isBrowser || !pageRef.current) {
@@ -1298,6 +1260,9 @@ export default function Home() {
                         <article className="st-home-feature-card st-home-feature-card-wide st-home-rv" onMouseMove={handleFeatureGlow}>
                             <div className="st-home-feature-accent"></div>
                             <div>
+                                <div className={`st-home-feature-icon st-home-feature-icon-${content.features.schema.accent}`}>
+                                    <FeatureIcon icon={content.features.schema.icon} />
+                                </div>
                                 <div className="st-home-feature-number">{content.features.schema.number}</div>
                                 <h3 className="st-home-feature-title st-home-feature-title-large">{content.features.schema.title}</h3>
                                 <p className="st-home-feature-description st-home-feature-description-large">{content.features.schema.description}</p>
@@ -1450,59 +1415,6 @@ export default function Home() {
                 </div>
             </section>
 
-            <footer className="st-home-footer">
-                <div className="st-home-container">
-                    <div className="st-home-footer-top">
-                        <div>
-                            <div className="st-home-footer-brand">
-                                <span className="st-home-footer-brand-icon">
-                                    <img src={logoPath} alt="Apache SeaTunnel logo" />
-                                </span>
-                                <span className="st-home-footer-brand-name">Sea<span>Tunnel</span></span>
-                            </div>
-                            <p className="st-home-footer-tagline">{content.footer.tagline}</p>
-                            <p className="st-home-footer-apache">{content.footer.apache}</p>
-                        </div>
-
-                        {content.footer.columns.map((column) => (
-                            <div key={column.title} className="st-home-footer-column">
-                                <h5>{column.title}</h5>
-                                <ul>
-                                    {column.items.map((item) => {
-                                        const href = routeMap[item.hrefKey];
-                                        const isExternal = href.startsWith('http') || href.startsWith('mailto:');
-                                        return (
-                                            <li key={`${column.title}-${item.label}`}>
-                                                <a href={href} {...(isExternal ? {target: '_blank', rel: 'noreferrer'} : {})}>
-                                                    {item.label}
-                                                </a>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="st-home-footer-bottom">
-                        <p className="st-home-footer-copy">Copyright {new Date().getFullYear()} The Apache Software Foundation. Apache SeaTunnel is licensed under Apache 2.0.</p>
-                        <div className="st-home-footer-socials">
-                            <a href={systemConfiguration.github.projectUrl} className="st-home-social" target="_blank" rel="noreferrer" aria-label="GitHub">
-                                <GitHubIcon />
-                            </a>
-                            <a href={TWITTER_URL} className="st-home-social" target="_blank" rel="noreferrer" aria-label="Twitter / X">
-                                <XIcon />
-                            </a>
-                            <a href={MAILING_LIST_URL} className="st-home-social" target="_blank" rel="noreferrer" aria-label="Mailing list">
-                                <MailIcon />
-                            </a>
-                            <a href={SLACK_URL} className="st-home-social" target="_blank" rel="noreferrer" aria-label="Slack access">
-                                <SlackIcon />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }
