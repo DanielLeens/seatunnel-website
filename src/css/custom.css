@@ -95,6 +95,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 0 0 auto;
+  min-width: max-content;
   margin-right: 1.75rem;
 }
 
@@ -103,14 +105,22 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--st-shell-text-strong);
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
 }
 
 .navbar__link {
   font-size: 15px;
   font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 500;
-  padding: 10px;
+  padding: 10px 8px;
   color: var(--st-shell-text);
+}
+
+.navbar__items--right {
+  gap: 0.05rem;
 }
 
 .navbar__brand,
@@ -160,6 +170,9 @@ html[data-theme='dark'] .navbar__search-input {
 .navbar [class*='colorModeToggle'] {
   display: inline-flex;
   margin-left: 0.15rem;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
 }
 
 .navbar [class*='toggleButton'] {
@@ -168,7 +181,7 @@ html[data-theme='dark'] .navbar__search-input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 999px;
   border: 1px solid var(--st-shell-border);
   background: rgba(255, 255, 255, 0.52);
   color: var(--st-shell-text-strong);
@@ -188,7 +201,13 @@ html[data-theme='dark'] .navbar [class*='toggleButton'] {
 .navbar [class*='lightToggleIcon'],
 .navbar [class*='darkToggleIcon'] {
   width: 18px;
-  height: 18px;
+  height: auto;
+  flex: 0 0 18px;
+}
+
+html[data-theme='dark'] .navbar__item.dropdown > .navbar__link,
+html[data-theme='dark'] .dropdown__menu .dropdown__link {
+  color: var(--st-shell-text-strong);
 }
 
 .footer__link-item svg,.navbar__link svg {
@@ -247,6 +266,11 @@ html[data-theme='dark'] .card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
   pointer-events: auto;
   text-decoration: none;
 }
@@ -255,59 +279,60 @@ html[data-theme='dark'] .card {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0.76rem 1.55rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  background: linear-gradient(135deg, #7eb8ff 0%, #6776ff 48%, #5847ff 100%);
-  color: #fff;
-  white-space: nowrap;
+  justify-content: center;
+  width: 78px;
+  height: 92px;
+  padding: 0;
+  border: 1px solid rgba(155, 206, 245, 0.95);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(252, 254, 255, 0.98) 0%, rgba(238, 247, 255, 0.98) 100%);
+  color: #0f172a;
   overflow: hidden;
-  box-shadow: 0 14px 34px rgba(74, 87, 255, 0.38), 0 2px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s, border-color 0.2s;
+  box-shadow: 0 18px 42px rgba(132, 181, 226, 0.22), 0 2px 10px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s, border-color 0.2s, background 0.2s;
 }
 
 .st-global-ask-ai-button::before {
   content: '';
   position: absolute;
-  inset: 1px;
+  inset: 7px;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03) 52%, transparent);
+  border: 1px solid rgba(190, 224, 250, 0.7);
+  background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0) 68%);
   pointer-events: none;
 }
 
 .st-global-ask-ai-button svg {
-  width: 17px;
-  height: 17px;
+  width: 34px;
+  height: 34px;
+  aspect-ratio: 1 / 1;
   flex-shrink: 0;
   position: relative;
   z-index: 1;
 }
 
 .st-global-ask-ai-button span {
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 .st-global-ask-ai:hover .st-global-ask-ai-button {
-  transform: translateY(-3px) scale(1.04);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 18px 42px rgba(74, 87, 255, 0.48), 0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  border-color: rgba(121, 188, 237, 0.98);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(232, 244, 255, 0.98) 100%);
+  box-shadow: 0 22px 48px rgba(132, 181, 226, 0.28), 0 2px 10px rgba(15, 23, 42, 0.1);
+}
+
+.st-global-ask-ai:focus-visible {
+  outline: none;
+}
+
+.st-global-ask-ai:focus-visible .st-global-ask-ai-button {
+  border-color: rgba(121, 188, 237, 0.98);
+  box-shadow: 0 0 0 4px rgba(154, 213, 249, 0.24), 0 22px 48px rgba(132, 181, 226, 0.28), 0 2px 10px rgba(15, 23, 42, 0.1);
 }
 
 .st-global-ask-ai-dot {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #00d79c;
-  box-shadow: 0 0 0 0 rgba(0, 215, 156, 0.55);
-  animation: st-home-pulse 2s ease infinite;
+  display: none;
 }
 
 @media (max-width: 996px) {
@@ -317,22 +342,21 @@ html[data-theme='dark'] .card {
   }
 
   .st-global-ask-ai-button {
-    padding: 0.72rem 1.2rem;
+    width: 70px;
+    height: 82px;
   }
 
   .st-global-ask-ai-button span {
-    font-size: 0.84rem;
+    display: none;
   }
 }
 
 @media (max-width: 640px) {
   .st-global-ask-ai-button {
-    padding: 0.7rem 1rem;
+    width: 64px;
+    height: 76px;
+    border-radius: 24px;
   }
-}
-
-html[data-theme='dark']  img {
-  filter: brightness(.8) contrast(1.2)
 }
 
 /* Hide Google Translate banner and fix body positioning */

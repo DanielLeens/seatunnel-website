@@ -227,9 +227,9 @@ const config = {
     },
     hideOnScroll: false, // Whether to hide the sidebar on scroll
     colorMode: {
-      defaultMode: "light",
+      defaultMode: "dark",
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "Apache SeaTunnel",
@@ -238,12 +238,6 @@ const config = {
         src: "image/logo.png",
       },
       items: [
-        {
-          to: "/",
-          position: "right",
-          label: "Home",
-          activeBaseRegex: `^/$`,
-        },
         {
           position: "right",
           label: "Document",
@@ -298,36 +292,6 @@ const config = {
           activeBaseRegex: `/user/`,
         },
         {
-          label: "ASF",
-          position: "right",
-          items: [
-            {
-              label: "Foundation",
-              to: "https://www.apache.org/",
-            },
-            {
-              label: "License",
-              to: "https://www.apache.org/licenses/",
-            },
-            {
-              label: "Events",
-              to: "https://www.apache.org/events/current-event",
-            },
-            {
-              label: "Sponsorship",
-              to: "https://www.apache.org/foundation/sponsorship.html",
-            },
-            {
-              label: "Thanks",
-              to: "https://www.apache.org/foundation/thanks.html",
-            },
-            {
-              label: "Privacy",
-              to: "https://apache.org/foundation/policies/privacy.html",
-            },
-          ],
-        },
-        {
           href: "https://github.com/apache/seatunnel",
           label: "GitHub",
           position: "right",
@@ -379,6 +343,35 @@ const config = {
           ],
         },
         {
+          title: "ASF",
+          items: [
+            {
+              label: "Foundation",
+              href: "https://www.apache.org/",
+            },
+            {
+              label: "License",
+              href: "https://www.apache.org/licenses/",
+            },
+            {
+              label: "Events",
+              href: "https://www.apache.org/events/current-event",
+            },
+            {
+              label: "Sponsorship",
+              href: "https://www.apache.org/foundation/sponsorship.html",
+            },
+            {
+              label: "Thanks",
+              href: "https://www.apache.org/foundation/thanks.html",
+            },
+            {
+              label: "Privacy",
+              href: "https://apache.org/foundation/policies/privacy.html",
+            },
+          ],
+        },
+        {
           title: "Subscribe Mailing List",
           items: [
             {
@@ -398,7 +391,6 @@ const config = {
       ],
       copyright: `
             <div style="margin-top: 20px;">
-                <img style="height:50px;margin: 30px 0 10px;" alt="Apache Software Foundation" src="/image/asf_logo_wide.svg" />
                 <div style="border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;"><span>Copyright © 2021-${new Date().getFullYear()} The Apache Software Foundation. Apache SeaTunnel, SeaTunnel, and its feather logo are trademarks of The Apache Software Foundation.</span></div>
                 <div style="text-align: center;">
                     <a href="https://twitter.com/asfseatunnel?s=21" target="_blank" title="Twitter" ><svg t="1644553365083" class="icon" viewBox="0 0 1260 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7015" width="38" height="38"><path d="M1259.846921 121.148242c-46.524504 20.728739-96.273478 34.547899-148.325646 40.536201 53.434084-31.784067 94.430924-82.454319 113.777747-142.797982-50.209613 29.480874-105.486251 51.13089-164.447999 62.646857A257.584528 257.584528 0 0 0 872.449815 0.000276c-142.797982 0-258.418284 115.620302-258.418284 258.418284 0 20.268101 2.303193 40.075563 6.909579 58.961748C405.82286 306.32498 215.579097 203.602561 87.98219 47.446058c-22.110655 38.233008-35.008538 82.454319-35.008538 129.900099 0 89.824537 45.603227 168.593747 115.159663 215.118251-42.378756-1.381916-81.99368-12.897882-117.002217-32.244706v3.224471c0 125.293713 88.90326 229.398049 207.287393 253.351259-21.650017 5.988302-44.681949 9.212773-68.17452 9.212773-16.582991 0-32.705344-1.842555-48.827697-4.606387 32.705344 102.722419 128.518184 177.345881 241.374653 179.649074-88.442621 69.095798-199.917175 110.553277-321.06514 110.553277-20.728739 0-41.457479-1.381916-61.72558-3.685109 114.238386 73.241546 250.126788 116.08094 396.149241 116.08094 475.379089 0 735.179289-393.846048 735.179289-735.179289 0-11.055328-0.460639-22.571294-0.921277-33.626621 51.13089-36.851092 94.891562-82.454319 129.439461-134.045848z" fill="#909094" p-id="7016"></path></svg></a> 
