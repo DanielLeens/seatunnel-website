@@ -725,7 +725,9 @@ export default function Home() {
     const ctaWarpCanvasRef = useRef(null);
     const flowCanvasRef = useRef(null);
 
-    const language = i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en';
+    const language = isBrowser
+        ? (window.location.pathname.startsWith('/zh-CN/') ? 'zh-CN' : 'en')
+        : (i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en');
     const isChinese = language === 'zh-CN';
     const content = HOME_COPY[language] || HOME_COPY.en;
     const version = versions[0];
