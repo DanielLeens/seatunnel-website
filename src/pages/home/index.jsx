@@ -394,7 +394,7 @@ const HOME_COPY = {
         hero: {
             titleLead: '开源的',
             titleAccent: '数据集成',
-            titleTail: '工具。',
+            titleTail: '工具',
             subtitle: '通过一份配置连接近 200 种 source 与 sink，运行在 Flink、Spark 或原生 Zeta 引擎之上，覆盖批处理、CDC 与流式任务。',
             primaryButton: '快速开始',
             secondaryButton: '阅读文档',
@@ -419,8 +419,8 @@ const HOME_COPY = {
         ],
         architecture: {
             eyebrow: '架构',
-            titleLead: '不只是 ETL。',
-            titleAccent: '而是 EtLT。',
+            titleLead: '不只是 ETL',
+            titleAccent: '而是 EtLT',
             lead: 'SeaTunnel 负责抽取、轻量转换与装载，把重量级的下游转换保留给仓库或湖仓，让数据链路更清晰也更稳定。',
             headers: {
                 sources: '01 上游数据源',
@@ -478,13 +478,13 @@ const HOME_COPY = {
         },
         features: {
             eyebrow: '为什么选择 SeaTunnel',
-            title: '从第一天起就是生产级。',
+            title: '从第一天起就是生产级',
             lead: '容错、模式演进和多引擎扩展能力都按生产环境要求设计。',
             schema: {
                 number: '01',
                 icon: 'schema',
                 accent: 'violet',
-                title: 'Schema 变化？自动处理。',
+                title: 'Schema 变化？自动处理',
                 description: 'SeaTunnel 能检测上游 Schema 变化并实时同步到下游，减少因为字段变更带来的人工迁移与任务中断。',
             },
             cards: [
@@ -514,7 +514,7 @@ const HOME_COPY = {
         connectors: {
             eyebrow: '约 200 个原生连接器',
             titleLead: '只要你的数据在那里，',
-            titleAccent: 'SeaTunnel 就能连接。',
+            titleAccent: 'SeaTunnel 就能连接',
             lead: '覆盖数据库、消息系统、湖仓、搜索系统与对象存储等主流数据系统。',
             categories: [
                 {
@@ -567,7 +567,7 @@ const HOME_COPY = {
         flow: {
             eyebrow: '工作方式',
             titleLead: 'Extract. transform. Load. Transform.',
-            titleAccent: '保持简单。',
+            titleAccent: '保持简单',
             lead: '一份配置文件即可定义整条 EtLT pipeline，从抽取、轻量转换到目标写入。',
             steps: [
                 {
@@ -590,8 +590,8 @@ const HOME_COPY = {
         },
         code: {
             eyebrow: '设计上就是简单',
-            titleLead: '一份配置文件。',
-            titleTail: '就够了。',
+            titleLead: '一份配置文件',
+            titleTail: '就够了',
             lead: '用一份配置描述 source、transform 与 sink，然后在任意支持的执行引擎上运行，无需重复改写 pipeline。',
             primaryButton: '阅读文档',
             secondaryButton: '查看示例',
@@ -599,7 +599,7 @@ const HOME_COPY = {
         },
         cta: {
             titleLead: '开始让数据流动',
-            titleAccent: '不受限制。',
+            titleAccent: '不受限制',
             lead: '开源、Apache License、永久免费。为真正的生产团队提供稳定的数据集成底座，而不是一套只能演示的页面。',
             primaryButton: '快速开始',
             secondaryButton: 'GitHub',
