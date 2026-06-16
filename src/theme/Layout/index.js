@@ -144,14 +144,20 @@ function KapaWidgetOverrides() {
   return null;
 }
 
-function AskAiSparkIcon() {
+function MessageIcon() {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="16" cy="16" r="4.25" fill="currentColor" />
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
       <path
-        d="M16 4.5V8M16 24v3.5M27.5 16H24M8 16H4.5M24.132 7.868l-2.475 2.475M10.343 21.657l-2.475 2.475M24.132 24.132l-2.475-2.475M10.343 10.343 7.868 7.868"
+        d="M5.833 14.167 2.5 17.5V4.167C2.5 3.246 3.246 2.5 4.167 2.5h11.666c.921 0 1.667.746 1.667 1.667v8.333c0 .921-.746 1.667-1.667 1.667H5.833Z"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.667 7.083h6.666M6.667 10.417h4.166"
+        stroke="currentColor"
+        strokeWidth="1.7"
         strokeLinecap="round"
       />
     </svg>
@@ -162,8 +168,10 @@ function GlobalAskAi() {
   return (
     <button id={ASK_AI_TRIGGER_ID} type="button" className="st-global-ask-ai" aria-label="Ask AI" title="Ask AI">
       <span className="st-global-ask-ai-button">
-        <AskAiSparkIcon />
+        <MessageIcon />
+        <span>Ask AI</span>
       </span>
+      <span className="st-global-ask-ai-dot" aria-hidden="true"></span>
     </button>
   );
 }
