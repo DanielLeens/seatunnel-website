@@ -26,6 +26,8 @@ const HERO_SINKS = [
     {name: 'Apache Paimon', colorClass: 'pink'},
 ];
 
+// Keep the marquee aligned with connectors and integrations that already have
+// public support pages in the current SeaTunnel documentation set.
 const CONNECTOR_MARQUEE_ITEMS = [
     'MySQL',
     'PostgreSQL',
@@ -33,91 +35,67 @@ const CONNECTOR_MARQUEE_ITEMS = [
     'SQL Server',
     'TiDB',
     'MariaDB',
-    'CockroachDB',
-    'SQLite',
     'MongoDB',
     'DynamoDB',
     'Cassandra',
-    'ScyllaDB',
     'HBase',
-    'ArangoDB',
     'Neo4j',
-    'Couchbase',
+    'DB2',
+    'Greenplum',
+    'OceanBase',
     'Apache Kafka',
     'Apache Pulsar',
     'RabbitMQ',
     'RocketMQ',
     'ActiveMQ',
-    'NATS',
     'AWS SQS',
-    'Azure Event Hub',
     'Elasticsearch',
-    'OpenSearch',
-    'Solr',
-    'Meilisearch',
+    'Apache Druid',
+    'Typesense',
     'ClickHouse',
     'Apache Doris',
     'StarRocks',
-    'Apache Druid',
-    'Apache Pinot',
-    'Firebolt',
+    'Snowflake',
+    'Cloudberry',
+    'Amazon Redshift',
     'Amazon S3',
-    'Google GCS',
-    'Azure Blob',
     'HDFS',
-    'MinIO',
     'Alibaba OSS',
+    'LocalFile',
     'Apache Iceberg',
     'Apache Hudi',
     'Delta Lake',
     'Apache Paimon',
     'Apache Kudu',
     'Apache Hive',
-    'Snowflake',
-    'BigQuery',
-    'Amazon Redshift',
-    'Databricks',
-    'SAP HANA',
     'InfluxDB',
-    'TimescaleDB',
-    'QuestDB',
     'Apache IoTDB',
-    'OpenTSDB',
+    'TDengine',
     'Redis',
-    'Memcached',
     'Aerospike',
     'FTP',
     'SFTP',
-    'HTTP/REST',
+    'HTTP',
     'GraphQL',
-    'LocalFile',
-    'Excel',
-    'CSV',
-    'JSON',
-    'Parquet',
-    'ORC',
-    'Avro',
-    'Protobuf',
+    'Google Sheets',
+    'Google Firestore',
     'Slack',
     'DingTalk',
     'Feishu',
     'Email',
     'MaxCompute',
     'TableStore',
-    'SelectDB',
+    'SelectDB Cloud',
     'Milvus',
     'Qdrant',
     'Lance',
-    'MQTT',
-    'Greenplum',
-    'Teradata',
-    'Sybase',
-    'DB2',
-    'Informix',
-    'Google Firestore',
-    'Google Sheets',
     'Apache Fluss',
     'HugeGraph',
+    'Prometheus',
+    'SLS',
+    'Sentry',
+    'SensorsData',
+    'Web3j',
 ];
 
 const HOME_COPY = {
@@ -200,13 +178,13 @@ const HOME_COPY = {
                         title: 'Data Lake',
                         tag: 'Object Storage',
                         dotClass: 'orange',
-                        chips: ['Amazon S3', 'Google GCS', 'HDFS', 'MinIO'],
+                        chips: ['Amazon S3', 'Alibaba OSS', 'HDFS', 'LocalFile'],
                     },
                     target: {
                         title: 'AI & Analytics',
                         tag: 'Vector / LLM',
                         dotClass: 'purple',
-                        chips: ['Milvus', 'Qdrant', 'BigQuery', 'Elasticsearch'],
+                        chips: ['Milvus', 'Qdrant', 'Elasticsearch', 'Typesense'],
                     },
                 },
             ],
@@ -274,8 +252,8 @@ const HOME_COPY = {
                         {name: 'Apache Pulsar', colorClass: 'blue'},
                         {name: 'RabbitMQ', colorClass: 'orange'},
                         {name: 'RocketMQ', colorClass: 'red'},
-                        {name: 'AWS SQS / Kinesis', colorClass: 'indigo'},
-                        {name: 'NATS / MQTT', colorClass: 'green'},
+                        {name: 'AWS SQS', colorClass: 'indigo'},
+                        {name: 'ActiveMQ', colorClass: 'green'},
                     ],
                 },
                 {
@@ -285,23 +263,23 @@ const HOME_COPY = {
                         {name: 'Apache Doris', colorClass: 'blue'},
                         {name: 'StarRocks', colorClass: 'indigo'},
                         {name: 'Snowflake', colorClass: 'sky'},
-                        {name: 'BigQuery', colorClass: 'blue'},
-                        {name: 'Databricks', colorClass: 'purple'},
+                        {name: 'Amazon Redshift', colorClass: 'blue'},
+                        {name: 'Cloudberry', colorClass: 'purple'},
                     ],
                 },
                 {
                     label: 'Data Lakes & Storage',
                     items: [
                         {name: 'Amazon S3 / Hudi', colorClass: 'orange'},
-                        {name: 'Google GCS', colorClass: 'blue'},
-                        {name: 'Azure Blob Storage', colorClass: 'sky'},
+                        {name: 'Alibaba OSS', colorClass: 'blue'},
+                        {name: 'HDFS / LocalFile', colorClass: 'sky'},
                         {name: 'Apache Iceberg', colorClass: 'green'},
                         {name: 'Delta Lake', colorClass: 'orange'},
                         {name: 'Apache Paimon', colorClass: 'green'},
                     ],
                 },
             ],
-            more: 'Also: MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / Pinot / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
+            more: 'Also: MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / HugeGraph / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
         },
         flow: {
             eyebrow: 'How it works',
@@ -419,7 +397,7 @@ const HOME_COPY = {
         ],
         architecture: {
             eyebrow: '架构',
-            titleLead: '不只是 ETL',
+            titleLead: '不是 ETL',
             titleAccent: '而是 EtLT',
             lead: 'SeaTunnel 负责抽取、轻量转换与装载，把重量级的下游转换保留给仓库或湖仓，让数据链路更清晰也更稳定。',
             headers: {
@@ -461,13 +439,13 @@ const HOME_COPY = {
                         title: '数据湖',
                         tag: 'Object Storage',
                         dotClass: 'orange',
-                        chips: ['Amazon S3', 'Google GCS', 'HDFS', 'MinIO'],
+                        chips: ['Amazon S3', 'Alibaba OSS', 'HDFS', 'LocalFile'],
                     },
                     target: {
                         title: 'AI 与分析',
                         tag: 'Vector / LLM',
                         dotClass: 'purple',
-                        chips: ['Milvus', 'Qdrant', 'BigQuery', 'Elasticsearch'],
+                        chips: ['Milvus', 'Qdrant', 'Elasticsearch', 'Typesense'],
                     },
                 },
             ],
@@ -535,8 +513,8 @@ const HOME_COPY = {
                         {name: 'Apache Pulsar', colorClass: 'blue'},
                         {name: 'RabbitMQ', colorClass: 'orange'},
                         {name: 'RocketMQ', colorClass: 'red'},
-                        {name: 'AWS SQS / Kinesis', colorClass: 'indigo'},
-                        {name: 'NATS / MQTT', colorClass: 'green'},
+                        {name: 'AWS SQS', colorClass: 'indigo'},
+                        {name: 'ActiveMQ', colorClass: 'green'},
                     ],
                 },
                 {
@@ -546,23 +524,23 @@ const HOME_COPY = {
                         {name: 'Apache Doris', colorClass: 'blue'},
                         {name: 'StarRocks', colorClass: 'indigo'},
                         {name: 'Snowflake', colorClass: 'sky'},
-                        {name: 'BigQuery', colorClass: 'blue'},
-                        {name: 'Databricks', colorClass: 'purple'},
+                        {name: 'Amazon Redshift', colorClass: 'blue'},
+                        {name: 'Cloudberry', colorClass: 'purple'},
                     ],
                 },
                 {
                     label: '数据湖与存储',
                     items: [
                         {name: 'Amazon S3 / Hudi', colorClass: 'orange'},
-                        {name: 'Google GCS', colorClass: 'blue'},
-                        {name: 'Azure Blob Storage', colorClass: 'sky'},
+                        {name: 'Alibaba OSS', colorClass: 'blue'},
+                        {name: 'HDFS / LocalFile', colorClass: 'sky'},
                         {name: 'Apache Iceberg', colorClass: 'green'},
                         {name: 'Delta Lake', colorClass: 'orange'},
                         {name: 'Apache Paimon', colorClass: 'green'},
                     ],
                 },
             ],
-            more: '还包括：MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / Pinot / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
+            more: '还包括：MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / HugeGraph / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
         },
         flow: {
             eyebrow: '工作方式',
@@ -937,7 +915,8 @@ export default function Home() {
                 const dash = 10;
                 const gap = 8;
                 const period = dash + gap;
-                const offset = -(frame * 0.6) % period;
+                // Keep the divider motion readable instead of turning it into a noisy scan line.
+                const offset = -(frame * 0.26) % period;
                 const gradient = context.createLinearGradient(0, 0, width, 0);
 
                 gradient.addColorStop(0, 'rgba(66,184,236,0)');
@@ -960,11 +939,11 @@ export default function Home() {
 
                 const pulseCount = 5;
                 for (let index = 0; index < pulseCount; index += 1) {
-                    const phase = ((frame / 240) + (index / pulseCount)) % 1;
+                    const phase = ((frame / 380) + (index / pulseCount)) % 1;
                     const pulseX = phase * width;
                     const hueRatio = width > 0 ? (pulseX / width) : 0;
                     const hue = 197 + (hueRatio * 130);
-                    const radius = 11 + (Math.sin((frame * 0.04) + index) * 2);
+                    const radius = 11 + (Math.sin((frame * 0.022) + index) * 2);
                     const pulseGradient = context.createRadialGradient(pulseX, centerY, 0, pulseX, centerY, radius * 2.2);
                     pulseGradient.addColorStop(0, `hsla(${hue},90%,78%,1)`);
                     pulseGradient.addColorStop(0.35, `hsla(${hue},85%,68%,.55)`);
@@ -1276,10 +1255,10 @@ export default function Home() {
                         <article className="st-home-feature-card st-home-feature-card-wide st-home-rv" onMouseMove={handleFeatureGlow}>
                             <div className="st-home-feature-accent"></div>
                             <div>
+                                <div className="st-home-feature-number">{content.features.schema.number}</div>
                                 <div className={`st-home-feature-icon st-home-feature-icon-${content.features.schema.accent}`}>
                                     <FeatureIcon icon={content.features.schema.icon} />
                                 </div>
-                                <div className="st-home-feature-number">{content.features.schema.number}</div>
                                 <h3 className="st-home-feature-title st-home-feature-title-large">{content.features.schema.title}</h3>
                                 <p className="st-home-feature-description st-home-feature-description-large">{content.features.schema.description}</p>
                             </div>

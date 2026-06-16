@@ -34,13 +34,19 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #74c3e7;
   --ifm-color-primary-lighter: #84cbea;
   --ifm-color-primary-lightest: #a7dbf1;
+  --ifm-font-color-base: #dde8f7;
+  --ifm-font-color-secondary: #c9d6e7;
+  --ifm-heading-color: #f8fbff;
+  --ifm-menu-color: #d7e3f2;
+  --ifm-menu-color-active: #f8fbff;
+  --ifm-toc-link-color: #d7e3f2;
   --st-shell-bg: #060a15;
   --st-shell-surface: rgba(10, 17, 34, 0.86);
   --st-shell-surface-strong: rgba(10, 17, 34, 0.98);
   --st-shell-border: rgba(255, 255, 255, 0.08);
   --st-shell-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
-  --st-shell-text: #8ba5c5;
-  --st-shell-text-strong: #eef4ff;
+  --st-shell-text: #d7e3f2;
+  --st-shell-text-strong: #f8fbff;
   --st-shell-footer-bg: #0a1122;
 }
 
@@ -176,32 +182,48 @@ html[data-theme='dark'] .navbar__search-input {
 }
 
 .navbar [class*='toggleButton'] {
-  width: 40px;
-  height: 40px;
+  position: relative;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  border: 1px solid var(--st-shell-border);
-  background: rgba(255, 255, 255, 0.52);
-  color: var(--st-shell-text-strong);
+  border-radius: 16px;
+  border: 1px solid rgba(125, 185, 245, 0.5);
+  background: linear-gradient(135deg, rgba(125, 185, 245, 0.98) 0%, rgba(107, 118, 214, 0.98) 56%, rgba(187, 86, 182, 0.96) 100%);
+  color: #f8fbff;
+  box-shadow: 0 12px 30px rgba(107, 118, 214, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  overflow: hidden;
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
 
 html[data-theme='dark'] .navbar [class*='toggleButton'] {
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(125, 185, 245, 0.42);
+  box-shadow: 0 12px 30px rgba(40, 58, 105, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.navbar [class*='toggleButton']::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
+  pointer-events: none;
 }
 
 .navbar [class*='toggleButton']:hover {
   transform: translateY(-1px);
-  border-color: rgba(93, 184, 226, 0.3);
-  box-shadow: 0 10px 24px rgba(39, 63, 101, 0.12);
+  border-color: rgba(172, 223, 255, 0.72);
+  box-shadow: 0 16px 34px rgba(107, 118, 214, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .navbar [class*='lightToggleIcon'],
 .navbar [class*='darkToggleIcon'] {
+  position: relative;
+  z-index: 1;
   width: 18px;
-  height: auto;
+  height: 18px;
   flex: 0 0 18px;
 }
 
@@ -256,6 +278,28 @@ html[data-theme='dark'] .card {
 .menu__link--active:not(.menu__link--sublist),
 .table-of-contents__link--active {
   color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .theme-doc-markdown,
+html[data-theme='dark'] .theme-doc-markdown p,
+html[data-theme='dark'] .theme-doc-markdown li,
+html[data-theme='dark'] .theme-doc-markdown td,
+html[data-theme='dark'] .theme-doc-markdown th,
+html[data-theme='dark'] .theme-doc-markdown blockquote,
+html[data-theme='dark'] .menu__link,
+html[data-theme='dark'] .table-of-contents__link {
+  color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .theme-doc-markdown h1,
+html[data-theme='dark'] .theme-doc-markdown h2,
+html[data-theme='dark'] .theme-doc-markdown h3,
+html[data-theme='dark'] .theme-doc-markdown h4,
+html[data-theme='dark'] .theme-doc-markdown h5,
+html[data-theme='dark'] .theme-doc-markdown h6,
+html[data-theme='dark'] .breadcrumbs__link,
+html[data-theme='dark'] .pagination-nav__label {
+  color: var(--ifm-heading-color);
 }
 
 .st-global-ask-ai {
