@@ -264,6 +264,11 @@ html[data-theme='dark'] .card {
   color: var(--ifm-color-primary);
 }
 
+html[data-theme='dark'] .menu__link--active:not(.menu__link--sublist),
+html[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--ifm-heading-color);
+}
+
 html[data-theme='dark'] .theme-doc-markdown,
 html[data-theme='dark'] .theme-doc-markdown p,
 html[data-theme='dark'] .theme-doc-markdown li,
