@@ -170,6 +170,9 @@ html[data-theme='dark'] .navbar__search-input {
 .navbar [class*='colorModeToggle'] {
   display: inline-flex;
   margin-left: 0.15rem;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
 }
 
 .navbar [class*='toggleButton'] {
@@ -178,7 +181,7 @@ html[data-theme='dark'] .navbar__search-input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 999px;
   border: 1px solid var(--st-shell-border);
   background: rgba(255, 255, 255, 0.52);
   color: var(--st-shell-text-strong);
@@ -198,7 +201,13 @@ html[data-theme='dark'] .navbar [class*='toggleButton'] {
 .navbar [class*='lightToggleIcon'],
 .navbar [class*='darkToggleIcon'] {
   width: 18px;
-  height: 18px;
+  height: auto;
+  flex: 0 0 18px;
+}
+
+html[data-theme='dark'] .navbar__item.dropdown > .navbar__link,
+html[data-theme='dark'] .dropdown__menu .dropdown__link {
+  color: var(--st-shell-text-strong);
 }
 
 .footer__link-item svg,.navbar__link svg {

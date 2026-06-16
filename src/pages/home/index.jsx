@@ -726,6 +726,7 @@ export default function Home() {
     const flowCanvasRef = useRef(null);
 
     const language = i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en';
+    const isChinese = language === 'zh-CN';
     const content = HOME_COPY[language] || HOME_COPY.en;
     const version = versions[0];
     const assetRoot = useBaseUrl('/');
@@ -1087,10 +1088,23 @@ export default function Home() {
                         <span>{content.badge}</span>
                     </div>
 
-                    <h1 className="st-home-hero-title">
-                        {content.hero.titleLead}<br />
-                        <span className="st-home-gradient st-home-meteor-line" id="st-home-hero-meteor">{content.hero.titleAccent}</span><br />
-                        {content.hero.titleTail}
+                    <h1 className={`st-home-hero-title${isChinese ? ' st-home-hero-title-zh' : ''}`}>
+                        {isChinese ? (
+                            <>
+                                <span className="st-home-hero-title-line">{content.hero.titleLead}</span>
+                                <span className="st-home-hero-title-line st-home-hero-title-line-zh">
+                                    <span className="st-home-gradient st-home-meteor-line" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
+                                    {content.hero.titleTail}
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                {content.hero.titleLead}<br />
+                                <span className="st-home-gradient st-home-meteor-line" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
+                                <br />
+                                {content.hero.titleTail}
+                            </>
+                        )}
                     </h1>
 
                     <p className="st-home-hero-subtitle">{content.hero.subtitle}</p>

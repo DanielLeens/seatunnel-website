@@ -141,6 +141,9 @@ body.seatunnel-homepage-page .index-nav .toggleButton_gllP {
 
 body.seatunnel-homepage-page .index-nav [class*='colorModeToggle'] {
   margin-left: 0.15rem;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
 }
 
 body.seatunnel-homepage-page .index-nav [class*='toggleButton'] {
@@ -149,7 +152,7 @@ body.seatunnel-homepage-page .index-nav [class*='toggleButton'] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 999px;
   border: 1px solid var(--home-toggle-border);
   background: var(--home-toggle-bg);
   color: var(--home-toggle-color);
@@ -165,7 +168,12 @@ body.seatunnel-homepage-page .index-nav [class*='toggleButton']:hover {
 body.seatunnel-homepage-page .index-nav [class*='lightToggleIcon'],
 body.seatunnel-homepage-page .index-nav [class*='darkToggleIcon'] {
   width: 18px;
-  height: 18px;
+  height: auto;
+  flex: 0 0 18px;
+}
+
+body.seatunnel-homepage-page .index-nav .dropdown__menu .dropdown__link {
+  color: var(--home-nav-text-hover);
 }
 
 .seatunnel-homepage-shell {
@@ -522,6 +530,20 @@ html[data-theme='light'] .st-home {
   letter-spacing: -0.04em;
   color: var(--t1);
   animation: st-home-fade-up 0.6s ease both 0.08s;
+}
+
+.st-home-hero-title-zh {
+  line-height: 1;
+  font-size: clamp(2.8rem, 5.25vw, 4.7rem);
+  letter-spacing: -0.03em;
+}
+
+.st-home-hero-title-line {
+  display: block;
+}
+
+.st-home-hero-title-line-zh {
+  white-space: nowrap;
 }
 
 .st-home-hero-subtitle {
