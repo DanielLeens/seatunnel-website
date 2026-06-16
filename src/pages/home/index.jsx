@@ -1254,7 +1254,7 @@ export default function Home() {
                     <div className="st-home-feature-grid">
                         <article className="st-home-feature-card st-home-feature-card-wide st-home-rv" onMouseMove={handleFeatureGlow}>
                             <div className="st-home-feature-accent"></div>
-                            <div>
+                            <div className="st-home-feature-copy st-home-feature-copy-wide">
                                 <div className="st-home-feature-number">{content.features.schema.number}</div>
                                 <div className={`st-home-feature-icon st-home-feature-icon-${content.features.schema.accent}`}>
                                     <FeatureIcon icon={content.features.schema.icon} />
