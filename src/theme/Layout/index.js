@@ -57,11 +57,15 @@ const KAPA_SHADOW_OVERRIDES = `
   #kapa-widget-root input[type='text'],
   #kapa-widget-root input:not([type]) {
     min-height: 112px !important;
+    padding: 18px 22px !important;
+    box-sizing: border-box !important;
     border-radius: 22px !important;
     border: 1px solid rgba(160, 202, 240, 0.78) !important;
     background: rgba(248, 252, 255, 0.97) !important;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
     color: #1b2b3d !important;
+    caret-color: #1b2b3d !important;
+    line-height: 1.55 !important;
   }
 
   #kapa-widget-root textarea::placeholder,
