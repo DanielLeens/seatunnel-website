@@ -126,10 +126,10 @@ const HOME_COPY = {
             download: 'Download',
         },
         hero: {
-            titleLead: 'The open source',
+            titleLead: 'High-performance',
             titleAccent: 'data integration',
-            titleTail: 'tool.',
-            subtitle: 'Connect about 200 sources and sinks with a single config file. Run on Flink, Spark, or the native Zeta engine for batch and streaming workloads.',
+            titleTail: 'for every workload.',
+            subtitle: 'Build one pipeline definition and run it on Zeta, Flink, or Spark. SeaTunnel covers batch, streaming, CDC, and multimodal synchronization across production systems.',
             primaryButton: 'Quick Start',
             secondaryButton: 'Read the Docs',
             helperButton: 'View Connectors',
@@ -387,10 +387,10 @@ const HOME_COPY = {
             download: '下载',
         },
         hero: {
-            titleLead: '开源的',
+            titleLead: '高性能',
             titleAccent: '数据集成',
             titleTail: '工具',
-            subtitle: '通过一份配置连接近 200 种 source 与 sink，运行在 Flink、Spark 或原生 Zeta 引擎之上，覆盖批处理、CDC 与流式任务。',
+            subtitle: '支持多模态数据集成，一次定义 pipeline，可运行在 Zeta、Flink 和 Spark 上，覆盖批处理、流处理、CDC 与实时同步场景。',
             primaryButton: '快速开始',
             secondaryButton: '阅读文档',
             helperButton: '查看连接器',
@@ -1091,14 +1091,14 @@ export default function Home() {
                             <>
                                 <span className="st-home-hero-title-line">{content.hero.titleLead}</span>
                                 <span className="st-home-hero-title-line st-home-hero-title-line-zh">
-                                    <span className="st-home-gradient st-home-meteor-line" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
+                                    <span className="st-home-gradient" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
                                     {content.hero.titleTail}
                                 </span>
                             </>
                         ) : (
                             <>
                                 {content.hero.titleLead}<br />
-                                <span className="st-home-gradient st-home-meteor-line" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
+                                <span className="st-home-gradient" id="st-home-hero-meteor">{content.hero.titleAccent}</span>
                                 <br />
                                 {content.hero.titleTail}
                             </>
