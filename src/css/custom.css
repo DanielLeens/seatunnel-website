@@ -51,8 +51,8 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #74c3e7;
   --ifm-color-primary-lighter: #84cbea;
   --ifm-color-primary-lightest: #a7dbf1;
-  --ifm-font-color-base: #dde8f7;
-  --ifm-font-color-secondary: #c9d6e7;
+  --ifm-font-color-base: #f8fbff;
+  --ifm-font-color-secondary: rgba(248, 251, 255, 0.88);
   --ifm-heading-color: #f8fbff;
   --ifm-menu-color: #d7e3f2;
   --ifm-menu-color-active: #f8fbff;
@@ -62,7 +62,7 @@ html[data-theme='dark'] {
   --st-shell-surface-strong: rgba(10, 17, 34, 0.98);
   --st-shell-border: rgba(255, 255, 255, 0.08);
   --st-shell-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
-  --st-shell-text: #d7e3f2;
+  --st-shell-text: #f8fbff;
   --st-shell-text-strong: #f8fbff;
   --st-shell-footer-bg: #0a1122;
 }
@@ -294,7 +294,7 @@ html[data-theme='dark'] .theme-doc-markdown th,
 html[data-theme='dark'] .theme-doc-markdown blockquote,
 html[data-theme='dark'] .menu__link,
 html[data-theme='dark'] .table-of-contents__link {
-  color: var(--ifm-font-color-base);
+  color: #f8fbff;
 }
 
 html[data-theme='dark'] .theme-doc-markdown h1,
