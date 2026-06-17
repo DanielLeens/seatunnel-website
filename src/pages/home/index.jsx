@@ -474,7 +474,7 @@ const HOME_COPY = {
         features: {
             eyebrow: '为什么选择 SeaTunnel',
             title: '从第一天起就是生产级',
-            lead: '容错、模式演进和多引擎扩展能力都按生产环境要求设计。',
+            lead: '容错、模式演进和多引擎扩展能力都按分布式生产环境要求设计。',
             schema: {
                 number: '01',
                 icon: 'schema',
