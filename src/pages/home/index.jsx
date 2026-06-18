@@ -129,7 +129,7 @@ const HOME_COPY = {
             titleLead: 'High-performance',
             titleAccent: 'data integration',
             titleTail: 'for every workload.',
-            subtitle: 'Build one pipeline definition and run it on Zeta, Flink, or Spark. SeaTunnel covers batch, streaming, CDC, and multimodal synchronization across production systems.',
+            subtitle: 'Build one pipeline definition and run it on Zeta, Flink, or Spark. SeaTunnel powers batch, streaming, CDC, multimodal, and AI data movement across production systems.',
             primaryButton: 'Quick Start',
             secondaryButton: 'Read the Docs',
             helperButton: 'View Connectors',
@@ -387,7 +387,7 @@ const HOME_COPY = {
             download: '下载',
         },
         hero: {
-            titleLead: '高性能',
+            titleLead: '超高性能',
             titleAccent: '数据集成',
             titleTail: '工具',
             subtitle: '支持多模态数据集成，一次定义 pipeline，可运行在 Zeta、Flink 和 Spark 上，覆盖批处理、流处理、CDC 与实时同步场景。',
