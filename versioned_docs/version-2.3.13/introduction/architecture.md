@@ -23,7 +23,7 @@ flowchart LR
 
     classDef controlNode fill:#0f1d33,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
     classDef coreNode fill:#10223a,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
-    classDef connectorNode fill:#0c2530,stroke:#4ade80,stroke-width:2px,color:#f8fbff;
+    classDef connectorNode fill:#0c2530,stroke:#2dd4bf,stroke-width:2px,color:#f8fbff;
     classDef engineNode fill:#1f1a34,stroke:#8d7cf6,stroke-width:2px,color:#f8fbff;
 
     class config controlNode;
@@ -67,7 +67,7 @@ flowchart LR
     writer -. snapshot .-> state
     state --> tolerance["Fault Tolerance"]
 
-    classDef data fill:#0c2530,stroke:#4ade80,stroke-width:2px,color:#f8fbff;
+    classDef data fill:#0c2530,stroke:#2dd4bf,stroke-width:2px,color:#f8fbff;
     classDef runtime fill:#10223a,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
     classDef guard fill:#1f1a34,stroke:#8d7cf6,stroke-width:2px,color:#f8fbff;
 
