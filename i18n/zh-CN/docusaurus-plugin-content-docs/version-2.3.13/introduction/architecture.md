@@ -21,16 +21,16 @@ flowchart LR
 
     config --> core --> engine --> source
 
-    classDef controlNode fill:#0e1a2f,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
-    classDef coreNode fill:#10223a,stroke:#6b76d6,stroke-width:2px,color:#f8fbff;
+    classDef controlNode fill:#0f1d33,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
+    classDef coreNode fill:#10223a,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
     classDef connectorNode fill:#0c2530,stroke:#4ade80,stroke-width:2px,color:#f8fbff;
-    classDef engineNode fill:#241832,stroke:#bb56b6,stroke-width:2px,color:#f8fbff;
+    classDef engineNode fill:#1f1a34,stroke:#8d7cf6,stroke-width:2px,color:#f8fbff;
 
     class config controlNode;
     class core coreNode;
     class engine engineNode;
     class source,transform,sink connectorNode;
-    style pipeline fill:#081425,stroke:#245172,stroke-width:1.5px,color:#f8fbff;
+    style pipeline fill:#081425,stroke:#5db8e2,stroke-width:1.5px,color:#f8fbff;
     linkStyle default stroke:#8ab4f8,stroke-width:2px;
 ```
 
@@ -67,9 +67,9 @@ flowchart LR
     writer -. 快照 .-> state
     state --> tolerance[容错机制]
 
-    classDef data fill:#0c2530,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
-    classDef runtime fill:#10223a,stroke:#6b76d6,stroke-width:2px,color:#f8fbff;
-    classDef guard fill:#241832,stroke:#bb56b6,stroke-width:2px,color:#f8fbff;
+    classDef data fill:#0c2530,stroke:#4ade80,stroke-width:2px,color:#f8fbff;
+    classDef runtime fill:#10223a,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
+    classDef guard fill:#1f1a34,stroke:#8d7cf6,stroke-width:2px,color:#f8fbff;
 
     class source,split,sink data;
     class reader,transform,writer runtime;
