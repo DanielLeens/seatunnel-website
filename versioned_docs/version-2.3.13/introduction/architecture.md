@@ -19,8 +19,7 @@ flowchart LR
         source["Source<br/>Connectors"] --> transform["Transform<br/>(Optional)"] --> sink["Sink<br/>Connectors"]
     end
 
-    config --> core --> source
-    sink --> engine
+    config --> core --> engine --> source
 
     classDef controlNode fill:#0e1a2f,stroke:#5db8e2,stroke-width:2px,color:#f8fbff;
     classDef coreNode fill:#10223a,stroke:#6b76d6,stroke-width:2px,color:#f8fbff;
@@ -29,8 +28,8 @@ flowchart LR
 
     class config controlNode;
     class core coreNode;
-    class source,transform,sink connectorNode;
     class engine engineNode;
+    class source,transform,sink connectorNode;
     style pipeline fill:#081425,stroke:#245172,stroke-width:1.5px,color:#f8fbff;
     linkStyle default stroke:#8ab4f8,stroke-width:2px;
 ```
