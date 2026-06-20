@@ -43,6 +43,8 @@ const HERO_SINKS = [
     {name: 'Apache Paimon', colorClass: 'pink'},
 ];
 
+const ARCHITECTURE_ROW_KEYS = ['top', 'mid', 'bot'];
+
 // Keep the marquee aligned with connectors and integrations that already have
 // public support pages in the current SeaTunnel documentation set.
 const CONNECTOR_MARQUEE_ITEMS = [
@@ -115,6 +117,8 @@ const CONNECTOR_MARQUEE_ITEMS = [
     'Web3j',
 ];
 
+const stripArchitectureStageIndex = (value) => value.replace(/^\d+\s+/, '');
+
 const HOME_COPY = {
     'en': {
         badge: `v${versions[0]} live / Apache Top-Level Project`,
@@ -129,7 +133,7 @@ const HOME_COPY = {
             titleLead: 'High-performance',
             titleAccent: 'data integration',
             titleTail: 'for every workload.',
-            subtitle: 'Build one pipeline definition and run it on Zeta, Flink, or Spark. SeaTunnel powers batch, streaming, CDC, multimodal, and AI data movement across production systems.',
+            subtitle: 'A production-grade integration layer for distributed data systems, with fault tolerance, schema evolution, and multi-engine execution across batch, streaming, CDC, multimodal, and AI workloads.',
             primaryButton: 'Quick Start',
             secondaryButton: 'Read the Docs',
             helperButton: 'View Connectors',
@@ -152,13 +156,13 @@ const HOME_COPY = {
             {value: '2.3k+', label: 'GitHub Forks'},
         ],
         architecture: {
-            eyebrow: 'Architecture',
+            eyebrow: 'Architecture Pattern',
             titleLead: 'Not ETL.',
             titleAccent: 'EtLT.',
             lead: 'SeaTunnel handles extract, lightweight transform, and load. Your warehouse or lakehouse can keep the heavy downstream transformation while SeaTunnel moves reliable, structured data between systems.',
             headers: {
                 sources: '01 Upstream Sources',
-                engine: '02 EtLT Engine',
+                engine: '02 EtLT PATTERN',
                 targets: '03 Downstream Targets',
             },
             rows: [
@@ -179,7 +183,7 @@ const HOME_COPY = {
                 {
                     source: {
                         title: 'Streaming',
-                        tag: 'Pub/Sub',
+                        tag: 'Pub / Sub',
                         dotClass: 'blue',
                         chips: ['Apache Kafka', 'Apache Pulsar', 'RocketMQ', 'RabbitMQ'],
                     },
@@ -192,22 +196,28 @@ const HOME_COPY = {
                 },
                 {
                     source: {
-                        title: 'Data Lake',
+                        title: 'Files & Lake',
                         tag: 'Object Storage',
-                        dotClass: 'orange',
+                        dotClass: 'teal',
                         chips: ['Amazon S3', 'Alibaba OSS', 'HDFS', 'LocalFile'],
                     },
                     target: {
-                        title: 'AI & Analytics',
-                        tag: 'Vector / LLM',
-                        dotClass: 'purple',
-                        chips: ['Milvus', 'Qdrant', 'Elasticsearch', 'Typesense'],
+                        title: 'Search & Vectors',
+                        tag: 'Retrieval',
+                        dotClass: 'blue',
+                        chips: ['Elasticsearch', 'Typesense', 'Milvus', 'Qdrant'],
                     },
                 },
             ],
-            engineBadges: [
-                'Zeta Engine / Apache Flink / Apache Spark',
-                'CDC / Exactly-Once / Schema Evolution',
+            enginePillars: [
+                {label: 'Engines', value: 'Zeta / Flink / Spark'},
+                {label: 'Modes', value: 'Batch / Streaming / CDC'},
+                {label: 'Guarantees', value: 'Exactly-once / Schema evolution / Multi-engine scale'},
+            ],
+            engineFoot: [
+                '200+ Connectors',
+                'Structured Movement',
+                'Production Ready',
             ],
         },
         features: {
@@ -225,9 +235,10 @@ const HOME_COPY = {
                 {
                     number: '02',
                     title: 'Real-Time CDC',
-                    description: 'Capture INSERT, UPDATE, and DELETE events from MySQL, Oracle, PostgreSQL, SQL Server, MongoDB, and more with low latency.',
+                    description: 'Low-latency change capture across major databases, with seamless batch-to-stream handoff and no lock-based cutover.',
                     icon: 'lightning',
                     accent: 'blue',
+                    highlights: ['Low latency', 'Batch to stream', 'No lock cutover'],
                 },
                 {
                     number: '03',
@@ -235,13 +246,16 @@ const HOME_COPY = {
                     description: 'Checkpoint-backed fault tolerance keeps records consistent across failures, retries, and restarts.',
                     icon: 'shield',
                     accent: 'teal',
+                    highlights: ['Checkpoint backed', 'Failure safe', 'Restart consistent'],
                 },
                 {
                     number: '04',
                     title: 'Multi-Engine Support',
-                    description: 'Write one pipeline definition and run it on Zeta, Flink, or Spark without rewriting connector logic.',
+                    description: 'Use the same pipeline definition on Zeta, Flink, or Spark without rewriting connector logic or delivery paths.',
                     icon: 'layers',
                     accent: 'amber',
+                    highlights: ['One definition', 'Zeta / Flink / Spark', 'No connector rewrites'],
+                    layout: 'wide',
                 },
             ],
         },
@@ -298,30 +312,6 @@ const HOME_COPY = {
             ],
             more: 'Also: MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / HugeGraph / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
         },
-        flow: {
-            eyebrow: 'How it works',
-            titleLead: 'Extract. transform. Load. Transform.',
-            titleAccent: 'Elegantly simple.',
-            lead: 'One config file defines the full EtLT pipeline, from ingestion through lightweight transformation and delivery.',
-            steps: [
-                {
-                    label: '01 Extract',
-                    title: 'Read from anywhere',
-                    tags: ['MySQL-CDC', 'Kafka', 'PostgreSQL', 'MongoDB', 'Oracle', 'S3', 'Hive', '+193 more'],
-                },
-                {
-                    label: '02 Lightweight transform',
-                    title: 'Shape and enrich in-flight',
-                    tags: ['SQL Transform', 'FieldMapper', 'Copy', 'Replace', 'FieldEncrypt', 'Split', 'FilterRowKind', 'Jsonpath'],
-                    highlight: true,
-                },
-                {
-                    label: '03 Load',
-                    title: 'Deliver anywhere',
-                    tags: ['ClickHouse', 'Iceberg', 'Doris', 'StarRocks', 'Paimon', 'Kafka', 'Redis', '+193 more'],
-                },
-            ],
-        },
         code: {
             eyebrow: 'Simple by design',
             titleLead: 'A config file.',
@@ -332,9 +322,9 @@ const HOME_COPY = {
             fileName: 'mysql-cdc-to-clickhouse.conf',
         },
         cta: {
-            titleLead: 'Start moving your data',
-            titleAccent: 'without limits.',
-            lead: 'Open source. Apache licensed. Free forever. Built for production teams that need a reliable integration layer instead of another fragile demo.',
+            titleLead: 'One pipeline definition.',
+            titleAccent: 'Run it on Zeta, Flink, or Spark.',
+            lead: 'SeaTunnel unifies CDC, schema evolution, multimodal movement, and production-grade reliability into one Apache-licensed integration layer.',
             primaryButton: 'Quick Start',
             secondaryButton: 'GitHub',
             tertiaryButton: 'Slack Access',
@@ -390,7 +380,7 @@ const HOME_COPY = {
             titleLead: '超高性能',
             titleAccent: '数据集成',
             titleTail: '工具',
-            subtitle: '支持多模态数据集成，一次定义 pipeline，可运行在 Zeta、Flink 和 Spark 上，覆盖批处理、流处理、CDC 与实时同步场景。',
+            subtitle: '面向分布式生产系统的数据集成底座，具备容错、模式演进与多引擎执行能力，覆盖批处理、流处理、CDC、多模态与 AI 数据场景。',
             primaryButton: '快速开始',
             secondaryButton: '阅读文档',
             helperButton: '查看连接器',
@@ -413,13 +403,13 @@ const HOME_COPY = {
             {value: '2.3k+', label: 'GitHub Forks'},
         ],
         architecture: {
-            eyebrow: '架构',
+            eyebrow: '架构模式',
             titleLead: '不是 ETL',
             titleAccent: '而是 EtLT',
             lead: 'SeaTunnel 负责抽取、轻量转换与装载，把重量级的下游转换保留给仓库或湖仓，让数据链路更清晰也更稳定。',
             headers: {
                 sources: '01 上游数据源',
-                engine: '02 EtLT 引擎',
+                engine: '02 EtLT 模式',
                 targets: '03 下游目标',
             },
             rows: [
@@ -440,7 +430,7 @@ const HOME_COPY = {
                 {
                     source: {
                         title: '消息流',
-                        tag: 'Pub/Sub',
+                        tag: '发布 / 订阅',
                         dotClass: 'blue',
                         chips: ['Apache Kafka', 'Apache Pulsar', 'RocketMQ', 'RabbitMQ'],
                     },
@@ -453,22 +443,28 @@ const HOME_COPY = {
                 },
                 {
                     source: {
-                        title: '数据湖',
-                        tag: 'Object Storage',
-                        dotClass: 'orange',
+                        title: '文件与数据湖',
+                        tag: '对象存储',
+                        dotClass: 'teal',
                         chips: ['Amazon S3', 'Alibaba OSS', 'HDFS', 'LocalFile'],
                     },
                     target: {
-                        title: 'AI 与分析',
-                        tag: 'Vector / LLM',
-                        dotClass: 'purple',
-                        chips: ['Milvus', 'Qdrant', 'Elasticsearch', 'Typesense'],
+                        title: '搜索与向量',
+                        tag: '检索',
+                        dotClass: 'blue',
+                        chips: ['Elasticsearch', 'Typesense', 'Milvus', 'Qdrant'],
                     },
                 },
             ],
-            engineBadges: [
-                'Zeta Engine / Apache Flink / Apache Spark',
-                'CDC / Exactly-Once / Schema Evolution',
+            enginePillars: [
+                {label: '引擎', value: 'Zeta / Flink / Spark'},
+                {label: '模式', value: '批处理 / 流处理 / CDC'},
+                {label: '保障', value: 'Exactly-once / 模式演进 / 多引擎扩展'},
+            ],
+            engineFoot: [
+                '200+ Connectors',
+                'Structured Movement',
+                'Production Ready',
             ],
         },
         features: {
@@ -486,9 +482,10 @@ const HOME_COPY = {
                 {
                     number: '02',
                     title: '实时 CDC',
-                    description: '支持 MySQL、Oracle、PostgreSQL、SQL Server、MongoDB 等多种数据库的实时变更捕获。',
+                    description: '面向主流数据库的低延迟变更捕获，同时支持从批到流无缝衔接，并避免锁式切换。',
                     icon: 'lightning',
                     accent: 'blue',
+                    highlights: ['低延迟', '批流衔接', '无锁切换'],
                 },
                 {
                     number: '03',
@@ -496,13 +493,16 @@ const HOME_COPY = {
                     description: '基于 checkpoint 的容错保证任务在失败、重试与重启场景下仍保持数据一致性。',
                     icon: 'shield',
                     accent: 'teal',
+                    highlights: ['Checkpoint 保障', '失败可恢复', '重启仍一致'],
                 },
                 {
                     number: '04',
                     title: '多引擎支持',
-                    description: '同一份 pipeline 定义可运行在 Zeta、Flink 或 Spark 上，无需重写连接器逻辑。',
+                    description: '同一份 pipeline 定义可运行在 Zeta、Flink 或 Spark 上，无需重写连接器逻辑与交付链路。',
                     icon: 'layers',
                     accent: 'amber',
+                    highlights: ['一份定义', 'Zeta / Flink / Spark', '无需重写连接器'],
+                    layout: 'wide',
                 },
             ],
         },
@@ -559,30 +559,6 @@ const HOME_COPY = {
             ],
             more: '还包括：MongoDB / Redis / Elasticsearch / Neo4j / Cassandra / HBase / Druid / HugeGraph / IoTDB / InfluxDB / DynamoDB / Milvus / Qdrant ...',
         },
-        flow: {
-            eyebrow: '工作方式',
-            titleLead: 'Extract. transform. Load. Transform.',
-            titleAccent: '保持简单',
-            lead: '一份配置文件即可定义整条 EtLT pipeline，从抽取、轻量转换到目标写入。',
-            steps: [
-                {
-                    label: '01 抽取',
-                    title: '从任何地方读取',
-                    tags: ['MySQL-CDC', 'Kafka', 'PostgreSQL', 'MongoDB', 'Oracle', 'S3', 'Hive', '+193 more'],
-                },
-                {
-                    label: '02 轻量转换',
-                    title: '在链路中完成清洗与增强',
-                    tags: ['SQL Transform', 'FieldMapper', 'Copy', 'Replace', 'FieldEncrypt', 'Split', 'FilterRowKind', 'Jsonpath'],
-                    highlight: true,
-                },
-                {
-                    label: '03 装载',
-                    title: '写入任何目标',
-                    tags: ['ClickHouse', 'Iceberg', 'Doris', 'StarRocks', 'Paimon', 'Kafka', 'Redis', '+193 more'],
-                },
-            ],
-        },
         code: {
             eyebrow: '设计上就是简单',
             titleLead: '一份配置文件',
@@ -593,9 +569,9 @@ const HOME_COPY = {
             fileName: 'mysql-cdc-to-clickhouse.conf',
         },
         cta: {
-            titleLead: '开始让数据流动',
-            titleAccent: '不受限制',
-            lead: '开源、Apache License、永久免费。为真正的生产团队提供稳定的数据集成底座，而不是一套只能演示的页面。',
+            titleLead: '一份 pipeline 定义',
+            titleAccent: '运行在 Zeta、Flink 或 Spark 上',
+            lead: 'SeaTunnel 把 CDC、模式演进、多模态数据流动与生产级可靠性统一到一个 Apache License 的集成层里。',
             primaryButton: '快速开始',
             secondaryButton: 'GitHub',
             tertiaryButton: 'Slack 入口',
@@ -719,6 +695,12 @@ export default function Home() {
     const heroWarpCanvasRef = useRef(null);
     const ctaWarpCanvasRef = useRef(null);
     const flowCanvasRef = useRef(null);
+    const architectureBoardRef = useRef(null);
+    const architectureGridRef = useRef(null);
+    const architectureSvgRef = useRef(null);
+    const architectureEngineRef = useRef(null);
+    const architectureSourceRefs = useRef([]);
+    const architectureTargetRefs = useRef([]);
 
     const language = isBrowser
         ? (window.location.pathname.startsWith('/zh-CN/') ? 'zh-CN' : 'en')
@@ -913,6 +895,11 @@ export default function Home() {
             let frame = 0;
             let frameId;
 
+            const smoothStep = (value) => {
+                const clamped = Math.min(Math.max(value, 0), 1);
+                return clamped * clamped * (3 - (2 * clamped));
+            };
+
             function resize() {
                 const deviceRatio = window.devicePixelRatio || 1;
                 canvas.width = canvas.offsetWidth * deviceRatio;
@@ -932,8 +919,10 @@ export default function Home() {
                 const dash = 10;
                 const gap = 8;
                 const period = dash + gap;
+                const edgeSoftness = Math.min(width * 0.09, 116);
+                const travelPadding = edgeSoftness + 34;
                 // Keep the divider motion readable instead of turning it into a noisy scan line.
-                const offset = -(frame * 0.26) % period;
+                const offset = -(frame * 0.13) % period;
                 const gradient = context.createLinearGradient(0, 0, width, 0);
 
                 gradient.addColorStop(0, 'rgba(66,184,236,0)');
@@ -956,14 +945,21 @@ export default function Home() {
 
                 const pulseCount = 5;
                 for (let index = 0; index < pulseCount; index += 1) {
-                    const phase = ((frame / 380) + (index / pulseCount)) % 1;
-                    const pulseX = phase * width;
+                    const phase = ((frame / 760) + (index / pulseCount)) % 1;
+                    const pulseX = (-travelPadding) + (phase * (width + (travelPadding * 2)));
+                    const edgeAlpha = Math.min(
+                        smoothStep(pulseX / edgeSoftness),
+                        smoothStep((width - pulseX) / edgeSoftness),
+                    );
+                    if (edgeAlpha <= 0.001) {
+                        continue;
+                    }
                     const hueRatio = width > 0 ? (pulseX / width) : 0;
                     const hue = 197 + (hueRatio * 130);
                     const radius = 11 + (Math.sin((frame * 0.022) + index) * 2);
                     const pulseGradient = context.createRadialGradient(pulseX, centerY, 0, pulseX, centerY, radius * 2.2);
-                    pulseGradient.addColorStop(0, `hsla(${hue},90%,78%,1)`);
-                    pulseGradient.addColorStop(0.35, `hsla(${hue},85%,68%,.55)`);
+                    pulseGradient.addColorStop(0, `hsla(${hue},90%,78%,${edgeAlpha})`);
+                    pulseGradient.addColorStop(0.35, `hsla(${hue},85%,68%,${edgeAlpha * 0.55})`);
                     pulseGradient.addColorStop(1, `hsla(${hue},85%,65%,0)`);
 
                     context.beginPath();
@@ -995,6 +991,218 @@ export default function Home() {
             };
         };
 
+        const startArchitecturePipelines = () => {
+            const grid = architectureGridRef.current;
+            const svg = architectureSvgRef.current;
+            const engine = architectureEngineRef.current;
+            const engineCard = engine?.querySelector('.st-home-architecture-engine-box');
+            if (!grid || !svg || !engine || !engineCard) {
+                return () => {};
+            }
+
+            let syncFrame = 0;
+            let resizeObserver;
+            const pipeIds = [
+                'left-top',
+                'left-mid',
+                'left-bot',
+                'right-top',
+                'right-mid',
+                'right-bot',
+                'flow-top',
+                'flow-mid',
+                'flow-bot',
+            ];
+
+            const setPath = (id, d) => {
+                const path = svg.querySelector(`#${id}`);
+                if (path) {
+                    path.setAttribute('d', d);
+                }
+            };
+
+            const clearPaths = () => {
+                pipeIds.forEach((id) => setPath(id, 'M 0 0 H 0'));
+            };
+
+            const buildHorizontalPath = (fromX, toX, y) => `M ${fromX} ${y} H ${toX}`;
+
+            const syncPipelines = () => {
+                syncFrame = 0;
+                const layoutRect = grid.getBoundingClientRect();
+                if (!layoutRect.width || !layoutRect.height) {
+                    clearPaths();
+                    return;
+                }
+
+                svg.setAttribute('viewBox', `0 0 ${layoutRect.width} ${layoutRect.height}`);
+
+                if (window.innerWidth <= 1024) {
+                    clearPaths();
+                    return;
+                }
+
+                const engineRect = engineCard.getBoundingClientRect();
+                if (!engineRect.width || !engineRect.height) {
+                    clearPaths();
+                    return;
+                }
+
+                const toLocal = (rect) => ({
+                    left: rect.left - layoutRect.left,
+                    right: rect.right - layoutRect.left,
+                    top: rect.top - layoutRect.top,
+                    bottom: rect.bottom - layoutRect.top,
+                    centerY: rect.top - layoutRect.top + (rect.height / 2),
+                });
+
+                const engineLocal = toLocal(engineRect);
+                const pipeGlobalShift = 2;
+                const leftEnd = engineLocal.left - 18 + pipeGlobalShift;
+                const rightStart = engineLocal.right + 18 + pipeGlobalShift;
+                const rightPipeShift = -9;
+
+                ARCHITECTURE_ROW_KEYS.forEach((key, index) => {
+                    const sourceEl = architectureSourceRefs.current[index];
+                    const targetEl = architectureTargetRefs.current[index];
+                    if (!sourceEl || !targetEl) {
+                        setPath(`left-${key}`, 'M 0 0 H 0');
+                        setPath(`right-${key}`, 'M 0 0 H 0');
+                        setPath(`flow-${key}`, 'M 0 0 H 0');
+                        return;
+                    }
+
+                    const sourceLocal = toLocal(sourceEl.getBoundingClientRect());
+                    const targetLocal = toLocal(targetEl.getBoundingClientRect());
+                    setPath(`left-${key}`, buildHorizontalPath(sourceLocal.right + 6 + pipeGlobalShift, leftEnd, sourceLocal.centerY));
+                    setPath(
+                        `right-${key}`,
+                        buildHorizontalPath(
+                            rightStart + rightPipeShift,
+                            targetLocal.left - 6 + rightPipeShift + pipeGlobalShift,
+                            targetLocal.centerY,
+                        ),
+                    );
+
+                    const laneY = ((sourceLocal.centerY + targetLocal.centerY) / 2).toFixed(2);
+                    const sourceRight = (sourceLocal.right + 6 + pipeGlobalShift).toFixed(2);
+                    const targetLeft = (targetLocal.left - 6 + rightPipeShift + pipeGlobalShift).toFixed(2);
+                    // Keep the motion path continuous so a single pulse can pass behind the center card.
+                    setPath(`flow-${key}`, buildHorizontalPath(sourceRight, targetLeft, laneY));
+                });
+            };
+
+            const requestSync = () => {
+                if (syncFrame) {
+                    window.cancelAnimationFrame(syncFrame);
+                }
+                syncFrame = window.requestAnimationFrame(syncPipelines);
+            };
+
+            const observedElements = [
+                grid,
+                engineCard,
+                ...architectureSourceRefs.current,
+                ...architectureTargetRefs.current,
+            ].filter(Boolean);
+
+            if (window.ResizeObserver) {
+                resizeObserver = new ResizeObserver(requestSync);
+                observedElements.forEach((element) => resizeObserver.observe(element));
+            }
+
+            clearPaths();
+            requestSync();
+            window.addEventListener('resize', requestSync);
+
+            return () => {
+                if (syncFrame) {
+                    window.cancelAnimationFrame(syncFrame);
+                }
+                window.removeEventListener('resize', requestSync);
+                if (resizeObserver) {
+                    resizeObserver.disconnect();
+                }
+            };
+        };
+
+        const startArchitectureHover = () => {
+            const board = architectureBoardRef.current;
+            const engine = architectureEngineRef.current;
+            const engineCard = engine?.querySelector('.st-home-architecture-engine-box');
+            if (!board || !engine || !engineCard) {
+                return () => {};
+            }
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const resetBoard = () => {
+                board.classList.remove('is-hovering');
+                board.style.setProperty('--tilt-x', '0deg');
+                board.style.setProperty('--tilt-y', '0deg');
+                board.style.setProperty('--spot-x', '50%');
+                board.style.setProperty('--spot-y', '50%');
+            };
+
+            const resetEngine = () => {
+                engine.classList.remove('is-hovering');
+                engineCard.style.setProperty('--engine-shift-x', '0px');
+                engineCard.style.setProperty('--engine-shift-y', '0px');
+                engineCard.style.setProperty('--engine-spot-x', '50%');
+                engineCard.style.setProperty('--engine-spot-y', '12%');
+            };
+
+            if (reduceMotion) {
+                resetBoard();
+                resetEngine();
+                return () => {};
+            }
+
+            const handleBoardMove = (event) => {
+                const rect = board.getBoundingClientRect();
+                const px = (event.clientX - rect.left) / rect.width;
+                const py = (event.clientY - rect.top) / rect.height;
+                const tiltY = (px - 0.5) * 7.5;
+                const tiltX = (0.5 - py) * 6.5;
+
+                board.classList.add('is-hovering');
+                board.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+                board.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+                board.style.setProperty('--spot-x', `${(px * 100).toFixed(2)}%`);
+                board.style.setProperty('--spot-y', `${(py * 100).toFixed(2)}%`);
+            };
+
+            const handleEngineMove = (event) => {
+                const rect = engine.getBoundingClientRect();
+                const px = (event.clientX - rect.left) / rect.width;
+                const py = (event.clientY - rect.top) / rect.height;
+                const shiftX = (px - 0.5) * 12;
+                const shiftY = (py - 0.5) * 10;
+
+                engine.classList.add('is-hovering');
+                engineCard.style.setProperty('--engine-shift-x', `${shiftX.toFixed(2)}px`);
+                engineCard.style.setProperty('--engine-shift-y', `${shiftY.toFixed(2)}px`);
+                engineCard.style.setProperty('--engine-spot-x', `${(px * 100).toFixed(2)}%`);
+                engineCard.style.setProperty('--engine-spot-y', `${(py * 100).toFixed(2)}%`);
+            };
+
+            board.addEventListener('pointermove', handleBoardMove);
+            board.addEventListener('pointerleave', resetBoard);
+            engine.addEventListener('pointermove', handleEngineMove);
+            engine.addEventListener('pointerleave', resetEngine);
+            resetBoard();
+            resetEngine();
+
+            return () => {
+                board.removeEventListener('pointermove', handleBoardMove);
+                board.removeEventListener('pointerleave', resetBoard);
+                engine.removeEventListener('pointermove', handleEngineMove);
+                engine.removeEventListener('pointerleave', resetEngine);
+                resetBoard();
+                resetEngine();
+            };
+        };
+
         const stopHeroWarpCanvas = startWarpCanvas(heroWarpCanvasRef, {
             alphaMultiplier: 0.48,
             lineCount: 84,
@@ -1003,6 +1211,8 @@ export default function Home() {
         });
         const stopCtaWarpCanvas = startWarpCanvas(ctaWarpCanvasRef);
         const stopFlowCanvas = startFlowCanvas();
+        const stopArchitecturePipelines = startArchitecturePipelines();
+        const stopArchitectureHover = startArchitectureHover();
 
         return () => {
             document.body.classList.remove('seatunnel-homepage-page');
@@ -1016,6 +1226,8 @@ export default function Home() {
             stopHeroWarpCanvas();
             stopCtaWarpCanvas();
             stopFlowCanvas();
+            stopArchitecturePipelines();
+            stopArchitectureHover();
             visibilityHandlers.forEach((cleanup) => cleanup());
         };
     }, [isBrowser]);
@@ -1123,146 +1335,184 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="st-home-hero-visual">
-                    <div className="st-home-pipeline-visual">
-                        <div className="st-home-pipeline-column">
-                            <div className="st-home-pipeline-label">Sources</div>
-                            {HERO_SOURCES.map((item) => (
-                                <div key={item.name} className="st-home-pipeline-item">
-                                    <span className={`st-home-pipeline-dot st-home-dot-${item.colorClass}`}></span>
-                                    <span>{item.name}</span>
-                                </div>
-                            ))}
-                            <div className="st-home-pipeline-item st-home-pipeline-item-muted">+195 more sources</div>
-                        </div>
-
-                        <div className="st-home-pipeline-tunnel">
-                            <div className="st-home-pipeline-tunnel-label">In</div>
-                            <div className="st-home-tunnel-line"></div>
-                            <div className="st-home-tunnel-line"></div>
-                            <div className="st-home-tunnel-line"></div>
-                        </div>
-
-                        <div className="st-home-pipeline-center">
-                            <div className="st-home-pipeline-tunnel-label st-home-pipeline-center-label">SeaTunnel</div>
-                            <div className="st-home-pipeline-center-icon">
-                                <img src={logoPath} alt="SeaTunnel" />
-                            </div>
-                            <div className="st-home-pipeline-center-name">EtLT / Route</div>
-                        </div>
-
-                        <div className="st-home-pipeline-tunnel">
-                            <div className="st-home-pipeline-tunnel-label">Out</div>
-                            <div className="st-home-tunnel-line"></div>
-                            <div className="st-home-tunnel-line"></div>
-                            <div className="st-home-tunnel-line"></div>
-                        </div>
-
-                        <div className="st-home-pipeline-column">
-                            <div className="st-home-pipeline-label">Sinks</div>
-                            {HERO_SINKS.map((item) => (
-                                <div key={item.name} className="st-home-pipeline-item">
-                                    <span className={`st-home-pipeline-dot st-home-dot-${item.colorClass}`}></span>
-                                    <span>{item.name}</span>
-                                </div>
-                            ))}
-                            <div className="st-home-pipeline-item st-home-pipeline-item-muted">+195 more sinks</div>
-                        </div>
-                    </div>
-                </div>
-
                 <div className="st-home-hero-fade"></div>
             </section>
 
-            <div className="st-home-stats-divider">
-                <canvas ref={flowCanvasRef} className="st-home-flow-canvas"></canvas>
-            </div>
-
-            <section className="st-home-stats">
-                {content.stats.map((stat) => (
-                    <div key={stat.label} className="st-home-stat st-home-rv">
-                        <div className="st-home-stat-number">{stat.value}</div>
-                        <div className="st-home-stat-label">{stat.label}</div>
-                    </div>
-                ))}
-            </section>
-
-            <section className="st-home-section st-home-architecture">
+            <section className="st-home-stats-band">
                 <div className="st-home-container">
-                    <p className="st-home-eyebrow st-home-rv">{content.architecture.eyebrow}</p>
-                    <h2 className="st-home-section-title st-home-rv">
-                        {content.architecture.titleLead} <span className="st-home-gradient st-home-meteor-line">{content.architecture.titleAccent}</span>
-                    </h2>
-                    <p className="st-home-section-lead st-home-rv">{content.architecture.lead}</p>
-
-                    <div className="st-home-architecture-header st-home-rv">
-                        <div>{content.architecture.headers.sources}</div>
-                        <div></div>
-                        <div className="st-home-architecture-header-center">{content.architecture.headers.engine}</div>
-                        <div></div>
-                        <div className="st-home-architecture-header-right">{content.architecture.headers.targets}</div>
+                    <div className="st-home-stats-divider">
+                        <canvas ref={flowCanvasRef} className="st-home-flow-canvas"></canvas>
                     </div>
 
-                    <div className="st-home-architecture-grid st-home-rv">
-                        <div className="st-home-architecture-engine">
-                            <div className="st-home-architecture-engine-box">
-                                <img src={logoPath} alt="SeaTunnel" />
-                                <div className="st-home-architecture-engine-name">SeaTunnel</div>
-                                <div className="st-home-architecture-engine-word">
-                                    <span className="st-home-architecture-engine-e">E</span>
-                                    <span className="st-home-architecture-engine-t-small">t</span>
-                                    <span className="st-home-architecture-engine-l">L</span>
-                                    <span className="st-home-architecture-engine-t">T</span>
-                                </div>
-                                <div className="st-home-architecture-engine-badges">
-                                    {content.architecture.engineBadges.map((badge) => (
-                                        <span key={badge}>{badge}</span>
-                                    ))}
-                                </div>
+                    <div className="st-home-stats st-home-rv">
+                        {content.stats.map((stat) => (
+                            <div key={stat.label} className="st-home-stat">
+                                <div className="st-home-stat-number">{stat.value}</div>
+                                <div className="st-home-stat-label">{stat.label}</div>
                             </div>
-                        </div>
-
-                        {content.architecture.rows.map((row) => (
-                            <React.Fragment key={`${row.source.title}-${row.target.title}`}>
-                                <div className="st-home-architecture-card">
-                                    <div className="st-home-architecture-card-head">
-                                        <span className={`st-home-architecture-card-dot st-home-dot-${row.source.dotClass}`}></span>
-                                        <span>{row.source.title}</span>
-                                        <span className="st-home-architecture-card-tag">{row.source.tag}</span>
-                                    </div>
-                                    <div className="st-home-architecture-chip-list">
-                                        {row.source.chips.map((chip) => (
-                                            <span key={chip} className="st-home-architecture-chip">{chip}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="st-home-architecture-connector">
-                                    <div className="st-home-architecture-line"></div>
-                                    <span>&gt;</span>
-                                </div>
-                                <div className="st-home-architecture-connector st-home-architecture-connector-right">
-                                    <div className="st-home-architecture-line"></div>
-                                    <span>&gt;</span>
-                                </div>
-                                <div className="st-home-architecture-card">
-                                    <div className="st-home-architecture-card-head">
-                                        <span className={`st-home-architecture-card-dot st-home-dot-${row.target.dotClass}`}></span>
-                                        <span>{row.target.title}</span>
-                                        <span className="st-home-architecture-card-tag">{row.target.tag}</span>
-                                    </div>
-                                    <div className="st-home-architecture-chip-list">
-                                        {row.target.chips.map((chip) => (
-                                            <span key={chip} className="st-home-architecture-chip">{chip}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </React.Fragment>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="st-home-section">
+            <section className="st-home-section st-home-architecture">
+                <div className="st-home-container st-home-container-wide">
+                    <p className="st-home-eyebrow st-home-rv">{content.architecture.eyebrow}</p>
+                    <h2 className="st-home-section-title st-home-rv">
+                        {content.architecture.titleLead} <span className="st-home-gradient">{content.architecture.titleAccent}</span>
+                    </h2>
+                    <p className="st-home-section-lead st-home-rv">{content.architecture.lead}</p>
+
+                    <div className="st-home-architecture-board st-home-rv" ref={architectureBoardRef}>
+                        <div className="st-home-architecture-board-inner">
+                            <div className="st-home-architecture-header">
+                                <div className="st-home-architecture-stage">
+                                    <span className="st-home-architecture-stage-index">01</span>
+                                    <span className="st-home-architecture-stage-label">
+                                        {stripArchitectureStageIndex(content.architecture.headers.sources)}
+                                    </span>
+                                </div>
+                                <div className="st-home-architecture-stage st-home-architecture-stage-center">
+                                    <span className="st-home-architecture-stage-index">02</span>
+                                    <span className="st-home-architecture-stage-label st-home-architecture-stage-label-engine">
+                                        {stripArchitectureStageIndex(content.architecture.headers.engine)}
+                                    </span>
+                                </div>
+                                <div className="st-home-architecture-stage st-home-architecture-stage-right">
+                                    <span className="st-home-architecture-stage-index">03</span>
+                                    <span className="st-home-architecture-stage-label">
+                                        {stripArchitectureStageIndex(content.architecture.headers.targets)}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="st-home-architecture-grid" ref={architectureGridRef}>
+                                <div className="st-home-architecture-pipelines" aria-hidden="true">
+                                    <svg ref={architectureSvgRef} preserveAspectRatio="none" role="presentation">
+                                        <defs>
+                                            <path id="left-top"></path>
+                                            <path id="left-mid"></path>
+                                            <path id="left-bot"></path>
+                                            <path id="right-top"></path>
+                                            <path id="right-mid"></path>
+                                            <path id="right-bot"></path>
+                                            <path id="flow-top"></path>
+                                            <path id="flow-mid"></path>
+                                            <path id="flow-bot"></path>
+                                        </defs>
+
+                                        {ARCHITECTURE_ROW_KEYS.map((key) => (
+                                            <React.Fragment key={`pipe-left-${key}`}>
+                                                <use href={`#left-${key}`} className="st-home-architecture-pipe-base"></use>
+                                                <use href={`#left-${key}`} className="st-home-architecture-pipe-edge"></use>
+                                                <use href={`#left-${key}`} className="st-home-architecture-pipe-core"></use>
+                                            </React.Fragment>
+                                        ))}
+
+                                        {ARCHITECTURE_ROW_KEYS.map((key) => (
+                                            <React.Fragment key={`pipe-right-${key}`}>
+                                                <use href={`#right-${key}`} className="st-home-architecture-pipe-base"></use>
+                                                <use href={`#right-${key}`} className="st-home-architecture-pipe-edge"></use>
+                                                <use href={`#right-${key}`} className="st-home-architecture-pipe-core"></use>
+                                            </React.Fragment>
+                                        ))}
+
+                                        {ARCHITECTURE_ROW_KEYS.map((key, index) => {
+                                            const duration = `${6.5 + (index * 0.3)}s`;
+                                            const begin = `${[-1.45, -4.15, -5.7][index]}s`;
+                                            return (
+                                                <React.Fragment key={`pulse-${key}`}>
+                                                    <circle r="7" className="st-home-architecture-pulse st-home-architecture-pulse-ring">
+                                                        <animateMotion dur={duration} begin={begin} repeatCount="indefinite">
+                                                            <mpath href={`#flow-${key}`}></mpath>
+                                                        </animateMotion>
+                                                    </circle>
+                                                    <circle r="4" className="st-home-architecture-pulse st-home-architecture-pulse-core">
+                                                        <animateMotion dur={duration} begin={begin} repeatCount="indefinite">
+                                                            <mpath href={`#flow-${key}`}></mpath>
+                                                        </animateMotion>
+                                                    </circle>
+                                                </React.Fragment>
+                                            );
+                                        })}
+                                    </svg>
+                                </div>
+
+                                <div className="st-home-architecture-column">
+                                    {content.architecture.rows.map((row, index) => (
+                                        <div
+                                            key={`source-${row.source.title}`}
+                                            className="st-home-architecture-card"
+                                            data-pipe-source={ARCHITECTURE_ROW_KEYS[index]}
+                                            ref={(node) => {
+                                                architectureSourceRefs.current[index] = node;
+                                            }}>
+                                            <div className="st-home-architecture-card-head">
+                                                <span className={`st-home-architecture-card-dot st-home-dot-${row.source.dotClass}`}></span>
+                                                <span>{row.source.title}</span>
+                                                <span className="st-home-architecture-card-tag">{row.source.tag}</span>
+                                            </div>
+                                            <div className="st-home-architecture-chip-list">
+                                                {row.source.chips.map((chip) => (
+                                                    <span key={chip} className="st-home-architecture-chip">{chip}</span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="st-home-architecture-engine" ref={architectureEngineRef}>
+                                    <div className="st-home-architecture-engine-box">
+                                        <div className="st-home-architecture-engine-logo">
+                                            <img src={logoPath} alt="SeaTunnel" />
+                                        </div>
+                                        <div className="st-home-architecture-engine-name">SeaTunnel</div>
+                                        <div className="st-home-architecture-engine-word">
+                                            <span className="st-home-architecture-engine-e">E</span>
+                                            <span className="st-home-architecture-engine-t-small">t</span>
+                                            <span className="st-home-architecture-engine-l">L</span>
+                                            <span className="st-home-architecture-engine-t">T</span>
+                                        </div>
+                                        <div className="st-home-architecture-engine-pillars">
+                                            {content.architecture.enginePillars.map((item) => (
+                                                <div key={item.label} className="st-home-architecture-engine-pillar">
+                                                    <strong>{item.label}</strong>
+                                                    <span>{item.value}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="st-home-architecture-column">
+                                    {content.architecture.rows.map((row, index) => (
+                                        <div
+                                            key={`target-${row.target.title}`}
+                                            className="st-home-architecture-card"
+                                            data-pipe-target={ARCHITECTURE_ROW_KEYS[index]}
+                                            ref={(node) => {
+                                                architectureTargetRefs.current[index] = node;
+                                            }}>
+                                            <div className="st-home-architecture-card-head">
+                                                <span className={`st-home-architecture-card-dot st-home-dot-${row.target.dotClass}`}></span>
+                                                <span>{row.target.title}</span>
+                                                <span className="st-home-architecture-card-tag">{row.target.tag}</span>
+                                            </div>
+                                            <div className="st-home-architecture-chip-list">
+                                                {row.target.chips.map((chip) => (
+                                                    <span key={chip} className="st-home-architecture-chip">{chip}</span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="st-home-section st-home-features-section">
                 <div className="st-home-container">
                     <p className="st-home-eyebrow st-home-rv">{content.features.eyebrow}</p>
                     <h2 className="st-home-section-title st-home-rv">{content.features.title}</h2>
@@ -1270,7 +1520,6 @@ export default function Home() {
 
                     <div className="st-home-feature-grid">
                         <article className="st-home-feature-card st-home-feature-card-wide st-home-rv" onMouseMove={handleFeatureGlow}>
-                            <div className="st-home-feature-accent"></div>
                             <div className="st-home-feature-copy st-home-feature-copy-wide">
                                 <div className="st-home-feature-number">{content.features.schema.number}</div>
                                 <div className={`st-home-feature-icon st-home-feature-icon-${content.features.schema.accent}`}>
@@ -1285,15 +1534,23 @@ export default function Home() {
                         {content.features.cards.map((card) => (
                             <article
                                 key={card.number}
-                                className="st-home-feature-card st-home-rv"
+                                className={`st-home-feature-card st-home-rv${card.layout === 'wide' ? ' st-home-feature-card-span-2' : ''}`}
                                 onMouseMove={handleFeatureGlow}>
-                                <div className="st-home-feature-accent"></div>
                                 <div className="st-home-feature-number">{card.number}</div>
                                 <div className={`st-home-feature-icon st-home-feature-icon-${card.accent}`}>
                                     <FeatureIcon icon={card.icon} />
                                 </div>
                                 <h3 className="st-home-feature-title">{card.title}</h3>
                                 <p className="st-home-feature-description">{card.description}</p>
+                                {card.highlights?.length ? (
+                                    <div className="st-home-feature-highlights">
+                                        {card.highlights.map((item) => (
+                                            <span key={item} className="st-home-feature-highlight">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                ) : null}
                             </article>
                         ))}
                     </div>
@@ -1335,38 +1592,6 @@ export default function Home() {
                     </div>
 
                     <div className="st-home-connector-more st-home-rv">{content.connectors.more}</div>
-                </div>
-            </section>
-
-            <section className="st-home-section">
-                <div className="st-home-container">
-                    <p className="st-home-eyebrow st-home-rv">{content.flow.eyebrow}</p>
-                    <h2 className="st-home-section-title st-home-rv">
-                        {content.flow.titleLead}<br />
-                        <span className="st-home-gradient st-home-meteor-line">{content.flow.titleAccent}</span>
-                    </h2>
-                    <p className="st-home-section-lead st-home-rv">{content.flow.lead}</p>
-
-                    <div className="st-home-flow-grid st-home-rv">
-                        {content.flow.steps.map((step, index) => (
-                            <React.Fragment key={step.label}>
-                                <article className={`st-home-flow-card${step.highlight ? ' st-home-flow-card-highlight' : ''}`}>
-                                    <div className="st-home-flow-card-label">{step.label}</div>
-                                    <h3 className="st-home-flow-card-title">{step.title}</h3>
-                                    <div className="st-home-flow-card-tags">
-                                        {step.tags.map((tag) => (
-                                            <span key={tag} className={`st-home-flow-tag${step.highlight ? ' st-home-flow-tag-highlight' : ''}`}>{tag}</span>
-                                        ))}
-                                    </div>
-                                </article>
-                                {index < content.flow.steps.length - 1 ? (
-                                    <div className="st-home-flow-arrow" aria-hidden="true">
-                                        <ArrowRightIcon />
-                                    </div>
-                                ) : null}
-                            </React.Fragment>
-                        ))}
-                    </div>
                 </div>
             </section>
 
@@ -1413,7 +1638,7 @@ export default function Home() {
                 <div className="st-home-cta-inner st-home-rv">
                     <h2 className="st-home-cta-title">
                         {content.cta.titleLead}<br />
-                        <span className="st-home-gradient st-home-meteor-line">{content.cta.titleAccent}</span>
+                        <span className="st-home-gradient">{content.cta.titleAccent}</span>
                     </h2>
                     <p className="st-home-cta-subtitle">{content.cta.lead}</p>
                     <div className="st-home-cta-actions">
