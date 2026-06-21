@@ -1040,12 +1040,13 @@ html[data-theme='light'] .st-home {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.72;
+  opacity: 0.48;
   background:
-    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(117, 173, 255, 0.16), transparent 24%),
-    linear-gradient(120deg, transparent 0%, rgba(101, 208, 199, 0.08) 46%, transparent 54%),
-    linear-gradient(180deg, transparent 0%, rgba(98, 142, 226, 0.05) 100%);
-  transform: translateX(-55%);
+    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(117, 173, 255, 0.14), transparent 18%),
+    radial-gradient(circle at calc(var(--spot-x) - 8%) calc(var(--spot-y) + 4%), rgba(96, 208, 199, 0.1), transparent 24%),
+    linear-gradient(180deg, transparent 0%, rgba(98, 142, 226, 0.035) 100%);
+  filter: blur(34px);
+  transform: translateX(-28%);
   animation: st-home-board-shimmer 8s linear infinite;
   transition: opacity 0.3s ease;
 }
@@ -1133,11 +1134,11 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-grid {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 26rem) 18rem minmax(0, 26rem);
+  grid-template-columns: minmax(0, 23.25rem) 15.75rem minmax(0, 23.25rem);
   justify-content: space-between;
   align-items: stretch;
-  gap: 1.25rem;
-  min-height: 37.5rem;
+  gap: 1.75rem;
+  min-height: 34.5rem;
   isolation: isolate;
 }
 
@@ -1150,7 +1151,7 @@ html[data-theme='light'] .st-home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.125rem;
+  gap: 0.95rem;
   position: relative;
   z-index: 2;
 }
@@ -1238,8 +1239,8 @@ html[data-theme='light'] .st-home {
   --engine-spot-y: 12%;
   position: relative;
   width: 100%;
-  min-height: 27.5rem;
-  padding: 1.75rem 1.5rem 1.625rem;
+  min-height: 24.5rem;
+  padding: 1.375rem 1.125rem 1.25rem;
   border-radius: 2.125rem;
   border: 1px solid rgba(105, 161, 235, 0.2);
   background: linear-gradient(180deg, rgba(14, 24, 40, 0.95), rgba(8, 15, 28, 0.99));
@@ -1277,7 +1278,7 @@ html[data-theme='light'] .st-home {
   position: absolute;
   left: 16%;
   right: 16%;
-  top: 8.875rem;
+  top: 7.9rem;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(84, 162, 235, 0.12), transparent);
   pointer-events: none;
@@ -1293,10 +1294,10 @@ html[data-theme='light'] .st-home {
 }
 
 .st-home-architecture-engine-logo {
-  width: 4.125rem;
-  height: 4.125rem;
-  margin: 0 auto 1rem;
-  padding: 0.6875rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 0.875rem;
+  padding: 0.6rem;
   border-radius: 1.25rem;
   background: linear-gradient(180deg, rgba(18, 31, 53, 0.96), rgba(13, 23, 41, 0.94));
   box-shadow:
@@ -1324,9 +1325,9 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-engine-name {
   position: relative;
   z-index: 1;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.625rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #eef4ff;
@@ -1336,42 +1337,42 @@ html[data-theme='light'] .st-home {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.125rem;
+  gap: 0.4rem;
+  margin-bottom: 0.95rem;
   font-family: var(--ifm-font-family-monospace);
   font-weight: 800;
 }
 
 .st-home-architecture-engine-e {
   color: #42b8ec;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-t-small {
   color: #61d0c7;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
   font-weight: 800;
 }
 
 .st-home-architecture-engine-l {
   color: #75a2eb;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-t {
   color: #8fd4f6;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-pillars {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 0.625rem;
+  margin-top: 0.625rem;
 }
 
 .st-home-architecture-engine-pillar {
   position: relative;
-  padding: 0.875rem 0.875rem 0.875rem 1.125rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.95rem;
   border-radius: 1.125rem;
   background: rgba(15, 28, 49, 0.76);
   border: 1px solid rgba(98, 150, 230, 0.16);
@@ -1387,7 +1388,7 @@ html[data-theme='light'] .st-home {
 
 .st-home-architecture-engine-pillar strong {
   display: block;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.3rem;
   color: #9fc4ff;
   font-size: 0.75rem;
   font-weight: 800;
@@ -1399,8 +1400,8 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-engine-pillar span {
   display: block;
   color: rgba(231, 239, 255, 0.84);
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.45;
   font-weight: 700;
 }
 
@@ -1434,8 +1435,8 @@ html[data-theme='light'] .st-home {
 
 .st-home-architecture-card {
   position: relative;
-  min-height: 9.125rem;
-  padding: 1.375rem 1.5rem 1.25rem;
+  min-height: 8rem;
+  padding: 1.125rem 1.2rem 1.05rem;
   border-radius: 1.5rem;
   background: linear-gradient(180deg, rgba(12, 20, 35, 0.98), rgba(9, 15, 28, 0.96));
   border: 1px solid rgba(94, 140, 210, 0.16);
@@ -1476,7 +1477,7 @@ html[data-theme='light'] .st-home {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.125rem;
+  margin-bottom: 0.9rem;
 }
 
 .st-home-architecture-card-dot {
@@ -1492,7 +1493,7 @@ html[data-theme='light'] .st-home {
   gap: 0.625rem;
   color: #dce8ff;
   font-family: var(--ifm-font-family-monospace);
-  font-size: 0.8125rem;
+  font-size: 0.77rem;
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1502,7 +1503,7 @@ html[data-theme='light'] .st-home {
   margin-left: auto;
   color: rgba(161, 189, 235, 0.78);
   font-family: var(--ifm-font-family-monospace);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1512,16 +1513,16 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-chip-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
+  gap: 0.5rem;
 }
 
 .st-home-architecture-chip {
-  padding: 0.625rem 0.875rem;
+  padding: 0.56rem 0.78rem;
   border: 1px solid rgba(96, 136, 198, 0.18);
   border-radius: 0.875rem;
   background: linear-gradient(180deg, rgba(17, 28, 47, 0.92), rgba(13, 21, 37, 0.88));
   color: #c8dcff;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1;
   font-weight: 700;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
@@ -1529,10 +1530,21 @@ html[data-theme='light'] .st-home {
 
 @keyframes st-home-board-shimmer {
   0% {
-    transform: translateX(-58%);
+    transform: translateX(-24%);
+    opacity: 0.04;
+  }
+  18% {
+    opacity: 0.16;
+  }
+  52% {
+    opacity: 0.26;
+  }
+  82% {
+    opacity: 0.12;
   }
   100% {
-    transform: translateX(72%);
+    transform: translateX(24%);
+    opacity: 0.03;
   }
 }
 
@@ -2236,11 +2248,12 @@ html[data-theme='light'] .st-home .st-home-architecture-board::before {
 }
 
 html[data-theme='light'] .st-home .st-home-architecture-board::after {
-  opacity: 0.86;
+  opacity: 0.46;
   background:
-    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(255, 255, 255, 0.48), transparent 24%),
-    linear-gradient(120deg, transparent 0%, rgba(103, 200, 193, 0.12) 46%, transparent 52%),
-    linear-gradient(180deg, transparent 0%, rgba(127, 163, 236, 0.03) 100%);
+    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(255, 255, 255, 0.32), transparent 18%),
+    radial-gradient(circle at calc(var(--spot-x) - 8%) calc(var(--spot-y) + 4%), rgba(103, 200, 193, 0.08), transparent 24%),
+    linear-gradient(180deg, transparent 0%, rgba(127, 163, 236, 0.02) 100%);
+  filter: blur(34px);
 }
 
 html[data-theme='light'] .st-home .st-home-architecture-board.is-hovering {
