@@ -1,0 +1,137 @@
+[
+    {
+        "icon": "brand-icons/vipshop.png",
+        "label": "Vipshop",
+        "alt": "Vipshop logo"
+    },
+    {
+        "icon": "brand-icons/kidswant.png",
+        "label": "Kidswant",
+        "alt": "Kidswant logo"
+    },
+    {
+        "icon": "brand-icons/mafengwo.png",
+        "label": "Mafengwo",
+        "alt": "Mafengwo logo"
+    },
+    {
+        "icon": "brand-icons/zhongan.png",
+        "label": "ZhongAn",
+        "alt": "ZhongAn Insurance logo",
+        "title": "ZhongAn Insurance"
+    },
+    {
+        "icon": "brand-icons/asiainfo.png",
+        "label": "AsiaInfo",
+        "alt": "AsiaInfo logo"
+    },
+    {
+        "icon": "brand-icons/inke.png",
+        "label": "Inke",
+        "alt": "Inke logo"
+    },
+    {
+        "icon": "brand-icons/china-telecom-ehealth.png",
+        "label": "China Telecom E-health",
+        "alt": "China Telecom E-health Technology logo",
+        "title": "China Telecom E-health Technology"
+    },
+    {
+        "icon": "brand-icons/finvolution.png",
+        "label": "FinVolution",
+        "alt": "FinVolution Group logo",
+        "title": "FinVolution Group"
+    },
+    {
+        "icon": "brand-icons/china-resources-land.png",
+        "label": "China Resources Land",
+        "alt": "China Resources Land logo"
+    },
+    {
+        "icon": "brand-icons/gold-hongye-paper.png",
+        "label": "Gold Hongye Paper",
+        "alt": "Gold Hongye Paper Group logo",
+        "title": "Qingfeng / Gold Hongye Paper Group"
+    },
+    {
+        "icon": "brand-icons/ctyun.png",
+        "label": "CTYun",
+        "alt": "CTYun logo",
+        "title": "Tianyi Cloud / eSurfing Cloud / CTYun"
+    },
+    {
+        "icon": "brand-icons/joyadata.png",
+        "label": "JoyaData",
+        "alt": "JoyaData logo",
+        "title": "Zhaoyuan DataTech / JoyaData"
+    },
+    {
+        "icon": "brand-icons/tongcheng-travel.png",
+        "label": "Tongcheng Travel",
+        "alt": "Tongcheng Travel logo"
+    },
+    {
+        "icon": "brand-icons/supcon.png",
+        "label": "SUPCON",
+        "alt": "SUPCON Technology logo",
+        "title": "SUPCON Technology"
+    },
+    {
+        "icon": "brand-icons/hopegoo.png",
+        "label": "HOPEGOO",
+        "alt": "HOPEGOO logo"
+    },
+    {
+        "icon": "brand-icons/weibo.png",
+        "label": "Weibo",
+        "alt": "Weibo logo"
+    },
+    {
+        "icon": "brand-icons/sina.png",
+        "label": "Sina",
+        "alt": "Sina logo"
+    },
+    {
+        "icon": "brand-icons/sogou.png",
+        "label": "Sogou",
+        "alt": "Sogou logo"
+    },
+    {
+        "icon": "brand-icons/qutoutiao.png",
+        "label": "Qutoutiao",
+        "alt": "Qutoutiao logo"
+    },
+    {
+        "icon": "brand-icons/yixia.png",
+        "label": "Yixia Technology",
+        "alt": "Yixia Technology logo",
+        "title": "Yixia Technology / Yizhibo"
+    },
+    {
+        "icon": "brand-icons/yonghui.png",
+        "label": "Yonghui",
+        "alt": "Yonghui Superstores logo",
+        "title": "Yonghui Superstores / Yonghui Yunchuang"
+    },
+    {
+        "icon": "brand-icons/shuidichou.png",
+        "label": "Shuidichou",
+        "alt": "Shuidichou logo"
+    },
+    {
+        "icon": "brand-icons/thinkingdata.png",
+        "label": "ThinkingData",
+        "alt": "ThinkingData logo"
+    },
+    {
+        "icon": "brand-icons/shuhai.png",
+        "label": "Shuhai Supply Chain",
+        "alt": "Shuhai Supply Chain logo"
+    },
+    {
+        "icon": "brand-icons/cetc-28th.png",
+        "label": "CETC 28th Institute",
+        "alt": "CETC 28th Research Institute logo",
+        "title": "CETC 28th Research Institute"
+    }
+]
