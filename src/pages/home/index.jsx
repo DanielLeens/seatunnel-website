@@ -1006,9 +1006,15 @@ export default function Home() {
                 'left-top',
                 'left-mid',
                 'left-bot',
+                'left-core-top',
+                'left-core-mid',
+                'left-core-bot',
                 'right-top',
                 'right-mid',
                 'right-bot',
+                'right-core-top',
+                'right-core-mid',
+                'right-core-bot',
                 'flow-top',
                 'flow-mid',
                 'flow-bot',
@@ -1026,6 +1032,16 @@ export default function Home() {
             };
 
             const buildHorizontalPath = (fromX, toX, y) => `M ${fromX} ${y} H ${toX}`;
+
+            const buildCenteredConnectorPath = (gapStart, gapEnd, y, ratio, minLength, maxLength) => {
+                const availableWidth = gapEnd - gapStart;
+                if (availableWidth <= 0) {
+                    return 'M 0 0 H 0';
+                }
+                const connectorLength = Math.min(maxLength, Math.max(minLength, availableWidth * ratio));
+                const connectorOffset = (availableWidth - connectorLength) / 2;
+                return buildHorizontalPath(gapStart + connectorOffset, gapEnd - connectorOffset, y);
+            };
 
             const syncPipelines = () => {
                 syncFrame = 0;
@@ -1058,9 +1074,6 @@ export default function Home() {
 
                 const engineLocal = toLocal(engineRect);
                 const pipeGlobalShift = 2;
-                const leftEnd = engineLocal.left - 18 + pipeGlobalShift;
-                const rightStart = engineLocal.right + 18 + pipeGlobalShift;
-                const rightPipeShift = -9;
 
                 ARCHITECTURE_ROW_KEYS.forEach((key, index) => {
                     const sourceEl = architectureSourceRefs.current[index];
@@ -1074,19 +1087,44 @@ export default function Home() {
 
                     const sourceLocal = toLocal(sourceEl.getBoundingClientRect());
                     const targetLocal = toLocal(targetEl.getBoundingClientRect());
-                    setPath(`left-${key}`, buildHorizontalPath(sourceLocal.right + 6 + pipeGlobalShift, leftEnd, sourceLocal.centerY));
+                    const leftGapStart = sourceLocal.right + pipeGlobalShift;
+                    const leftGapEnd = engineLocal.left + pipeGlobalShift;
+                    const rightGapStart = engineLocal.right + pipeGlobalShift;
+                    const rightGapEnd = targetLocal.left + pipeGlobalShift;
+                    setPath(
+                        `left-${key}`,
+                        buildCenteredConnectorPath(
+                            leftGapStart,
+                            leftGapEnd,
+                            sourceLocal.centerY,
+                            0.52,
+                            22,
+                            28,
+                        ),
+                    );
+                    setPath(
+                        `left-core-${key}`,
+                        buildCenteredConnectorPath(leftGapStart, leftGapEnd, sourceLocal.centerY, 0.3, 12, 16),
+                    );
                     setPath(
                         `right-${key}`,
-                        buildHorizontalPath(
-                            rightStart + rightPipeShift,
-                            targetLocal.left - 6 + rightPipeShift + pipeGlobalShift,
+                        buildCenteredConnectorPath(
+                            rightGapStart,
+                            rightGapEnd,
                             targetLocal.centerY,
+                            0.52,
+                            22,
+                            28,
                         ),
+                    );
+                    setPath(
+                        `right-core-${key}`,
+                        buildCenteredConnectorPath(rightGapStart, rightGapEnd, targetLocal.centerY, 0.3, 12, 16),
                     );
 
                     const laneY = ((sourceLocal.centerY + targetLocal.centerY) / 2).toFixed(2);
                     const sourceRight = (sourceLocal.right + 6 + pipeGlobalShift).toFixed(2);
-                    const targetLeft = (targetLocal.left - 6 + rightPipeShift + pipeGlobalShift).toFixed(2);
+                    const targetLeft = (targetLocal.left - 6 + pipeGlobalShift).toFixed(2);
                     // Keep the motion path continuous so a single pulse can pass behind the center card.
                     setPath(`flow-${key}`, buildHorizontalPath(sourceRight, targetLeft, laneY));
                 });
@@ -1356,7 +1394,7 @@ export default function Home() {
             </section>
 
             <section className="st-home-section st-home-architecture">
-                <div className="st-home-container st-home-container-wide">
+                <div className="st-home-container">
                     <p className="st-home-eyebrow st-home-rv">{content.architecture.eyebrow}</p>
                     <h2 className="st-home-section-title st-home-rv">
                         {content.architecture.titleLead} <span className="st-home-gradient">{content.architecture.titleAccent}</span>
@@ -1393,9 +1431,15 @@ export default function Home() {
                                             <path id="left-top"></path>
                                             <path id="left-mid"></path>
                                             <path id="left-bot"></path>
+                                            <path id="left-core-top"></path>
+                                            <path id="left-core-mid"></path>
+                                            <path id="left-core-bot"></path>
                                             <path id="right-top"></path>
                                             <path id="right-mid"></path>
                                             <path id="right-bot"></path>
+                                            <path id="right-core-top"></path>
+                                            <path id="right-core-mid"></path>
+                                            <path id="right-core-bot"></path>
                                             <path id="flow-top"></path>
                                             <path id="flow-mid"></path>
                                             <path id="flow-bot"></path>
@@ -1404,16 +1448,14 @@ export default function Home() {
                                         {ARCHITECTURE_ROW_KEYS.map((key) => (
                                             <React.Fragment key={`pipe-left-${key}`}>
                                                 <use href={`#left-${key}`} className="st-home-architecture-pipe-base"></use>
-                                                <use href={`#left-${key}`} className="st-home-architecture-pipe-edge"></use>
-                                                <use href={`#left-${key}`} className="st-home-architecture-pipe-core"></use>
+                                                <use href={`#left-core-${key}`} className="st-home-architecture-pipe-core-centered"></use>
                                             </React.Fragment>
                                         ))}
 
                                         {ARCHITECTURE_ROW_KEYS.map((key) => (
                                             <React.Fragment key={`pipe-right-${key}`}>
                                                 <use href={`#right-${key}`} className="st-home-architecture-pipe-base"></use>
-                                                <use href={`#right-${key}`} className="st-home-architecture-pipe-edge"></use>
-                                                <use href={`#right-${key}`} className="st-home-architecture-pipe-core"></use>
+                                                <use href={`#right-core-${key}`} className="st-home-architecture-pipe-core-centered"></use>
                                             </React.Fragment>
                                         ))}
 
