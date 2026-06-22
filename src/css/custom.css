@@ -257,6 +257,13 @@ html[data-theme='dark'] .dropdown__menu .dropdown__link {
   color: var(--st-shell-text-strong);
 }
 
+.footer__copyright {
+  display: block;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .theme-doc-sidebar-container,
 .theme-doc-toc-desktop,
 .pagination-nav__link,
