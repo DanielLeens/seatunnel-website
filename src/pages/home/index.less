@@ -306,14 +306,21 @@ html[data-theme='light'] .st-home {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(135deg, #5db8e2 0%, #6f82dc 58%, #7988e1 100%);
+  background:
+    linear-gradient(90deg, #60c4f3 0%, #68b6ef 36%, #6dacec 62%, #729ee8 100%);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 30px -14px rgba(107, 118, 214, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-color: rgba(141, 198, 247, 0.22);
+  box-shadow:
+    0 18px 30px -14px rgba(73, 132, 206, 0.34),
+    0 8px 18px -16px rgba(96, 196, 243, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .st-home-btn-primary:hover {
-  box-shadow: 0 22px 36px -14px rgba(107, 118, 214, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 22px 36px -14px rgba(77, 139, 214, 0.4),
+    0 10px 22px -16px rgba(96, 196, 243, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .st-home-btn-primary::before {
@@ -322,19 +329,20 @@ html[data-theme='light'] .st-home {
   inset: 0;
   border-radius: inherit;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 42%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 44%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.07) 38%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 36%),
+    radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0) 34%);
   pointer-events: none;
 }
 
 .st-home-btn-primary::after {
   content: '';
   position: absolute;
-  inset: 1px 1px auto;
-  height: 42%;
+  inset: 1.5px;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%);
-  opacity: 0.42;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 28%, rgba(255, 255, 255, 0) 60%);
+  opacity: 0.72;
   pointer-events: none;
 }
 
@@ -1001,7 +1009,7 @@ html[data-theme='light'] .st-home {
   --lift-y: 0px;
   position: relative;
   margin-top: 3.25rem;
-  padding: 2.25rem;
+  padding: 2rem;
   border-radius: 2.5rem;
   border: 1px solid rgba(90, 150, 230, 0.18);
   background:
@@ -1038,13 +1046,11 @@ html[data-theme='light'] .st-home {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.72;
+  opacity: 0.48;
   background:
-    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(117, 173, 255, 0.16), transparent 24%),
-    linear-gradient(120deg, transparent 0%, rgba(101, 208, 199, 0.08) 46%, transparent 54%),
-    linear-gradient(180deg, transparent 0%, rgba(98, 142, 226, 0.05) 100%);
-  transform: translateX(-55%);
-  animation: st-home-board-shimmer 8s linear infinite;
+    radial-gradient(circle at 20% 22%, rgba(84, 196, 255, 0.1), transparent 24%),
+    radial-gradient(circle at 82% 22%, rgba(97, 208, 199, 0.08), transparent 26%),
+    linear-gradient(180deg, transparent 0%, rgba(98, 142, 226, 0.04) 100%);
   transition: opacity 0.3s ease;
 }
 
@@ -1066,17 +1072,17 @@ html[data-theme='light'] .st-home {
 }
 
 .st-home-architecture-board-inner {
-  min-height: 44.75rem;
+  min-height: 41.5rem;
   padding: 1rem 0.375rem 0.25rem;
   transform: translateZ(2px);
 }
 
 .st-home-architecture-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 20rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 17rem minmax(0, 1fr);
   align-items: center;
-  gap: 1.75rem;
-  margin-bottom: 1.75rem;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .st-home-architecture-stage {
@@ -1131,11 +1137,11 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-grid {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 26rem) 18rem minmax(0, 26rem);
+  grid-template-columns: minmax(0, 24rem) 16rem minmax(0, 24rem);
   justify-content: space-between;
   align-items: stretch;
-  gap: 1.25rem;
-  min-height: 37.5rem;
+  gap: 1rem;
+  min-height: 34.5rem;
   isolation: isolate;
 }
 
@@ -1187,6 +1193,14 @@ html[data-theme='light'] .st-home {
   animation: st-home-dash 3.2s linear infinite;
 }
 
+.st-home-architecture-pipe-core-centered {
+  fill: none;
+  stroke: rgba(240, 246, 255, 0.9);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .st-home-architecture-pipe-edge {
   fill: none;
   stroke: rgba(98, 179, 255, 0.56);
@@ -1218,6 +1232,10 @@ html[data-theme='light'] .st-home {
   stroke: rgba(255, 255, 255, 0.98);
 }
 
+.st-home-architecture-board.is-hovering .st-home-architecture-pipe-core-centered {
+  stroke: rgba(255, 255, 255, 0.98);
+}
+
 .st-home-architecture-board.is-hovering .st-home-architecture-pipe-edge {
   stroke: rgba(104, 182, 255, 0.74);
 }
@@ -1238,8 +1256,8 @@ html[data-theme='light'] .st-home {
   --engine-spot-y: 12%;
   position: relative;
   width: 100%;
-  min-height: 27.5rem;
-  padding: 1.75rem 1.5rem 1.625rem;
+  min-height: 24.75rem;
+  padding: 1.5rem 1.25rem 1.375rem;
   border-radius: 2.125rem;
   border: 1px solid rgba(105, 161, 235, 0.2);
   background: linear-gradient(180deg, rgba(14, 24, 40, 0.95), rgba(8, 15, 28, 0.99));
@@ -1293,10 +1311,10 @@ html[data-theme='light'] .st-home {
 }
 
 .st-home-architecture-engine-logo {
-  width: 4.125rem;
-  height: 4.125rem;
-  margin: 0 auto 1rem;
-  padding: 0.6875rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin: 0 auto 0.875rem;
+  padding: 0.625rem;
   border-radius: 1.25rem;
   background: linear-gradient(180deg, rgba(18, 31, 53, 0.96), rgba(13, 23, 41, 0.94));
   box-shadow:
@@ -1324,9 +1342,9 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-engine-name {
   position: relative;
   z-index: 1;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.625rem;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #eef4ff;
@@ -1336,43 +1354,43 @@ html[data-theme='light'] .st-home {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.125rem;
+  gap: 0.44rem;
+  margin-bottom: 0.95rem;
   font-family: var(--ifm-font-family-monospace);
   font-weight: 800;
 }
 
 .st-home-architecture-engine-e {
   color: #42b8ec;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-t-small {
   color: #61d0c7;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
   font-weight: 800;
 }
 
 .st-home-architecture-engine-l {
   color: #75a2eb;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-t {
   color: #8fd4f6;
-  font-size: 1.9rem;
+  font-size: 1.72rem;
 }
 
 .st-home-architecture-engine-pillars {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 0.625rem;
+  margin-top: 0.625rem;
 }
 
 .st-home-architecture-engine-pillar {
   position: relative;
-  padding: 0.875rem 0.875rem 0.875rem 1.125rem;
-  border-radius: 1.125rem;
+  padding: 0.75rem 0.8125rem 0.75rem 1rem;
+  border-radius: 1rem;
   background: rgba(15, 28, 49, 0.76);
   border: 1px solid rgba(98, 150, 230, 0.16);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
@@ -1387,7 +1405,7 @@ html[data-theme='light'] .st-home {
 
 .st-home-architecture-engine-pillar strong {
   display: block;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.3125rem;
   color: #9fc4ff;
   font-size: 0.75rem;
   font-weight: 800;
@@ -1399,8 +1417,8 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-engine-pillar span {
   display: block;
   color: rgba(231, 239, 255, 0.84);
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.5;
   font-weight: 700;
 }
 
@@ -1434,8 +1452,8 @@ html[data-theme='light'] .st-home {
 
 .st-home-architecture-card {
   position: relative;
-  min-height: 9.125rem;
-  padding: 1.375rem 1.5rem 1.25rem;
+  min-height: 8.375rem;
+  padding: 1.2rem 1.3rem 1.125rem;
   border-radius: 1.5rem;
   background: linear-gradient(180deg, rgba(12, 20, 35, 0.98), rgba(9, 15, 28, 0.96));
   border: 1px solid rgba(94, 140, 210, 0.16);
@@ -1476,7 +1494,7 @@ html[data-theme='light'] .st-home {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.125rem;
+  margin-bottom: 0.95rem;
 }
 
 .st-home-architecture-card-dot {
@@ -1512,16 +1530,16 @@ html[data-theme='light'] .st-home {
 .st-home-architecture-chip-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
+  gap: 0.55rem;
 }
 
 .st-home-architecture-chip {
-  padding: 0.625rem 0.875rem;
+  padding: 0.55rem 0.8rem;
   border: 1px solid rgba(96, 136, 198, 0.18);
   border-radius: 0.875rem;
   background: linear-gradient(180deg, rgba(17, 28, 47, 0.92), rgba(13, 21, 37, 0.88));
   color: #c8dcff;
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   line-height: 1;
   font-weight: 700;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
@@ -2236,10 +2254,10 @@ html[data-theme='light'] .st-home .st-home-architecture-board::before {
 }
 
 html[data-theme='light'] .st-home .st-home-architecture-board::after {
-  opacity: 0.86;
+  opacity: 0.5;
   background:
-    radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(255, 255, 255, 0.48), transparent 24%),
-    linear-gradient(120deg, transparent 0%, rgba(103, 200, 193, 0.12) 46%, transparent 52%),
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.26), transparent 22%),
+    radial-gradient(circle at 82% 22%, rgba(103, 200, 193, 0.1), transparent 24%),
     linear-gradient(180deg, transparent 0%, rgba(127, 163, 236, 0.03) 100%);
 }
 
@@ -2276,6 +2294,10 @@ html[data-theme='light'] .st-home .st-home-architecture-pipe-base {
 
 html[data-theme='light'] .st-home .st-home-architecture-pipe-core {
   stroke: rgba(255, 255, 255, 0.92);
+}
+
+html[data-theme='light'] .st-home .st-home-architecture-pipe-core-centered {
+  stroke: rgba(255, 255, 255, 0.94);
 }
 
 html[data-theme='light'] .st-home .st-home-architecture-pipe-edge {
@@ -2455,14 +2477,24 @@ html[data-theme='light'] .st-home .st-home-btn-dark {
 }
 
 html[data-theme='light'] .st-home .st-home-btn-primary {
-  background: linear-gradient(135deg, #63c0ea 0%, #7ba3ec 56%, #7f93e7 100%);
-  box-shadow: 0 20px 32px -16px rgba(99, 126, 209, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(90deg, #67c6f2 0%, #71bbef 36%, #78afec 64%, #7b9fe7 100%);
+  border-color: rgba(127, 178, 234, 0.26);
+  box-shadow:
+    0 20px 32px -16px rgba(99, 138, 209, 0.22),
+    0 10px 24px -18px rgba(103, 198, 242, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 html[data-theme='light'] .st-home .st-home-btn-primary::before {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.06) 40%, rgba(255, 255, 255, 0) 100%),
-    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 46%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 36%),
+    radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 34%);
+}
+
+html[data-theme='light'] .st-home .st-home-btn-primary::after {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 28%, rgba(255, 255, 255, 0) 62%);
 }
 
 html[data-theme='light'] .st-home .st-home-btn-outline:hover,
