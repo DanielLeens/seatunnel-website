@@ -130,7 +130,7 @@ triage role that helps the community keep issues and pull requests moving. Colla
 help label issues, organize follow-up work, and route reviews, but the role does not grant ASF
 committer privileges.
 
-A contributor can ask about the role, or an existing committer or PPMC member can propose them
+A contributor can ask about the role, or an existing committer or PMC member can propose them
 after a sustained record of helpful community work. Useful signals include opening and improving
 PRs, reviewing changes, reproducing bugs, triaging issues, and helping users on the mailing list.
 
