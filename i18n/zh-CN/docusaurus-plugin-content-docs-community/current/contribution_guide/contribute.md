@@ -51,7 +51,7 @@ sidebar_position: 1
 issue 和 PR triage 的轻量角色，主要用于帮助社区维护 issue、补充标签、跟进后续处理和协助
 reviewer 路由；它不等同于 ASF Committer，也不代表已经获得代码合并或发布权限。
 
-贡献者可以主动向 Committer 或 PPMC 成员了解该角色，现有 Committer 或 PPMC 也可以基于持续
+贡献者可以主动向 Committer 或 PMC 成员了解该角色，现有 Committer 或 PMC 也可以基于持续
 贡献主动提名。通常会重点参考这些贡献记录：持续提交和改进 PR、参与 review、复现和澄清 bug、
 帮助整理 issue，以及在邮件列表中帮助用户。
 
