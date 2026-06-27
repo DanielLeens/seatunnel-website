@@ -43,3 +43,20 @@ sidebar_position: 1
 * 完成后，发送一个 Pull Request 到 Apache Seatunnel，提交过程具体请参考下面《[提交代码流程](submit_guide/document.md)》。
 
 如果是想提交 Pull Request 完成某一个 Feature 或者修复某个 Bug，这里都建议大家从小处做起，完成一个小功能就提交一次，每次别改动太多文件，改动文件太多也会给 Reviewer 造成很大的心理压力，建议通过多次 Pull Request 的方式完成。
+
+### 4. 如何成为 GitHub Collaborator（协作者）
+
+对于已经持续参与社区的贡献者，社区可能会邀请其成为主仓库
+[`apache/seatunnel`](https://github.com/apache/seatunnel) 的 GitHub Collaborator。这是一个偏向
+issue 和 PR triage 的轻量角色，主要用于帮助社区维护 issue、补充标签、跟进后续处理和协助
+reviewer 路由；它不等同于 ASF Committer，也不代表已经获得代码合并或发布权限。
+
+贡献者可以主动向 Committer 或 PMC 成员了解该角色，现有 Committer 或 PMC 也可以基于持续
+贡献主动提名。通常会重点参考这些贡献记录：持续提交和改进 PR、参与 review、复现和澄清 bug、
+帮助整理 issue，以及在邮件列表中帮助用户。
+
+如果要提名新的 Collaborator，可以向
+[`apache/seatunnel`](https://github.com/apache/seatunnel) 提交一个 PR，在
+[`apache/seatunnel/.asf.yaml`](https://github.com/apache/seatunnel/blob/dev/.asf.yaml) 的
+`github.collaborators` 列表中加入对应 GitHub 用户名。Committer 会根据候选人的历史贡献进行
+审阅并决定是否接受。若长期不活跃，社区也可能将其从协作者列表中移除。
