@@ -122,6 +122,25 @@ When resolving ISSUEs, observe a few useful conventions:
 - Umbrellas are frequently marked **Done** if they are just container issues that don't correspond
   to an actionable change of their own
 
+## Becoming a collaborator
+
+Some active contributors may be invited to become GitHub collaborators for the main
+[`apache/seatunnel`](https://github.com/apache/seatunnel) repository. This is a lightweight
+triage role that helps the community keep issues and pull requests moving. Collaborators can
+help label issues, organize follow-up work, and route reviews, but the role does not grant ASF
+committer privileges.
+
+A contributor can ask about the role, or an existing committer or PPMC member can propose them
+after a sustained record of helpful community work. Useful signals include opening and improving
+PRs, reviewing changes, reproducing bugs, triaging issues, and helping users on the mailing list.
+
+To propose a new collaborator, open a PR against
+[`apache/seatunnel`](https://github.com/apache/seatunnel) that adds the contributor's GitHub
+username to the `github.collaborators` list in
+[`apache/seatunnel/.asf.yaml`](https://github.com/apache/seatunnel/blob/dev/.asf.yaml).
+Committers can review the contributor's past activity and approve the update. Collaborators who
+become inactive for a long period may be removed from the list.
+
 ## Preparing to contribute code changes
 
 ### Choosing what to contribute
