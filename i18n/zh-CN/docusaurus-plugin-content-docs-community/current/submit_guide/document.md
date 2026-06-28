@@ -7,15 +7,25 @@ sidebar_position: 1
 
 良好的使用文档对任何类型的软件都是至关重要的。欢迎任何可以改进 Seatunnel 文档的贡献。
 
-## 获取文档项目
+## 先确认该改哪个仓库
 
-Seatunnel 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/seatunnel-website) 中。
+SeaTunnel 的文档工作现在分布在两个仓库中：
 
-首先你需要先将文档项目 fork 到自己的 github 仓库中，然后将 fork 的文档克隆到本地计算机中。
+- **当前版本文档页面**，也就是 `https://seatunnel.apache.org/docs/...` 下的页面，source of truth 在 [apache/seatunnel](https://github.com/apache/seatunnel/tree/dev/docs)。
+- **网站壳页面** 在 [apache/seatunnel-website](https://github.com/apache/seatunnel-website) 中维护，例如首页、导航、版本入口、搜索、样式、渲染、社区页面，以及历史版本文档快照。
+
+如果您修改的是当前版本文档页面，请到 `apache/seatunnel` 提 PR。
+如果您修改的是网站壳或历史版本快照，请到 `apache/seatunnel-website` 提 PR。
+
+## 获取网站项目
+
+如果您的改动属于 `apache/seatunnel-website`，请先 fork 该仓库，再克隆到本地：
 
 ```
 git clone https://github.com/<your-github-user-name>/seatunnel-website
 ```
+
+如果您的改动属于 `apache/seatunnel`，请改为参考主仓库中的文档构建与提交流程。
 
 ## 预览并生成静态文件
 
@@ -88,7 +98,7 @@ git clone https://github.com/<your-github-user-name>/seatunnel-website
 css等样式文件放在`src/css`目录下
 
 ### 页面内容修改
-> 除了首页、团队、用户、Docs>All Version 模块页面外，其余页面都能通过底部的'Edit this page'按钮 直接跳转至对应的github的资源修改页
+> 当前版本文档页面底部的 `Edit this page` 会把贡献者导向 `apache/seatunnel`。首页、团队、用户、版本列表等网站壳页面仍然会导向 `apache/seatunnel-website`。
 
 ### 首页页面修改
 访问页面  https://seatunnel.apache.org/

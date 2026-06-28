@@ -7,6 +7,15 @@
 This is the repository containing all the source code of `https://seatunnel.apache.org`.
 This guide will guide you how to contribute to the SeaTunnel website.
 
+## Repository boundary
+
+`apache/seatunnel-website` is the website shell repository.
+
+- Edit **current docs content** in `apache/seatunnel` under `docs/en` and `docs/zh`.
+- Edit **website shell concerns** in `apache/seatunnel-website`, such as the homepage, navigation, version entry, search, styles, rendering, community pages, and versioned docs snapshots.
+
+If you are changing a page under `/docs` for the current unreleased docs, the source of truth is `apache/seatunnel`, not this repository.
+
 ## Branch
 
 main is the default branch. For all modifications, please fork first, and then proceed on the main branch.
@@ -23,7 +32,7 @@ This website is compiled using node, using Docusaurus framework components
 
 1. Download and install nodejs (version>14)
 2. Clone the code to the local `git clone git@github.com:apache/seatunnel-website.git`
-3. Run `./tools/build-docs.sh` to fetch and prepare docs form **apache/seatunnel**, for more information you could see [how our document work](HOW_DOC_WORK.md)
+3. Run `./tools/build-docs.sh` to fetch and prepare current docs from **apache/seatunnel**. For more details, see [how our docs work](HOW_DOC_WORK.md)
 4. Run `npm install` to install the required dependent libraries.
 5. Run `npm run start` in the root directory, you can visit http://localhost:3000 to view the English mode preview of the site
 6. Run `npm run start-zh` in the root directory, you can visit http://localhost:3000 to view the Chinese mode preview of the site

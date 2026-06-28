@@ -80,6 +80,15 @@ function getZhBlogExcludePatterns() {
   return exclude;
 }
 
+function getDocsEditUrl({ version, versionDocsDirPath, docPath, locale }) {
+  if (version === "current") {
+    const sourceLocaleDir = locale === "zh-CN" ? "zh" : "en";
+    return `https://github.com/apache/seatunnel/edit/dev/docs/${sourceLocaleDir}/${docPath}`;
+  }
+
+  return `https://github.com/apache/seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   markdown: {
@@ -168,9 +177,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           sidebarCollapsible: true,
           editLocalizedFiles: true,
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/apache/seatunnel-website/edit/main/",
+          // Current docs are sourced from apache/seatunnel, while historical snapshots stay in this repo.
+          editUrl: getDocsEditUrl,
           versions: {
             current: {
               path: "",
@@ -240,7 +248,7 @@ const config = {
       items: [
         {
           position: "right",
-          label: "Document",
+          label: "Docs",
           items: [
             ...versions.slice(0, 5).map((version) => ({
               label: version,
