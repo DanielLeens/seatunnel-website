@@ -7,6 +7,15 @@
 这是包含 `https://seatunnel.apache.org` 的所有源代码的存储库。
 本指南将指导您如何为SeaTunnel的网站做出贡献。
 
+## 仓库边界
+
+`apache/seatunnel-website` 是网站壳仓库。
+
+- **当前版本文档内容** 请在 `apache/seatunnel` 的 `docs/en` 和 `docs/zh` 中修改。
+- **网站壳能力** 请在 `apache/seatunnel-website` 中修改，例如首页、导航、版本入口、搜索、样式、渲染、社区页面，以及历史版本文档快照。
+
+如果您修改的是网站 `/docs` 下的当前未发布文档页面，source of truth 在 `apache/seatunnel`，不在本仓库。
+
 ## 分支
 
 main为默认主分支，修改请先fork到自己的仓库，然后在main分支上进行开发修改。
@@ -23,7 +32,7 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 
 1. 下载并安装 nodejs(version>14)
 2. 克隆代码到本地 `git clone  git@github.com:apache/seatunnel-website.git`
-3. 运行 `./tools/build-docs.sh` 从 **apache/seatunnel** 中拉取、准备文档。如果想要了解更多细节和操作请阅读[文档如何工作](HOW_DOC_WORK.md)
+3. 运行 `./tools/build-docs.sh` 从 **apache/seatunnel** 中拉取并准备当前文档。如果想了解更多细节，请阅读[文档如何工作](HOW_DOC_WORK.md)
 4. 运行 `npm install` 来安装所需的依赖库。
 5. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
 6. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览

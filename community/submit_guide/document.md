@@ -7,15 +7,25 @@ sidebar_position: 1
 
 Good documentation is critical for any type of software. Any contribution that can improve the Seatunnel documentation is welcome.
 
-##  Get the document project
+## Choose the right repository
 
-Documentation for the Seatunnel project is maintained in a separate [git repository](https://github.com/apache/seatunnel-website).
+SeaTunnel documentation work now spans two repositories:
 
-First you need to fork the document project into your own github repository, and then clone the document to your local computer.
+- **Current docs pages** under `https://seatunnel.apache.org/docs/...` are sourced from [apache/seatunnel](https://github.com/apache/seatunnel/tree/dev/docs).
+- **Website shell pages** are maintained in [apache/seatunnel-website](https://github.com/apache/seatunnel-website), including the homepage, navigation, version entry, search, styles, rendering, community pages, and versioned docs snapshots.
+
+If you are editing a current docs page, open your PR in `apache/seatunnel`.
+If you are editing the website shell or a historical/versioned snapshot, open your PR in `apache/seatunnel-website`.
+
+## Get the website project
+
+If your change belongs in `apache/seatunnel-website`, fork the website repository into your own GitHub account and then clone it locally.
 
 ```shell
 git clone https://github.com/<your-github-user-name>/seatunnel-website
 ```
+
+If your change belongs in `apache/seatunnel`, follow the docs build and contribution instructions in that repository instead.
 
 ## Preview and generate static files
 
@@ -88,7 +98,7 @@ Image resources are unified under `static/{module name}`
 css and other style files are placed in the `src/css` directory
 
 ### Page content modification
-> Except for the homepage, team, user, Docs>All Version module page, all other pages can be directly jumped to the corresponding github resource modification page through the'Edit this page' button at the bottom
+> Current docs pages use the bottom `Edit this page` button to route contributors to `apache/seatunnel`. Homepage, team, user, versions, and other website shell pages continue to route to `apache/seatunnel-website`.
 
 ### Home page modification
 Visit the page https://seatunnel.apache.org
