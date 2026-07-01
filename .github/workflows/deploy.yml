@@ -30,11 +30,52 @@ jobs:
       - name: Documents Sync
         run: |
           npm run sync
-      - name: Build
+      - name: Build site and LLM discovery artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build
+      - name: Verify generated discovery artifacts
+        run: |
+          FIRST_OLD_VERSION=$(node -p "require('./versions.json')[1] || ''")
+          test -f build/sitemap.xml
+          test -f build/zh-CN/sitemap.xml
+          test -f build/llms.txt
+          test -f build/llms-full.txt
+          test -f build/robots.txt
+          grep -q '<loc>https://seatunnel.apache.org/docs/' build/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/zh-CN/docs/' build/zh-CN/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/docs/getting-started/docker</loc>' build/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/docs/getting-started/kubernetes</loc>' build/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/docs/transforms/common-options</loc>' build/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/zh-CN/docs/getting-started/docker</loc>' build/zh-CN/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes</loc>' build/zh-CN/sitemap.xml
+          grep -q '<loc>https://seatunnel.apache.org/zh-CN/docs/transforms/common-options</loc>' build/zh-CN/sitemap.xml
+          grep -q 'English docs home: https://seatunnel.apache.org/docs/' build/llms.txt
+          grep -q 'Chinese docs home: https://seatunnel.apache.org/zh-CN/docs/' build/llms.txt
+          grep -q 'https://seatunnel.apache.org/docs/' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/zh-CN/docs/' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/docs/getting-started/docker' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/docs/getting-started/kubernetes' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/docs/transforms/common-options' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/zh-CN/docs/getting-started/docker' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes' build/llms-full.txt
+          grep -q 'https://seatunnel.apache.org/zh-CN/docs/transforms/common-options' build/llms-full.txt
+          grep -q '^User-agent: OAI-SearchBot$' build/robots.txt
+          grep -q '^User-agent: GPTBot$' build/robots.txt
+          grep -q '^User-agent: ChatGPT-User$' build/robots.txt
+          grep -q 'Sitemap: https://seatunnel.apache.org/zh-CN/sitemap.xml' build/robots.txt
+          ! grep -q 'https://seatunnel.apache.org/search' build/sitemap.xml
+          ! grep -q 'https://seatunnel.apache.org/zh-CN/search' build/zh-CN/sitemap.xml
+          ! grep -q 'https://seatunnel.apache.org/blog/' build/sitemap.xml
+          ! grep -q 'https://seatunnel.apache.org/zh-CN/blog/' build/zh-CN/sitemap.xml
+          ! grep -q 'https://seatunnel.apache.org/docs/1.x' build/sitemap.xml
+          ! grep -q 'https://seatunnel.apache.org/zh-CN/docs/1.x' build/zh-CN/sitemap.xml
+          if [ -n "$FIRST_OLD_VERSION" ]; then
+            ! grep -q "https://seatunnel.apache.org/docs/$FIRST_OLD_VERSION/" build/sitemap.xml
+            ! grep -q "https://seatunnel.apache.org/zh-CN/docs/$FIRST_OLD_VERSION/" build/zh-CN/sitemap.xml
+          fi
       - name: Copy .asf.yaml and .htaccess
         run: |
           cp .asf.yaml build
