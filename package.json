@@ -10,6 +10,7 @@
     "start-zh": "docusaurus start --locale zh-CN",
     "prebuild": "npm run team:contributors",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=10240 docusaurus build",
+    "postbuild": "node tools/generate-llm-artifacts.js",
     "build:fast": "cross-env NODE_OPTIONS=--max_old_space_size=10240 DOCUSAURUS_PARALLELIZE=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
