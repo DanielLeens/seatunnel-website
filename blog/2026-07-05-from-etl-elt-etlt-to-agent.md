@@ -2,6 +2,11 @@
 slug: from-etl-elt-etlt-to-agent
 title: "From ETL, ELT, and EtLT to Agent: What Is Changing in Enterprise Data Engineering?"
 tags: [SeaTunnel, Architecture, "Data Engineering", Agent, ETL, ELT]
+authors:
+  - name: David Zollo
+    title: Apache SeaTunnel Contributor
+    url: https://github.com/davidzollo
+    image_url: https://github.com/davidzollo.png
 ---
 
 # From ETL, ELT, and EtLT to Agent: What Is Changing in Enterprise Data Engineering?
