@@ -133,5 +133,25 @@
         "label": "CETC 28th Institute",
         "alt": "CETC 28th Research Institute logo",
         "title": "CETC 28th Research Institute"
+    },
+    {
+        "icon": "brand-icons/byd.svg",
+        "label": "BYD",
+        "alt": "BYD logo"
+    },
+    {
+        "icon": "brand-icons/happy-elements.svg",
+        "label": "Happy Elements",
+        "alt": "Happy Elements logo"
+    },
+    {
+        "icon": "brand-icons/ping-an.png",
+        "label": "PING AN",
+        "alt": "PING AN logo"
+    },
+    {
+        "icon": "brand-icons/hyundai.png",
+        "label": "Hyundai Motor",
+        "alt": "Hyundai Motor Company logo"
     }
 ]
