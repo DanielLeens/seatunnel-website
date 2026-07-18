@@ -163,10 +163,8 @@ Tongcheng Travel's experience is not simply a migration from one tool to another
 
 The next stage presented by Tongcheng Travel focuses on Kubernetes-native elastic workers, centralized remote job logs, natural-language task generation, automated root-cause analysis, and automatic parallelism tuning. Together, these capabilities move the data channel from manually operated pipelines toward an increasingly self-managing integration platform.
 
-## Speaker and original material
+## Speaker
 
 Xiaochen Zhou works on the data platform at Tongcheng Travel and presented this architecture at an Apache SeaTunnel Meetup. This independently written technical summary reports the publicly presented facts in a new structure; it does not reproduce the source article's images or extended passages.
 
-- [Original Chinese Meetup recap](https://www.cnblogs.com/seatunnel/p/21524896)
-- [Full Meetup replay](https://weixin.qq.com/sph/AkwdgrLP62)
 - [Xiaochen Zhou on GitHub](https://github.com/xiaochen-zhou)

@@ -163,10 +163,8 @@ flowchart TD
 
 同程旅行下一阶段的规划包括 Kubernetes 原生弹性 Worker、Job 日志远程集中存储、自然语言生成同步任务、异常根因自动定位以及并行度自动调优。这些能力将推动数据通道从人工维护的 Pipeline，逐步演进为更具自管理能力的数据集成平台。
 
-## 讲师与原始材料
+## 讲师信息
 
 周晓晨目前负责同程旅行数据平台相关工作，并在 Apache SeaTunnel Meetup 上分享了这套架构。本文是基于公开分享事实独立撰写的技术摘要，采用了新的叙事结构，未复制原文图片或大段文字。
 
-- [Meetup 中文完整回顾](https://www.cnblogs.com/seatunnel/p/21524896)
-- [Meetup 完整视频回放](https://weixin.qq.com/sph/AkwdgrLP62)
 - [周晓晨的 GitHub 主页](https://github.com/xiaochen-zhou)
