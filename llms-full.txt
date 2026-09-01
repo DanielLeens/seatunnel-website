@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 970
+- Total current docs pages: 980
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -83,6 +83,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-oss-jindo
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-s3
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-sftp
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-firestore
@@ -105,6 +106,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-posthog
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hudi
@@ -256,6 +258,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/docs/connectors/source/AzureQueueStorage
 - https://seatunnel.apache.org/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/docs/connectors/source/Clickhouse
@@ -270,6 +273,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/docs/connectors/source/Elasticsearch
 - https://seatunnel.apache.org/docs/connectors/source/FakeSource
+- https://seatunnel.apache.org/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/docs/connectors/source/FtpFile
 - https://seatunnel.apache.org/docs/connectors/source/Github
@@ -339,6 +343,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/SqlServer
 - https://seatunnel.apache.org/docs/connectors/source/SqlServer-CDC
 - https://seatunnel.apache.org/docs/connectors/source/StarRocks
+- https://seatunnel.apache.org/docs/connectors/source/Stripe
 - https://seatunnel.apache.org/docs/connectors/source/Tablestore
 - https://seatunnel.apache.org/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/docs/connectors/source/TiDB-CDC
@@ -570,6 +575,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-oss-jindo
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-s3
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-sftp
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-firestore
@@ -592,6 +598,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hudi
@@ -743,6 +750,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureQueueStorage
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Clickhouse
@@ -757,6 +765,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Elasticsearch
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FakeSource
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FtpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
@@ -826,6 +835,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SqlServer
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SqlServer-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/StarRocks
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Stripe
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Tablestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TiDB-CDC
