@@ -2151,6 +2151,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-deeplake</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-dingtalk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2752,6 +2757,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DB2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DeepLake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

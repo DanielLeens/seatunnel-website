@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 980
+- Total current docs pages: 984
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -61,6 +61,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-couchbase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-databend
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-datahub
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-deeplake
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-dingtalk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-doris
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-druid
@@ -182,6 +183,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Databend
 - https://seatunnel.apache.org/docs/connectors/sink/Datahub
 - https://seatunnel.apache.org/docs/connectors/sink/DB2
+- https://seatunnel.apache.org/docs/connectors/sink/DeepLake
 - https://seatunnel.apache.org/docs/connectors/sink/DingTalk
 - https://seatunnel.apache.org/docs/connectors/sink/Doris
 - https://seatunnel.apache.org/docs/connectors/sink/Druid
@@ -553,6 +555,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-couchbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-databend
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-datahub
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-deeplake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-dingtalk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-doris
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-druid
@@ -674,6 +677,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Databend
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Datahub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DB2
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DeepLake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DingTalk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Doris
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Druid
