@@ -3151,6 +3151,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Zendesk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3662,6 +3667,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/developer/anydoc-document-parser-poc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4317,6 +4327,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/transforms/multi-table-transform-and-join-boundary</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/transforms/python</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
