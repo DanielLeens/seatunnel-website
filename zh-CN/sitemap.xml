@@ -2361,6 +2361,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-asana</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-base</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3271,6 +3276,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Asana</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3872,6 +3882,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/developer/new-license</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/developer/postgres-cdc-bounded-read-audit</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
