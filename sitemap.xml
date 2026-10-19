@@ -2001,11 +2001,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://seatunnel.apache.org/docs/connectors</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2406,6 +2401,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-linear</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-myhours</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2447,6 +2447,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-stripe</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-typeform</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3466,6 +3471,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Http-Linear</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/HugeGraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3802,6 +3812,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/TikTokAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Typeform</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4167,6 +4182,51 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/cli</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/architecture</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/checkpoint-recovery</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/commands</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/overview</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/kubernetes/quick-start</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/application/overview</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
