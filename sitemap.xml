@@ -2406,6 +2406,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-mailchimp</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-myhours</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3542,6 +3547,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/LocalFile</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Mailchimp</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
