@@ -2356,6 +2356,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-amplitude</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-asana</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2502,6 +2507,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-jdbc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-jms</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3296,6 +3306,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Amplitude</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/Asana</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3312,6 +3327,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/AzureQueueStorage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/BigQuery</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3522,6 +3542,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/Jira</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Jms</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
